@@ -6,8 +6,18 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 14:39:57 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/29 14:59:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+typedef struct			s_lst
+{
+	void				*content;
+	struct s_lsto		*next;
+}						t_lst;
 
+typedef struct			s_node
+{
+	char				*name;
+	int					on;
+}						t_node;
