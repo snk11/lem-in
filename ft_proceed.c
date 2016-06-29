@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 15:02:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 19:19:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/29 19:33:44 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ void ft_proceed(t_lst2 *lstpath, t_lst2 *lstremain)
 		lst1begi = lst1;
 		while (lst1)
 		{
-			lst1 = lstremain->nextr;
 			if (lstpath)
 			{
 				while (lstpath)
@@ -44,7 +43,7 @@ void ft_proceed(t_lst2 *lstpath, t_lst2 *lstremain)
 					{
 						lst3 = lst3->next;
 					}
-					while (lst2)
+					while (lst2->next)
 					{
 						lst2 = lst2->next;
 					}
@@ -65,6 +64,7 @@ void ft_proceed(t_lst2 *lstpath, t_lst2 *lstremain)
 				s1 = ((t_node1*)(lstremain->content))->name;
 				((t_node1*)(lstmp->content))->name = ft_strsub(((t_node1*)(lstremain->content))->name, 0 , ft_strlen(s1));
 				lstpath = lst_add_downl(lstpath, lstmp);
+				
 				lst2 = lstpath->nextr;
 				e = (t_node1*)malloc(sizeof(t_node1));
 				lstmp1 = create_lst1(e);
