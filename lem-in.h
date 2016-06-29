@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 16:07:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/29 19:18:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,24 @@
 typedef struct			s_lst
 {
 	void				*content;
-	struct s_lsto		*next;
+	struct s_lst		*next;
 }						t_lst;
 
-typedef struct			s_node
+typedef struct			s_lst2
+{
+	void				*content;
+	struct s_lst2		*nextl;
+	struct s_lst		*nextr;
+}						t_lst2;
+
+typedef struct			s_node1
 {
 	char				*name;
-	char				*path;
-}						t_node;
+}						t_node1;
 
+t_lst2		*lst_add_downl(t_lst2 *toplist, t_lst2 *t_lst1);
+void		*lst_add_downr(t_lst *toplist, t_lst *t_lst1);
+t_lst		*create_lst1(void *content);
+t_lst2		*create_lst2(void *content);
+int		ft_checkremain(t_lst *lstremain, char *s);
 char	*ft_makepath(char *str1,char *str2);
