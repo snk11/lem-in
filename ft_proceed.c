@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 15:02:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 19:38:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/29 19:46:09 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem-in.h"
 
-void ft_proceed(t_lst2 *lstpath, t_lst2 *lstremain)
+void ft_proceed(t_lst2 *lstpath, t_lst2 *lstprime)
 {
 	char	*s1;
 	t_node1		*e;
@@ -24,11 +24,11 @@ void ft_proceed(t_lst2 *lstpath, t_lst2 *lstremain)
 	t_lst		*lst2;
 
 	lst1 = NULL;
-	lstremain = lstremain->nextl;
-	while (lstremain)
+	lstprime = lstprime->nextl;
+	while (lstprime)
 	{
 //		while (lstbeginnode && ft_checkremain(lstremain, ((t_node1*)(lstbeginnode->content))->name))
-		lst1 = lstremain->nextr;
+		lst1 = lstprime->nextr;
 		lst1begi = lst1;
 		while (lst1)
 		{
@@ -61,8 +61,8 @@ void ft_proceed(t_lst2 *lstpath, t_lst2 *lstremain)
 			{
 				e = (t_node1*)malloc(sizeof(t_node1));
 				lstmp = create_lst2(e);
-				s1 = ((t_node1*)(lstremain->content))->name;
-				((t_node1*)(lstmp->content))->name = ft_strsub(((t_node1*)(lstremain->content))->name, 0 , ft_strlen(s1));
+				s1 = ((t_node1*)(lstprime->content))->name;
+				((t_node1*)(lstmp->content))->name = ft_strsub(((t_node1*)(lstprime->content))->name, 0 , ft_strlen(s1));
 				lstpath = lst_add_downl(lstpath, lstmp);
 				
 				lst2 = lstpath->nextr;
@@ -74,6 +74,6 @@ void ft_proceed(t_lst2 *lstpath, t_lst2 *lstremain)
 			}
 			lst1 = lst1->next;
 		}
-		lstremain = lstremain->nextl;
+		lstprime = lstprime->nextl;
 	}
 }
