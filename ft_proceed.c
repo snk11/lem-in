@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 15:02:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 19:33:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/29 19:36:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void ft_proceed(t_lst2 *lstpath, t_lst2 *lstremain)
 		{
 			if (lstpath)
 			{
-				while (lstpath)
+//				while (lstpath)
 				{
 					s1 = ((t_node1*)(lstpath->content))->name;
 					lst2 = lstpath->nextr;
