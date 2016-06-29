@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.h                                           :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 16:07:31 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/05 17:51:04 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/18 23:55:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "libft.h"
 
-typedef struct			s_lst
+void	ft_strclr(char *s)
 {
-	void				*content;
-	struct s_lsto		*next;
-}						t_lst;
-
-typedef struct			s_node
-{
-	char				*name;
-	char				*path;
-}						t_node;
-
-char	*ft_makepath(char *str1,char *str2);
+	while (s && *s)
+	{
+		*s = '\0';
+		s++;
+	}
+}

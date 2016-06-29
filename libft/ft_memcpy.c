@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.h                                           :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 16:07:31 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/04 13:53:14 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/11 23:47:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "libft.h"
 
-typedef struct			s_lst
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-	void				*content;
-	struct s_lsto		*next;
-}						t_lst;
+	size_t	i;
+	char	*s1;
+	char	*s2;
 
-typedef struct			s_node
-{
-	char				*name;
-	char				*path;
-}						t_node;
-
-char	*ft_makepath(char *str1,char *str2);
+	s1 = (char*)dest;
+	s2 = (char*)src;
+	i = 0;
+	while (i < n)
+	{
+		s1[i] = s2[i];
+		i++;
+	}
+	return (s1);
+}

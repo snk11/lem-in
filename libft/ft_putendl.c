@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.h                                           :+:      :+:    :+:   */
+/*   ft_putendl.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 16:07:31 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/06 13:07:32 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/06 13:10:54 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "libft.h"
 
-typedef struct			s_lst
+void	ft_putendl(char const *s)
 {
-	void				*content;
-	struct s_lsto		*next;
-}						t_lst;
-
-typedef struct			s_node
-{
-	char				*name;
-	char				*path;
-}						t_node;
-
-char	*ft_makepath(char *str1,char *str2);
+	ft_putstr(s);
+	ft_putchar('\n');
+}

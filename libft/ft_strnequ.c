@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.h                                           :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 16:07:31 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/06 11:19:59 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/19 18:49:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "libft.h"
 
-typedef struct			s_lst
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	void				*content;
-	struct s_lsto		*next;
-}						t_lst;
-
-typedef struct			s_node
-{
-	char				*name;
-	char				*path;
-}						t_node;
-
-char	*ft_makepath(char *str1,char *str2);
+	if (s1 && s2)
+	{
+		if (ft_strncmp(s1, s2, n) == 0)
+			return (1);
+	}
+	return (0);
+}

@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.h                                           :+:      :+:    :+:   */
+/*   ft_memmove2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 16:07:31 by syusof           ###   ########.fr       */
+/*   Created: 2016/05/23 04:10:20 by syusof            #+#    #+#             */
+/*   Updated: 2016/05/23 04:23:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "libft.h"
 
-typedef struct			s_lst
+char	*ft_memmove2(char *src)
 {
-	void				*content;
-	struct s_lsto		*next;
-}						t_lst;
+	int		i;
+	int		n;
+	char	*temp;
 
-typedef struct			s_node
-{
-	char				*name;
-	char				*path;
-}						t_node;
+	n = ft_strlen(src);
 
-char	*ft_makepath(char *str1,char *str2);
+	temp = (char*)malloc(sizeof(char) * n + 1);
+	i = 0;
+	while (i <= n)
+	{
+		temp[i] = src[i];
+		i++;
+	}
+	return (temp);
+}

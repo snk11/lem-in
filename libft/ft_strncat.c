@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.h                                           :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 16:07:31 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/04 16:56:36 by syusof            #+#    #+#             */
+/*   Updated: 2016/05/23 05:22:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "libft.h"
 
-typedef struct			s_lst
+char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-	void				*content;
-	struct s_lsto		*next;
-}						t_lst;
+	int		i;
+	int		j;
 
-typedef struct			s_node
-{
-	char				*name;
-	char				*path;
-}						t_node;
-
-char	*ft_makepath(char *str1,char *str2);
+	j = 0;
+	i = ft_strlen(dest);
+	while (src[j] && (size_t)j < n)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}

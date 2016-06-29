@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.h                                           :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 16:07:31 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/03 16:42:30 by syusof            #+#    #+#             */
+/*   Updated: 2014/11/11 23:58:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "libft.h"
 
-typedef struct			s_lst
+char	*ft_strdup(const char *str)
 {
-	void				*content;
-	struct s_lsto		*next;
-}						t_lst;
+	char	*str1;
+	int		i;
 
-typedef struct			s_node
-{
-	char				*name;
-	char				*path;
-}						t_node;
-
-char	*ft_makepath(char *str1,char *str2);
+	if (str == NULL)
+		return (NULL);
+	str1 = ft_strnew(ft_strlen(str));
+	i = 0;
+	while (str[i])
+	{
+		str1[i] = str[i];
+		i++;
+	}
+	str1[i] = '\0';
+	return (str1);
+}

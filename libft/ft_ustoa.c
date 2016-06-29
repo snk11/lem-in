@@ -1,27 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.h                                           :+:      :+:    :+:   */
+/*   ft_ustoa.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 16:07:31 by syusof           ###   ########.fr       */
+/*   Created: 2016/06/14 07:42:27 by syusof            #+#    #+#             */
+/*   Updated: 2016/06/14 08:00:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "libft.h"
 
-typedef struct			s_lst
+static int		ft_countdigit(int n)
 {
-	void				*content;
-	struct s_lsto		*next;
-}						t_lst;
+	int		i;
 
-typedef struct			s_node
+	i = 1;
+	while (n > 9)
+	{
+		n = n / 10;
+		i++;
+	}
+	return (i);
+}
+
+static void		itoa_pos(char *str, int n, int i)
 {
-	char				*name;
-	char				*path;
-}						t_node;
+	while (i > 0)
+	{
+		str[i - 1] = n % 10 + '0';
+		n = n / 10;
+		i--;
+	}
+}
 
-char	*ft_makepath(char *str1,char *str2);
+
+char			*ft_ustoa(unsigned short n)
+{
+	char	*str;
+	int		i;
+
+	i = ft_countdigit((int)n);
+	str = ft_strnew(i);
+	itoa_pos(str, (int)n, i);
+	return (str);
+}

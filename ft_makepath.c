@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.h                                           :+:      :+:    :+:   */
+/*   ft_makepath.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 16:07:31 by syusof           ###   ########.fr       */
+/*   Created: 2016/02/24 00:45:57 by syusof            #+#    #+#             */
+/*   Updated: 2016/06/29 16:07:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+# include "lem-in.h"
 
-typedef struct			s_lst
+char	*ft_makepath(char *str1,char *str2)
 {
-	void				*content;
-	struct s_lsto		*next;
-}						t_lst;
+	char*str;
+	int len;
+	int	i;
 
-typedef struct			s_node
-{
-	char				*name;
-	char				*path;
-}						t_node;
-
-char	*ft_makepath(char *str1,char *str2);
+	len = ft_strlen(str1);
+	str = ft_strnew(len + 1 + 1);
+	i = 0;
+	while (i < len)
+	{
+		str[i] = str1[i];
+		i++;
+	}
+	str[i] = '/';
+	i++;
+	str[i] = 0;
+	str = ft_strjoin(str,str2);
+	return (str);
+}

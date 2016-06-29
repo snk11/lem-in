@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.h                                           :+:      :+:    :+:   */
+/*   ft_strnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 16:07:31 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/05 15:03:37 by syusof            #+#    #+#             */
+/*   Updated: 2016/02/20 11:23:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "libft.h"
 
-typedef struct			s_lst
+char	*ft_strnew(size_t size)
 {
-	void				*content;
-	struct s_lsto		*next;
-}						t_lst;
+	char		*str;
+	size_t		i;
 
-typedef struct			s_node
-{
-	char				*name;
-	char				*path;
-}						t_node;
-
-char	*ft_makepath(char *str1,char *str2);
+	if ((str = (char*)malloc(sizeof(char) * size)))
+	{
+		i = 0;
+		while (i <= size)
+		{
+			str[i] = 0;
+			i++;
+		}
+		return (str);
+	}
+	return (NULL);
+}

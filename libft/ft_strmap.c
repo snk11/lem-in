@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.h                                           :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 16:07:31 by syusof           ###   ########.fr       */
+/*   Created: 2014/11/06 10:32:07 by syusof            #+#    #+#             */
+/*   Updated: 2016/05/11 15:47:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
+#include "libft.h"
 
-typedef struct			s_lst
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	void				*content;
-	struct s_lsto		*next;
-}						t_lst;
+	int		i;
+	char	*str;
 
-typedef struct			s_node
-{
-	char				*name;
-	char				*path;
-}						t_node;
-
-char	*ft_makepath(char *str1,char *str2);
+	if ((str = ft_strnew(ft_strlen(s))))
+	{
+		i = 0;
+		while (s && s[i] && f)
+		{
+			str[i] = f(s[i]);
+			i++;
+		}
+		return (str);
+	}
+	return (NULL);
+}
