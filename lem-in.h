@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 19:18:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/29 20:05:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,4 @@ t_lst		*create_lst1(void *content);
 t_lst2		*create_lst2(void *content);
 int		ft_checkremain(t_lst *lstremain, char *s);
 char	*ft_makepath(char *str1,char *str2);
+void	ft_remove_if(t_lst2 **lsta, t_lst2 *lstb);

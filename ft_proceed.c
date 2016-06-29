@@ -6,17 +6,18 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 15:02:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 19:46:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/29 20:09:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem-in.h"
 
-void ft_proceed(t_lst2 *lstpath, t_lst2 *lstprime)
+void ft_proceed(t_lst2 *lstpath, t_lst2 *lstprime, t_lst2 *lstremain)
 {
 	char	*s1;
 	t_node1		*e;
 	t_lst2		*lstmp;
+	t_lst2		*lstprimebegi;
 	t_lst		*lstmp1;
 	t_lst		*lst1;
 	t_lst		*lst3;
@@ -24,6 +25,7 @@ void ft_proceed(t_lst2 *lstpath, t_lst2 *lstprime)
 	t_lst		*lst2;
 
 	lst1 = NULL;
+	lstprimebegi = lstprime;
 	lstprime = lstprime->nextl;
 	while (lstprime)
 	{
@@ -74,6 +76,9 @@ void ft_proceed(t_lst2 *lstpath, t_lst2 *lstprime)
 			}
 			lst1 = lst1->next;
 		}
+		ft_remove_if(&lstremain, lstprime);
 		lstprime = lstprime->nextl;
+		if (lstprime == 0 && lstremain != 0)
+				lstprime = lstprimebegi;
 	}
 }
