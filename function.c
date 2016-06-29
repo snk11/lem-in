@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 19:17:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/06/29 19:37:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void		*lst_add_downr(t_lst *toplist, t_lst *lst1)
 	t_lst		*lstmp;
 
 	lstmp = NULL;
-	lstmp = create_lst((lst1)->content);
+	lstmp = create_lst1((lst1)->content);
 	s1 = ((t_node1*)(lst1->content))->name;
 	((t_node1*)(lstmp->content))->name = ft_strsub(((t_node1*)(lst1->content))->name, 0 , ft_strlen(s1));
 	if (!toplist)
