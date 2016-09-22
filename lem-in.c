@@ -6,11 +6,15 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 17:24:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/22 18:00:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
 
+
+
+
+#include <stdio.h>
 int main(int ac,char **av)
 {
 	t_node	*node1;
@@ -58,5 +62,11 @@ int main(int ac,char **av)
 	}
 
 	ft_proceed(node1,path1begi,&path1,"0","3");
+
+	while(path1)
+	{
+		printf("path = %s\n",path1->name);
+		path1 = path1->next;
+	}
 }
 
