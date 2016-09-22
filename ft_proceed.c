@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 15:02:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 17:54:36 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/22 18:12:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,11 @@ void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_path *path1begi,t_p
 		{
 			while(nodetmp && ft_strcmp(nodetmp->name,strend) != 0 && ind1 == 0)
 			{
+				if (nodetmp)
+					printf("nodetmp = %s\n",nodetmp->name);
 				nodetmp = nodetmp->nextr;
+				if (nodetmp)
+					printf("nodetmp = %s\n",nodetmp->name);
 				if(nodetmp && ft_checknode(*path1,nodetmp->name) == 1)
 				{
 					ind1 = 1;

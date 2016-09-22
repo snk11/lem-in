@@ -6,12 +6,14 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 16:10:04 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/22 18:35:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "lem-in.h"
 
+
+#include <stdio.h>
 t_node		*ft_createnode(char *s)
 {
 	t_node	*curlst;
@@ -85,19 +87,30 @@ t_node		*lst_add_downl(t_node **node1,char *s)
 	return (nodetmp2);
 }
 
-t_node		*lst_add_downr(t_node **node1,char *s)
+t_node		*lst_add_downr(t_node **node1,t_node **noderef,char *s)
 {
 	t_node	*nodetmp;
 	t_node	*nodetmp2;
+	int		ind1;
 
+	ind1 = 0;
 	nodetmp2 = *node1;
 	nodetmp = NULL;
 	nodetmp = ft_createnode(s);
 	if (!(*node1))
 		return (nodetmp);
-	while ((*node1)->nextl)
-		*node1 = (*node1)->nextl;
+	while(*node1 && ind1 == 0)
+	{
+		if(ft_strcmp((*node1)->name,(*noderef)->name) == 0)
+			ind1 = 1;
+		else
+			*node1 = (*node1)->nextl;
+	}
+
+	while ((*node1)->nextr)
+		*node1 = (*node1)->nextr;
 	(*node1)->nextr = nodetmp;
+	printf("create %s\n",s);
 	return (nodetmp2);
 }
 
