@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 15:40:30 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/22 15:48:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,3 +50,4 @@ t_node		*lst_add_downl(t_node **node1,char *s);
 t_node		*lst_add_downr(t_node **node1,char *s);
 int		ft_checknode(t_path *path1,char *s);
 void	ft_search1(t_node *node1,char *strend,t_path *path1begi,t_path **path1);
+void ft_proceed(t_node *node1, t_path *path1begi,t_path **path1,char *strbegi,char *strend);

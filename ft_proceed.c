@@ -6,22 +6,22 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 15:02:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 15:41:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/22 15:48:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem-in.h"
 
-void ft_proceed(t_node *node1, t_path *path1begi,t_path *path1,char *strbegi,char *strend)
+void ft_proceed(t_node *node1, t_path *path1begi,t_path **path1,char *strbegi,char *strend)
 {
 	
 	t_node		*nodetmp;
 
 	path1 = NULL;
 	nodetmp = node1;
-	path1 = ft_createlstpath(strbegi);
-	path1begi = path1;
-	ft_search1(node1,strend,path1begi,&path1);
+	*path1 = ft_createlstpath(strbegi);
+	path1begi = *path1;
+	ft_search1(node1,strend,path1begi,path1);
 }
 
 void	ft_search1(t_node *node1,char *strend,t_path *path1begi,t_path **path1)
