@@ -6,8 +6,18 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 14:39:46 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/22 12:13:18 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "lem-in.h"
 
+int main(int ac,char **av)
+{
+	t_node_path	*node1;
+
+	node1 = ft_createlst("1");
+	lst_add_down(&node1,"2");
+	lst_add_down(&node1,"3");
+	lst_add_down(&node1,"0");
+}
 

@@ -6,11 +6,49 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/29 19:37:43 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/22 12:12:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "lem-in.h"
+
+t_node_path		*ft_createlst(char *s)
+{
+	t_node_path	*curlst;
+
+	curlst = NULL;
+	if (!(curlst = (t_node_path*)malloc(sizeof(t_node_path))))
+		return (NULL);
+	if (s == NULL)
+	{
+		curlst->name = NULL;
+	}
+	else
+	{
+		if (!(curlst->name = malloc(sizeof(s))))
+			return (NULL);
+		curlst->name = ft_memmove(curlst->name, s, sizeof(s));
+	}
+	curlst->next = NULL;
+	return (curlst);
+
+}
+
+t_node_path		*lst_add_down(t_node_path **node1,char *s)
+{
+	t_node_path	*nodetmp;
+	t_node_path	*nodetmp2;
+
+	nodetmp2 = *node1;
+	nodetmp = NULL;
+	nodetmp = ft_createlst(s);
+	if (!(*node1))
+		return (nodetmp);
+	while (node1)
+		*node1 = (*node1)->next;
+	(*node1)->next = nodetmp;
+	return (nodetmp2);
+}
 
 t_lst2		*lst_add_downl(t_lst2 *toplist, t_lst2 *lst1)
 {
