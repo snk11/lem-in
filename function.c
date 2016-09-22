@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 15:20:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/22 16:10:04 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ t_node		*lst_add_downl(t_node **node1,char *s)
 	nodetmp = ft_createnode(s);
 	if (!(*node1))
 		return (nodetmp);
-	while (node1)
+	while ((*node1)->nextl)
 		*node1 = (*node1)->nextl;
 	(*node1)->nextl = nodetmp;
 	return (nodetmp2);
@@ -95,7 +95,7 @@ t_node		*lst_add_downr(t_node **node1,char *s)
 	nodetmp = ft_createnode(s);
 	if (!(*node1))
 		return (nodetmp);
-	while (node1)
+	while ((*node1)->nextl)
 		*node1 = (*node1)->nextl;
 	(*node1)->nextr = nodetmp;
 	return (nodetmp2);
