@@ -6,18 +6,18 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 12:34:08 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/22 13:07:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "lem-in.h"
 
-t_node_path		*ft_createlst(char *s)
+t_node		*ft_createnode(char *s)
 {
-	t_node_path	*curlst;
+	t_node	*curlst;
 
 	curlst = NULL;
-	if (!(curlst = (t_node_path*)malloc(sizeof(t_node_path))))
+	if (!(curlst = (t_node*)malloc(sizeof(t_node))))
 		return (NULL);
 	if (s == NULL)
 	{
@@ -32,17 +32,37 @@ t_node_path		*ft_createlst(char *s)
 	curlst->nextl = NULL;
 	curlst->nextr = NULL;
 	return (curlst);
-
 }
 
-t_node_path		*lst_add_downl(t_node_path **node1,char *s)
+t_path		*ft_createlstpath(char *s)
 {
-	t_node_path	*nodetmp;
-	t_node_path	*nodetmp2;
+	t_path	*curlst;
+
+	curlst = NULL;
+	if (!(curlst = (t_path*)malloc(sizeof(t_path))))
+		return (NULL);
+	if (s == NULL)
+	{
+		curlst->name = NULL;
+	}
+	else
+	{
+		if (!(curlst->name = malloc(sizeof(s))))
+			return (NULL);
+		curlst->name = ft_memmove(curlst->name, s, sizeof(s));
+	}
+	curlst->next = NULL;
+	return (curlst);
+}
+
+t_node		*lst_add_downl(t_node **node1,char *s)
+{
+	t_node	*nodetmp;
+	t_node	*nodetmp2;
 
 	nodetmp2 = *node1;
 	nodetmp = NULL;
-	nodetmp = ft_createlst(s);
+	nodetmp = ft_createnode(s);
 	if (!(*node1))
 		return (nodetmp);
 	while (node1)
@@ -51,14 +71,14 @@ t_node_path		*lst_add_downl(t_node_path **node1,char *s)
 	return (nodetmp2);
 }
 
-t_node_path		*lst_add_downr(t_node_path **node1,char *s)
+t_node		*lst_add_downr(t_node **node1,char *s)
 {
-	t_node_path	*nodetmp;
-	t_node_path	*nodetmp2;
+	t_node	*nodetmp;
+	t_node	*nodetmp2;
 
 	nodetmp2 = *node1;
 	nodetmp = NULL;
-	nodetmp = ft_createlst(s);
+	nodetmp = ft_createnode(s);
 	if (!(*node1))
 		return (nodetmp);
 	while (node1)
