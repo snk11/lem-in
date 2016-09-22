@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 16:10:57 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/22 17:24:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -28,29 +28,35 @@ int main(int ac,char **av)
 
 	if(nodetmp)
 	{
-		lst_add_downr(&nodetmp,"0");
+		lst_add_downr(&nodetmp,"1");
 	}
 
+	nodetmp = node1;
+	nodetmp = nodetmp->nextl;
 	if(nodetmp)
 	{
-		nodetmp = nodetmp->nextl;
 		lst_add_downr(&nodetmp,"0");
+		lst_add_downr(&nodetmp,"2");
+	}
+
+	nodetmp = node1;
+	nodetmp = nodetmp->nextl;
+	nodetmp = nodetmp->nextl;
+	if(nodetmp)
+	{
+		lst_add_downr(&nodetmp,"1");
 		lst_add_downr(&nodetmp,"3");
 	}
-
-	if(nodetmp)
-	{
-		nodetmp = nodetmp->nextl;
-		lst_add_downr(&nodetmp,"2");
-		lst_add_downr(&nodetmp,"1");
-	}
 	
+	nodetmp = node1;
+	nodetmp = nodetmp->nextl;
+	nodetmp = nodetmp->nextl;
+	nodetmp = nodetmp->nextl;
 	if(nodetmp)
 	{
-		nodetmp = nodetmp->nextl;
-		lst_add_downr(&nodetmp,"1");
+		lst_add_downr(&nodetmp,"2");
 	}
 
-//	ft_proceed(node1,path1begi,&path1,"0","1");
+	ft_proceed(node1,path1begi,&path1,"0","3");
 }
 

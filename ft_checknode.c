@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 13:24:18 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 15:48:59 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/22 17:53:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -24,6 +24,7 @@ int		ft_checknode(t_path *path1,char *s)
 	s1 = path1->name;
 	s2 = NULL;
 	i = 0;
+
 	while(s1[i] != 0)
 	{
 		len = 0;
