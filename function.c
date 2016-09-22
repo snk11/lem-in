@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 13:07:17 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/22 15:20:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,20 @@ t_path		*ft_createlstpath(char *s)
 	}
 	curlst->next = NULL;
 	return (curlst);
+}
+
+t_path		*lst_add_down(t_path *path1)
+{
+	t_path	*pathtmp;
+
+	pathtmp = NULL;
+	pathtmp = ft_createlstpath(path1->name);
+	if (!path1)
+		return (pathtmp);
+	while (path1)
+		path1 = (path1)->next;
+	path1->next = pathtmp;
+	return (pathtmp);
 }
 
 t_node		*lst_add_downl(t_node **node1,char *s)
