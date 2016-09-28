@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/28 10:48:57 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/28 12:06:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_node		*ft_createnode(char *s)
 	return (curlst);
 }
 
+/*
 t_path		*ft_createlstpath(char *s)
 {
 	t_path	*curlst;
@@ -70,6 +71,7 @@ t_path		*lst_add_down(t_path *path1)
 	path1->next = pathtmp;
 	return (pathtmp);
 }
+*/
 
 t_node		*lst_add_downl(t_node **node1,char *s)
 {
@@ -79,12 +81,12 @@ t_node		*lst_add_downl(t_node **node1,char *s)
 	nodetmp2 = *node1;
 	nodetmp = NULL;
 	nodetmp = ft_createnode(s);
-	if (!(*node1))
+	if (!(nodetmp2))
 		return (nodetmp);
-	while ((*node1)->nextl)
-		*node1 = (*node1)->nextl;
-	(*node1)->nextl = nodetmp;
-	return (nodetmp2);
+	while ((nodetmp2)->nextl)
+		nodetmp2 = (nodetmp2)->nextl;
+	(nodetmp2)->nextl = nodetmp;
+	return (*node1);
 }
 
 t_node		*lst_add_downr(t_node **node1,t_node *noderef,char *s)
@@ -97,21 +99,21 @@ t_node		*lst_add_downr(t_node **node1,t_node *noderef,char *s)
 	nodetmp2 = *node1;
 	nodetmp = NULL;
 	nodetmp = ft_createnode(s);
-	if (!(*node1))
+	if (!(nodetmp2))
 		return (nodetmp);
-	while(*node1 && ind1 == 0)
+	while(nodetmp2 && ind1 == 0)
 	{
-		if(ft_strcmp((*node1)->name,(noderef)->name) == 0)
+		if(ft_strcmp((nodetmp2)->name,(noderef)->name) == 0)
 			ind1 = 1;
 		else
-			*node1 = (*node1)->nextl;
+			nodetmp2 = (nodetmp2)->nextl;
 	}
 
-	while ((*node1)->nextr)
-		*node1 = (*node1)->nextr;
-	(*node1)->nextr = nodetmp;
-	printf("create %s\n",s);
-	return (nodetmp2);
+	while ((nodetmp2)->nextr)
+		nodetmp2 = (nodetmp2)->nextr;
+	(nodetmp2)->nextr = nodetmp;
+	printf("createR %s\n",s);
+	return (*node1);
 }
 
 t_lst		*create_lst1(void *content)

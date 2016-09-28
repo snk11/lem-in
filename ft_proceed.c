@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 15:02:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/28 11:31:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/28 11:47:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void ft_proceed(t_node *node1, t_node *path1begi,t_node **path1,char *strbegi,ch
 
 	*path1 = NULL;
 	nodetmp = node1;
-	*path1 = ft_createlstpath(strbegi);
+	*path1 = ft_createnode(strbegi);
 	path1begi = *path1;
 	ft_search1(node1,node1,strend,path1begi,path1);
 }

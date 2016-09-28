@@ -6,49 +6,20 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 13:24:18 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 17:53:30 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/28 11:55:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
 
-int		ft_checknode(t_path *path1,char *s)
+int		ft_checknode(t_node *path1,char *s)
 {
-	char	*s1;
-	char	*s2;
-	int		len;
-	int i;
-	int j;
-	int r;
+	int	r;
 
 	r = 1;
-	s1 = path1->name;
-	s2 = NULL;
-	i = 0;
-
-	while(s1[i] != 0)
+	while (path1->nextr && r == 1)
 	{
-		len = 0;
-		j = i;
-		while(s1[i] != '/' && s1[i] != 0)
-		{
-			len++;
-			i++;
-		}
-		if (len > 0)
-		{
-			s2 = (char*)malloc(sizeof(char) * len + 1);
-		}
-		i = j;
-		j = 0;
-		while(s1[i] != '/' && s1[i] != 0)
-		{
-			s2[j] = s1[i];
-			i++;
-			j++;
-		}
-		if (s2)
-			s2[j] = 0;
-		if(ft_strcmp(s2,s) == 0)
+		path1 = path1->nextr;
+		if (ft_strcmp(path1->name,s))
 			r = 0;
 	}
 	return (r);
