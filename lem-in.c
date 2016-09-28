@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/28 16:15:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/28 16:24:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -80,6 +80,7 @@ int main(int ac,char **av)
 			printf("path = %s\n",path1begi->name);
 			path1begi = path1begi->nextr;
 		}
+		printf("\n");
 		path1begi = path1ind;
 		path1begi = path1begi->nextl;
 	}
