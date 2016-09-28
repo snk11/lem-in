@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 15:02:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/28 14:53:10 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/28 15:11:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ void ft_proceed(t_node *node1, t_node *path1begi,t_node **path1,char *strbegi,ch
 	nodetmp = node1;
 	*path1 = ft_createnode(strbegi);
 	path1begi = *path1;
-	ft_search1(node1,node1,strend,path1begi,path1,0);
+	ft_search1(node1,node1,strend,path1begi,path1,0,strbegi);
 }
 
 
-void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_node *path1begi,t_node **path1,int nbelem)
+void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_node *path1begi,t_node **path1,int nbelem,char *strbegi)
 {
 	int	ind1;
 	int	ind2;
@@ -65,19 +65,19 @@ void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_node *path1begi,t_n
 					lst_add_downr(&path1begi,*path1,nodetmp->name);
 					if(ft_strcmp(nodetmp->name,strend) == 0)
 					{
-						while (path1begi)
+//						while (path1begi)
+//						{
+//							path1begi = path1begi->nextl;
+//							nbelem1++;
+//						}
+//						if (nbelem1 >= 1)
 						{
-							path1begi = path1begi->nextl;
-							nbelem1++;
-						}
-						if (nbelem1 >= 1)
-						{
-							*path1 = lst_add_downl(path1,nodetmp->name);
+							*path1 = lst_add_downl(path1,strbegi);
 							printf("create ldown %s\n",nodetmp->name);
 						}
 					}
 					else
-						ft_search1(node1,nodetmp,strend,path1begi,path1,nbelem1);
+						ft_search1(node1,nodetmp,strend,path1begi,path1,nbelem1,strbegi);
 				}
 			}
 //			nodetmp = nodetmp->nextl;
