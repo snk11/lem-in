@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 18:24:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/28 10:07:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -39,8 +39,8 @@ int main(int ac,char **av)
 	nodetmp = nodetmp->nextl;
 	if(nodetmp)
 	{
-		lst_add_downr(&nodetmp,"0");
-		lst_add_downr(&nodetmp,"2");
+		lst_add_downr(&node1,&nodetmp,"0");
+		lst_add_downr(&node1,&nodetmp,"2");
 	}
 
 	nodetmp = node1;
@@ -48,8 +48,8 @@ int main(int ac,char **av)
 	nodetmp = nodetmp->nextl;
 	if(nodetmp)
 	{
-		lst_add_downr(&nodetmp,"1");
-		lst_add_downr(&nodetmp,"3");
+		lst_add_downr(&node1,&nodetmp,"1");
+		lst_add_downr(&node1,&nodetmp,"3");
 	}
 	
 	nodetmp = node1;
@@ -58,7 +58,7 @@ int main(int ac,char **av)
 	nodetmp = nodetmp->nextl;
 	if(nodetmp)
 	{
-		lst_add_downr(&nodetmp,"2");
+		lst_add_downr(&node1,&nodetmp,"2");
 	}
 
 	ft_proceed(node1,path1begi,&path1,"0","3");

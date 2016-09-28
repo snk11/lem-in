@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 18:48:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/28 11:13:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,15 @@ typedef struct			s_node
 	struct s_node	*nextr;
 }						t_node;
 
-typedef struct			s_path
-{
-	char				*name;
-	struct s_path		*next;
-}						t_path;
-
 t_lst		*create_lst1(void *content);
 t_lst2		*create_lst2(void *content);
 int		ft_checkremain(t_lst *lstremain, char *s);
-char	*ft_makepath(char *str1,char *str2);
 void	ft_remove_if(t_lst2 **lsta, t_lst2 *lstb);
 t_node		*ft_createnode(char *s);
 t_path		*ft_createlstpath(char *s);
 t_path		*lst_add_down(t_path *path1);
 t_node		*lst_add_downl(t_node **node1,char *s);
-t_node		*lst_add_downr(t_node **node1,char *s);
+t_node		*lst_add_downr(t_node **node1,t_node *noderef,char *s);
 int		ft_checknode(t_path *path1,char *s);
 void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_path *path1begi,t_path **path1);
 void ft_proceed(t_node *node1, t_path *path1begi,t_path **path1,char *strbegi,char *strend);

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 18:35:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/28 10:48:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ t_node		*lst_add_downl(t_node **node1,char *s)
 	return (nodetmp2);
 }
 
-t_node		*lst_add_downr(t_node **node1,t_node **noderef,char *s)
+t_node		*lst_add_downr(t_node **node1,t_node *noderef,char *s)
 {
 	t_node	*nodetmp;
 	t_node	*nodetmp2;
@@ -101,7 +101,7 @@ t_node		*lst_add_downr(t_node **node1,t_node **noderef,char *s)
 		return (nodetmp);
 	while(*node1 && ind1 == 0)
 	{
-		if(ft_strcmp((*node1)->name,(*noderef)->name) == 0)
+		if(ft_strcmp((*node1)->name,(noderef)->name) == 0)
 			ind1 = 1;
 		else
 			*node1 = (*node1)->nextl;

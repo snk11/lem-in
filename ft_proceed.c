@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 15:02:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/22 18:12:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/28 11:31:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 
 #include <stdio.h>
-void ft_proceed(t_node *node1, t_path *path1begi,t_path **path1,char *strbegi,char *strend)
+void ft_proceed(t_node *node1, t_node *path1begi,t_node **path1,char *strbegi,char *strend)
 {
 	
 	t_node		*nodetmp;
@@ -30,7 +30,7 @@ void ft_proceed(t_node *node1, t_path *path1begi,t_path **path1,char *strbegi,ch
 }
 
 
-void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_path *path1begi,t_path **path1)
+void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_node *path1begi,t_node **path1)
 {
 	int	ind1;
 	int	ind2;
@@ -62,16 +62,17 @@ void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_path *path1begi,t_p
 				if(nodetmp && ft_checknode(*path1,nodetmp->name) == 1)
 				{
 					ind1 = 1;
-					ft_makepath((*path1)->name,nodetmp->name);
+//					ft_makepath((*path1)->name,nodetmp->name);
+					lst_add_downr(&path1begi,*path1,nodetmp->name);
 					if(ft_strcmp(nodetmp->name,strend) == 0)
 					{
 						while (path1begi)
 						{
-							path1begi = path1begi->next;
+							path1begi = path1begi->nextl;
 							nbelem++;
 						}
 						if (nbelem > 1)
-							*path1 = lst_add_down(*path1);
+							*path1 = lst_add_downl(path1,nodetmp->name);
 					}
 					else
 						ft_search1(node1,nodetmp,strend,path1begi,path1);
