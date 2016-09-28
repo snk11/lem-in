@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/28 12:06:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/28 13:33:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,6 @@ t_node		*lst_add_downr(t_node **node1,t_node *noderef,char *s)
 	while ((nodetmp2)->nextr)
 		nodetmp2 = (nodetmp2)->nextr;
 	(nodetmp2)->nextr = nodetmp;
-	printf("createR %s\n",s);
 	return (*node1);
 }
 

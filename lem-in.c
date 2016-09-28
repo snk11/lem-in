@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/28 13:14:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/28 13:36:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -35,6 +35,7 @@ int main(int ac,char **av)
 	nodetmp = node1;
 	if(nodetmp)
 	{
+		printf("createR 1\n");
 		node1 = lst_add_downr(&node1,nodetmp,"1");
 	}
 
@@ -42,7 +43,9 @@ int main(int ac,char **av)
 	nodetmp = nodetmp->nextl;
 	if(nodetmp)
 	{
+		printf("createR 0\n");
 		lst_add_downr(&node1,nodetmp,"0");
+		printf("createR 2\n");
 		lst_add_downr(&node1,nodetmp,"2");
 	}
 
@@ -51,7 +54,9 @@ int main(int ac,char **av)
 	nodetmp = nodetmp->nextl;
 	if(nodetmp)
 	{
+		printf("createR 1\n");
 		lst_add_downr(&node1,nodetmp,"1");
+		printf("createR 3\n");
 		lst_add_downr(&node1,nodetmp,"3");
 	}
 	
@@ -61,6 +66,7 @@ int main(int ac,char **av)
 	nodetmp = nodetmp->nextl;
 	if(nodetmp)
 	{
+		printf("createR 2\n");
 		lst_add_downr(&node1,nodetmp,"2");
 	}
 
