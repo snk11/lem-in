@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/28 11:57:43 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/28 13:14:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -32,6 +32,7 @@ int main(int ac,char **av)
 	node1 = lst_add_downl(&node1,"2");
 	node1 = lst_add_downl(&node1,"3");
 
+	nodetmp = node1;
 	if(nodetmp)
 	{
 		node1 = lst_add_downr(&node1,nodetmp,"1");
@@ -63,7 +64,7 @@ int main(int ac,char **av)
 		lst_add_downr(&node1,nodetmp,"2");
 	}
 
-//	ft_proceed(node1,path1begi,&path1,"0","3");
+	ft_proceed(node1,path1begi,&path1,"0","3");
 
 	while(path1)
 	{
