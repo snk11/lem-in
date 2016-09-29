@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checknew.c                                      :+:      :+:    :+:   */
+/*   ft_printfpath.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/29 12:48:28 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/29 18:42:37 by syusof           ###   ########.fr       */
+/*   Created: 2016/09/29 16:20:28 by syusof            #+#    #+#             */
+/*   Updated: 2016/09/29 17:25:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,24 @@
 
 
 #include <stdio.h>
-int		ft_checknew(t_node *path1)
+void	ft_printfpath(t_node *path1begi)
 {
-	while (path1->nextl)
-		path1 = path1->nextl;
-	while (path1->nextr)
-		path1 = path1->nextr;
-	printf("pathname = %s\n",path1->name);
-	if(ft_strcmp(path1->name,"") == 0)
-		return (1);
-	return (0);
+	t_node	*path1ind2;
+	t_node	*path1ind;
+
+		printf("===============begi PATH\n");
+	path1ind2 = (path1begi);
+	path1ind = NULL;
+	while(path1ind2)
+	{
+		path1ind = path1ind2;
+		while (path1ind2)
+		{
+			printf("path = %s\n",(path1ind2)->name);
+			path1ind2 = (path1ind2)->nextr;
+		}
+		printf("===============end PATH\n");
+		(path1ind2) = path1ind;
+		(path1ind2) = (path1ind2)->nextl;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/28 17:55:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/29 16:37:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -144,17 +144,6 @@ int main(int ac,char **av)
 
 	ft_proceed(node1,&path1begi,"0","1");
 
-	while(path1begi)
-	{
-		path1ind = path1begi;
-		while (path1begi)
-		{
-			printf("path = %s\n",path1begi->name);
-			path1begi = path1begi->nextr;
-		}
-		printf("\n");
-		path1begi = path1ind;
-		path1begi = path1begi->nextl;
-	}
+	ft_printfpath(path1begi);
 }
 

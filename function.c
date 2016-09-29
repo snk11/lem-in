@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/29 13:37:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/09/29 18:49:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,78 @@
 
 
 #include <stdio.h>
+
+t_node		*lst_add_downlrnewminus(t_node **node1, int p,char *strbegi)
+{
+	printf("minus\n");
+	t_node	*nodetmp;
+	t_node	*nodetmp2;
+	t_node	*nodetmp3;
+	t_node	*nodetmp4;
+	int		ind1;
+	int cnt1;
+
+	ind1 = 0;
+	cnt1 = 0;
+	nodetmp2 = *node1;
+	nodetmp = NULL;
+	nodetmp4 = NULL;
+	while(nodetmp2 && nodetmp2->nextl)
+		nodetmp2 = (nodetmp2)->nextl;
+//	nodetmp = ft_createnode(nodetmp2->name);
+//	nodetmp3 = nodetmp;
+	while (nodetmp2 && (nodetmp2)->nextr)
+	{
+		nodetmp2 = (nodetmp2)->nextr;
+//		nodetmp = ft_createnode(nodetmp2->name);
+//		nodetmp3->nextr = nodetmp;
+//		nodetmp3 = nodetmp;
+		cnt1++;
+	}
+	nodetmp2 = *node1;
+	nodetmp = NULL;
+	nodetmp4 = NULL;
+	while(nodetmp2 && nodetmp2->nextl)
+		nodetmp2 = (nodetmp2)->nextl;
+//	while ((cnt1 - 1) > 0)
+//	{
+//		nodetmp4 = nodetmp2;
+//		nodetmp2 = (nodetmp2)->nextr;
+//		cnt1--;
+//	}
+//	nodetmp4->nextr = NULL;
+
+	nodetmp2 = *node1;
+	nodetmp = NULL;
+	nodetmp4 = NULL;
+	while(nodetmp2 && nodetmp2->nextl)
+		nodetmp2 = (nodetmp2)->nextl;
+	nodetmp = nodetmp2->nextl;
+	nodetmp3 = nodetmp;
+	*node1 = lst_add_downl(node1,strbegi);
+//	if(nodetmp2->nextl)
+//		nodetmp = nodetmp2->nextl;
+//	nodetmp3 = nodetmp;
+//	nodetmp2 = nodetmp2->nextr;
+//	nodetmp = ft_createnode(nodetmp2->name);
+//	nodetmp3->nextr = nodetmp;
+	/*
+	while ((cnt1 - 1) > 0)
+	{
+		nodetmp4 = nodetmp2;
+		nodetmp2 = (nodetmp2)->nextr;
+		nodetmp = ft_createnode(nodetmp2->name);
+		nodetmp3->nextr = nodetmp;
+		nodetmp3 = nodetmp;
+		cnt1--;
+	}
+	if(nodetmp4)
+		nodetmp4->nextr = NULL;
+		*/
+	ft_printfpath(*node1);
+	return (*node1);
+}
+
 t_node		*ft_createnode(char *s)
 {
 	t_node	*curlst;
@@ -112,53 +184,6 @@ t_node		*lst_add_downr(t_node **node1,t_node *noderef,char *s)
 	while ((nodetmp2)->nextr)
 		nodetmp2 = (nodetmp2)->nextr;
 	(nodetmp2)->nextr = nodetmp;
-	return (*node1);
-}
-
-t_node		*lst_add_downlrnew(t_node **node1, int p)
-{
-	t_node	*nodetmp;
-	t_node	*nodetmp2;
-	t_node	*nodetmp3;
-	t_node	*nodetmp4;
-	int		ind1;
-	int cnt1;
-
-	ind1 = 0;
-	cnt1 = 0;
-	nodetmp2 = *node1;
-	nodetmp = NULL;
-	nodetmp4 = NULL;
-	while(nodetmp2 && nodetmp2->nextl)
-		nodetmp2 = (nodetmp2)->nextl;
-	nodetmp = ft_createnode(nodetmp2->name);
-	nodetmp3 = nodetmp;
-	while (nodetmp2 && (nodetmp2)->nextr)
-	{
-		nodetmp2 = (nodetmp2)->nextr;
-		nodetmp = ft_createnode(nodetmp2->name);
-		nodetmp3->nextr = nodetmp;
-		nodetmp3 = nodetmp;
-		cnt1++;
-	}
-	nodetmp2 = *node1;
-	nodetmp = NULL;
-	nodetmp4 = NULL;
-	while(nodetmp2 && nodetmp2->nextl)
-		nodetmp2 = (nodetmp2)->nextl;
-	nodetmp = ft_createnode(nodetmp2->name);
-	nodetmp3 = nodetmp;
-	while ((cnt1 - 1 - p) > 0)
-	{
-		nodetmp4 = nodetmp2;
-		nodetmp2 = (nodetmp2)->nextr;
-		nodetmp = ft_createnode(nodetmp2->name);
-		nodetmp3->nextr = nodetmp;
-		nodetmp3 = nodetmp;
-		cnt1--;
-	}
-	if(nodetmp4)
-		nodetmp4->nextr = NULL;
 	return (*node1);
 }
 
