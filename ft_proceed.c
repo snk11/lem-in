@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 15:02:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/04 13:30:16 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/04 14:52:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_node **path1begi,in
 	int	ind2;
 	int	ind3;
 	int	ind5;
+	int	ind6;
 	int	p;
 	int	nbelem1;
 	t_node	*nodetmp;
@@ -45,6 +46,7 @@ void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_node **path1begi,in
 	ind2 = 0;
 	ind3 = 0;
 	ind5 = 0;
+	ind6 = 0;
 	p = 0;
 	nodeinit = NULL;
 	nbelem1 = nbelem;
@@ -62,11 +64,17 @@ void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_node **path1begi,in
 	nodetmp = nodetmp->nextr;
 	if(nodetmp)
 	{
-		while(nodetmp && ind3 == 0)
+		while(nodetmp)
 		{
 			printf("donc search %s\n",nodetmp->name);
-			if(*ind1 == 0)
-				*path1begi = lst_add_downlrnewminus(path1begi,p,strbegi);
+			if(*ind1 == 0 && ind6 == 0)
+				*path1begi = lst_add_downlrnew(path1begi,p,strbegi);
+			ft_printfpath(*path1begi);
+			if (ind6 == 1)
+			{
+				ind6 = 0;
+				*path1begi = lst_add_downlrnew_minus(path1begi,p,strbegi);
+			}
 			ind5 = 0;
 			printf("p = %d\n",p);
 			printf("\ntour boucle  ");
@@ -84,17 +92,18 @@ void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_node **path1begi,in
 			path1 = *path1begi;
 			while (path1->nextl)
 				path1 = path1->nextl;
+			ft_printfpath(*path1begi);
 			if(nodetmp && ft_checknode(path1,nodetmp->name) == 1 && ind5 == 0)
 			{
 				printf("gg\n");
 				lst_add_down_downr(path1begi,nodetmp->name);
-				ft_printfpath(*path1begi);
 				if(ft_strcmp(nodetmp->name,strend) == 0)
 				{
 					*ind1 = 0;
-					printf("RR %s\n",nodetmp->name);
+					printf("RR %s\n\n",nodetmp->name);
 					ind3 = 1;
-					lst_add_down_downr(path1begi,"");
+					ind6 = 1;
+//					lst_add_down_downr(path1begi,"");
 				}
 				else
 				{

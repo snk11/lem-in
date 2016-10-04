@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/04 13:31:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/04 14:55:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 #include <stdio.h>
 
-t_node		*lst_add_downlrnewminus(t_node **node1, int p,char *strbegi)
+t_node		*lst_add_downlrnew(t_node **node1, int p,char *strbegi)
 {
-	printf("newminus\n");
+	printf("newnormal\n");
 	t_node	*nodetmp;
 	t_node	*nodetmp2;
 	t_node	*nodetmp3;
@@ -39,16 +39,6 @@ t_node		*lst_add_downlrnewminus(t_node **node1, int p,char *strbegi)
 		nodetmp2 = (nodetmp2)->nextl;
 //	nodetmp = ft_createnode(nodetmp2->name);
 //	nodetmp3 = nodetmp;
-	while (nodetmp2 && (nodetmp2)->nextr)
-	{
-		nodetmp2 = (nodetmp2)->nextr;
-		cnt1++;
-	}
-	nodetmp2 = *node1;
-	nodetmp = NULL;
-	nodetmp4 = NULL;
-	while(nodetmp2 && nodetmp2->nextl)
-		nodetmp2 = (nodetmp2)->nextl;
 	nodetmp2 = *node1;
 	nodetmp = NULL;
 	nodetmp4 = NULL;
@@ -57,7 +47,56 @@ t_node		*lst_add_downlrnewminus(t_node **node1, int p,char *strbegi)
 	nodetmp = nodetmp2->nextl;
 	nodetmp3 = nodetmp;
 	*node1 = lst_add_downl(node1,strbegi);
-	ft_printfpath(*node1);
+	return (*node1);
+}
+
+t_node		*lst_add_downlrnew_minus(t_node **node1, int p,char *strbegi)
+{
+	printf("newminus\n");
+	t_node	*nodetmp;
+	t_node	*nodetmp2;
+	t_node	*nodetmp3;
+	t_node	*nodetmp4;
+	int		ind1;
+	int cnt1;
+
+	ind1 = 0;
+	cnt1 = 0;
+	nodetmp2 = *node1;
+	nodetmp = NULL;
+	nodetmp4 = NULL;
+	if(*node1 == NULL)
+	{
+		*node1 = lst_add_downl(node1,strbegi);
+		return (*node1);
+	}
+	while(nodetmp2 && nodetmp2->nextl)
+	{
+		nodetmp2 = (nodetmp2)->nextl;
+		cnt1++;
+	}
+	nodetmp2 = *node1;
+	nodetmp = NULL;
+	nodetmp4 = NULL;
+	while(nodetmp2 && nodetmp2->nextl)
+		nodetmp2 = (nodetmp2)->nextl;
+	nodetmp = nodetmp2->nextl;
+	nodetmp3 = nodetmp;
+	*node1 = lst_add_downl(node1,strbegi);
+	nodetmp2 = *node1;
+	nodetmp = NULL;
+	nodetmp4 = NULL;
+	while(cnt1 > 0)
+	{
+		nodetmp2 = (nodetmp2)->nextl;
+		cnt1--;
+	}
+	nodetmp2 = nodetmp2->nextr;
+	while(nodetmp2 && nodetmp2->nextr)
+	{
+		*node1 = lst_add_down_downr(node1,nodetmp2->name);
+		nodetmp2 = nodetmp2->nextr;
+	}
 	return (*node1);
 }
 
