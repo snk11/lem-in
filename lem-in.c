@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/04 16:05:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/04 16:48:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -21,6 +21,7 @@ int main(int ac,char **av)
 	t_node	*node1;
 	t_node	*nodetmp;
 	t_node	*path1begi;
+	de
 	t_node	*path1;
 	t_node	*path1ind;
 
@@ -143,8 +144,13 @@ int main(int ac,char **av)
 		node1 = lst_add_downr(&node1,nodetmp,"2");
 	}
 
-	ft_proceed(node1,&path1begi,"0","1");
+//	ft_proceed(node1,&path1begi,"0","1");
 
-	ft_printfpath(path1begi);
+//	ft_printfpath(path1begi);
+	ft_printfpath(node1);
+
+	t_node *tree1;
+
+	tree1 = ft_maketree(node1,"0");
 }
 
