@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 15:02:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/09/29 18:42:32 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/04 13:17:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,19 @@
 #include <stdio.h>
 void ft_proceed(t_node *node1,t_node **path1begi,char *strbegi,char *strend)
 {
-	
-//	t_node		*nodetmp;
 
-//	*path1begi = NULL;
-//	nodetmp = node1;
-	*path1begi = ft_createnode(strbegi);
-	ft_search1(node1,node1,strend,path1begi,0,strbegi,1);
+	//	t_node		*nodetmp;
+
+	*path1begi = NULL;
+	//	nodetmp = node1;
+	int ind1;
+	ind1 = 0;
+	//	*path1begi = ft_createnode(strbegi);
+	ft_search1(node1,node1,strend,path1begi,0,strbegi,&ind1);
 }
 
 
-void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_node **path1begi,int nbelem,char *strbegi,int ind1)
+void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_node **path1begi,int nbelem,char *strbegi,int *ind1)
 {
 	int	ind2;
 	int	ind3;
@@ -57,81 +59,62 @@ void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_node **path1begi,in
 		else
 			nodetmp = nodetmp->nextl;
 	}
-		if(nodetmp)
+	nodetmp = nodetmp->nextr;
+	if(nodetmp)
+	{
+		while(nodetmp && ind3 == 0)
 		{
-//			while(nodetmp && ft_strcmp(nodetmp->name,strend) != 0 && ind1 == 0)
-//			nodeinit = nodetmp;
-//			while(p < 8)
+			printf("donc search %s\n",nodetmp->name);
+			if(*ind1 == 0)
+				*path1begi = lst_add_downlrnewminus(path1begi,p,strbegi);
+			ind5 = 0;
+			printf("p = %d\n",p);
+			printf("\ntour boucle  ");
+			printf("sur le suivant de  %s\n",nodetmp->name);
+			if (nodetmp)
+				printf("nodetmp evalued = %s\n",nodetmp->name);
+			//					if(ft_checknew(*path1begi))
+			//					{
+			//						printf("new\n");
+			//					if(ft_strcmp(strbegi,nodetmp->name) != 0)
+			//							*path1begi = lst_add_downlrnewminus(path1begi,p,strbegi);
+			//						ind5 = 1;
+			//					}
+			//					ind1 = 0;
+			path1 = *path1begi;
+			while (path1->nextl)
+				path1 = path1->nextl;
+			if(nodetmp && ft_checknode(path1,nodetmp->name) == 1 && ind5 == 0)
 			{
-//				nodetmp = nodeinit;
-//				if(ft_checknew(*path1begi))
-//				{
-//					printf("new\n");
-	//				if(ft_strcmp(strbegi,nodetmp->name) != 0)
-//						*path1begi = lst_add_downlrnewminus(path1begi,p,strbegi);
-//				}
-				while(nodetmp && ind3 == 0)
-//			if(nodetmp)
-			{
-				ind5 = 0;
+				printf("gg\n");
+				lst_add_downr(path1begi,path1,nodetmp->name);
 				ft_printfpath(*path1begi);
-				printf("p = %d\n",p);
-//				while (ft_checkp(*path1begi,p))
+				if(ft_strcmp(nodetmp->name,strend) == 0)
 				{
-					printf("\ntour boucle  ");
-					printf("sur le suivant de  %s\n",nodetmp->name);
-					nodetmp = nodetmp->nextr;
-					if (nodetmp)
-						printf("nodetmp evalued = %s\n",nodetmp->name);
-					if(ft_checknew(*path1begi))
-					{
-						printf("new\n");
-	//					if(ft_strcmp(strbegi,nodetmp->name) != 0)
-							*path1begi = lst_add_downlrnewminus(path1begi,p,strbegi);
-						ind5 = 1;
-					}
-					ind1 = 0;
-					path1 = *path1begi;
-					while (path1->nextl)
-						path1 = path1->nextl;
-					if(nodetmp && ft_checknode(path1,nodetmp->name) == 1 && ind5 == 0)
-					{
-						printf("gg\n");
-	//					ind1 = 1;
-	//					ft_makepath((*path1)->name,nodetmp->name);
-						lst_add_downr(path1begi,path1,nodetmp->name);
-						if(ft_strcmp(nodetmp->name,strend) == 0)
-						{
-							printf("RR %s\n",nodetmp->name);
-	//						lst_add_downr(path1begi,path1,nodetmp->name);
-	//						ind1 = 1;
-							ind3 = 1;
-						lst_add_downr(path1begi,path1,"");
-	//						while (path1begi)
-	//						{
-	//							path1begi = path1begi->nextl;
-	//							nbelem1++;
-	//						}
-	//						if (nbelem1 >= 1)
-	//						{
-	//							*path1begi = lst_add_downl(path1begi,strbegi);
-	//							ft_search1(node1,node1,strend,path1,path1begi,nbelem1,strbegi);
-	//							printf("create ldown ");
-	//						}
-						}
-						else
-							ft_search1(node1,nodetmp,strend,path1begi,nbelem1,strbegi,ind1);
-					}
-					else
-						printf("NOO\n");
+					*ind1 = 0;
+					printf("RR %s\n",nodetmp->name);
+					ind3 = 1;
+					lst_add_downr(path1begi,path1,"");
 				}
+				else
+				{
+					printf("FT_SEARCH\n");
+					*ind1 = 1;
+					ft_search1(node1,nodetmp,strend,path1begi,nbelem1,strbegi,ind1);
 				}
-//			nodetmp = nodetmp->nextl;
-				p++;
 			}
+			else
+			{
+				printf("NOO\n");
+				*ind1 = 0;
+			}
+			p++;
+			nodetmp = nodetmp->nextr;
 		}
+		//			nodetmp = nodetmp->nextl;
+	}
 
 
-		printf("======END SEARCH========\n");
+	printf("======END SEARCH========\n");
 }
 
