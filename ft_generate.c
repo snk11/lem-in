@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/05 17:01:50 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/05 21:13:56 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/05 21:16:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void permute2(t_node **nodetmp, t_node **nodedata,char *s1,char *s2)
 	t_node *nodetmp3;
 	nodetmp3 = *nodetmp;
 	printf("s1 = %s, s2 = %s\n",s1,s2);
-	/*
 	   if (ft_strcmp(s1,s2) == 0)
 	   {
 	 *nodedata = lst_add_downlrnew(nodedata,nodetmp3->name);
@@ -63,9 +62,6 @@ void permute2(t_node **nodetmp, t_node **nodedata,char *s1,char *s2)
 	 nodetmp3 = nodetmp3->nextl;
 	 }
 	 }
-	 */
-	swap2(nodetmp,"2","0");
-	ft_printfpath(*nodetmp);
 }
 
 void	swap2(t_node **nodetmp,char *s1,char *s2)
