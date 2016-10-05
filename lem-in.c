@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/04 20:37:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/05 16:49:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -97,10 +97,14 @@ int main(int ac,char **av)
 	t_node	*path1begi;
 	t_node	*path1;
 	t_node	*path1ind;
+	t_node	*processnodes;
+	t_node	*lvnodes;
 
 	path1begi = NULL;
 	path1 = NULL;
 	path1ind = NULL;
+	processnodes = NULL;
+	lvnodes = NULL;
 	nodetmp = node1;
 	node1 = ft_createnode("0");
 
@@ -119,8 +123,8 @@ int main(int ac,char **av)
 	nodetmp = nodetmp->nextl;
 	if(nodetmp)
 	{
-//		node1 = lst_add_downr(&node1,nodetmp,"2");
-//		node1 = lst_add_downr(&node1,nodetmp,"3");
+		node1 = lst_add_downr(&node1,nodetmp,"2");
+		node1 = lst_add_downr(&node1,nodetmp,"3");
 	}
 
 	nodetmp = node1;
@@ -144,8 +148,9 @@ int main(int ac,char **av)
 		node1 = lst_add_downr(&node1,nodetmp,"2");
 	}
 
-	ft_proceed(node1,&path1begi,"0","1");
+	ft_proceed(node1,&processnodes,&path1begi,"0","1");
 
+	ft_printfpath(processnodes);
 	ft_printfpath(path1begi);
 //	ft_printfpath(node1);
 

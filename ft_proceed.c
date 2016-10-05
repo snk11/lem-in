@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 15:02:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/04 20:40:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/05 15:42:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,21 @@
 
 
 #include <stdio.h>
-void ft_proceed(t_node *node1,t_node **path1begi,char *strbegi,char *strend)
+void ft_proceed(t_node *node1,t_node **processnodes,t_node **path1begi,char *strbegi,char *strend)
 {
 
 	//	t_node		*nodetmp;
-	*path1begi = NULL;
+//	*path1begi = NULL;
 	//	nodetmp = node1;
 	int ind1;
 	ind1 = 0;
+	*processnodes = lst_add_downl(processnodes,"0");
 //		ft_search1(node1,node1,strend,path1begi,0,strbegi,&ind1);
-	ft_solv(node1,node1,strend,path1begi,strbegi,&ind1);
+//	ft_solv(node1,node1,strend,path1begi,strbegi,&ind1);
+	ft_roam(node1,processnodes,path1begi,strend,strbegi,&ind1);
 }
 
-
+/*
 void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_node **path1begi,int nbelem,char *strbegi,int *ind1)
 {
 	int	ind2;
@@ -125,4 +127,4 @@ void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_node **path1begi,in
 
 	printf("======END SEARCH========\n");
 }
-
+*/

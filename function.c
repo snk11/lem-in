@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/04 18:17:14 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/05 13:46:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,16 @@
 
 #include <stdio.h>
 
-t_node		*lst_add_downlrnew(t_node **node1, int p,char *strbegi)
+t_node		*lst_rmtop(t_node **node1)
+{
+	if(*node1)
+	{
+		*node1 = (*node1)->nextl;
+	}
+	return (*node1);
+}
+
+t_node		*lst_add_downlrnew(t_node **node1,char *strbegi)
 {
 	printf("newnormal\n");
 	t_node	*nodetmp;

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/04 20:07:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/05 16:03:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ t_node		*ft_createnode(char *s);
 t_node		*lst_add_downl(t_node **node1,char *s);
 t_node		*lst_add_downr(t_node **node1,t_node *noderef,char *s);
 t_node		*lst_add_down_downr(t_node **node1,char *s);
-t_node		*lst_add_downlrnew(t_node **node1, int p,char *strbegi);
+t_node		*lst_add_downlrnew(t_node **node1,char *strbegi);
 t_node		*lst_add_downlrnew_minus(t_node **node1, int p,char *strbegi);
 int		ft_checknode(t_node *path1,char *s);
 void	ft_search1(t_node *node1,t_node *noderef,char *strend,t_node **path1begi, int nbelem,char *strbegi,int *ind1);
-void ft_proceed(t_node *node1,t_node **path1begi,char *strbegi,char *strend);
+void ft_proceed(t_node *node1,t_node **processnodes,t_node **lvnodes,char *strbegi,char *strend);
 int		ft_checkp(t_node *node1,int p);
 int		ft_checknew(t_node *path1);
 void	ft_printfpath(t_node *path1begi);
@@ -55,3 +55,6 @@ t_node	*ft_maketree(t_node *maintree,char *strbegi);
 int		ft_countelem_lv1(t_node *node1);
 void	ft_solv(t_node *node1,t_node *noderef,char *strend,t_node **path1begi,char *strbegi,int *ind1);
 t_node *ft_cursref(t_node *node1,t_node *noderef);
+void	ft_roam(t_node *node1,t_node  **processnodes,t_node **lvnodes,char *strend,char *strbegi,int *ind1);
+t_node		*lst_rmtop(t_node **node1);
+void	ft_roam2(t_node *node1,t_node  **processnodes,t_node **path1begi,char *strend,char *strbegi,int *ind1);
