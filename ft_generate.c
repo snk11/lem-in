@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/05 17:01:50 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/05 21:16:08 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/05 21:16:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,29 +39,29 @@ void permute2(t_node **nodetmp, t_node **nodedata,char *s1,char *s2)
 	t_node *nodetmp3;
 	nodetmp3 = *nodetmp;
 	printf("s1 = %s, s2 = %s\n",s1,s2);
-	   if (ft_strcmp(s1,s2) == 0)
-	   {
-	 *nodedata = lst_add_downlrnew(nodedata,nodetmp3->name);
-	 nodetmp3 = nodetmp3->nextl;
-	 while(nodetmp3)
-	 {
-	 *nodedata = lst_add_down_downr(nodedata,nodetmp3->name);
-	 nodetmp3 = nodetmp3->nextl;
-	 }
-	 }
-	 else
-	 {
-	 while(ft_strcmp(nodetmp3->name,s1) != 0)
-	 nodetmp3 = nodetmp3->nextl;
-	 nodetmp2 = nodetmp3;
-	 while(ft_strcmp(nodetmp3->name,s2))
-	 {
-	 swap2(nodetmp,nodetmp2->name,nodetmp3->name);
-	 permute2(nodetmp,nodedata,(nodetmp3->nextl)->name,s2);
-	 swap2(nodetmp,nodetmp2->name,nodetmp3->name);
-	 nodetmp3 = nodetmp3->nextl;
-	 }
-	 }
+	if (ft_strcmp(s1,s2) == 0)
+	{
+		*nodedata = lst_add_downlrnew(nodedata,nodetmp3->name);
+		nodetmp3 = nodetmp3->nextl;
+		while(nodetmp3)
+		{
+			*nodedata = lst_add_down_downr(nodedata,nodetmp3->name);
+			nodetmp3 = nodetmp3->nextl;
+		}
+	}
+	else
+	{
+		while(ft_strcmp(nodetmp3->name,s1) != 0)
+			nodetmp3 = nodetmp3->nextl;
+		nodetmp2 = nodetmp3;
+		while(ft_strcmp(nodetmp3->name,s2))
+		{
+			swap2(nodetmp,nodetmp2->name,nodetmp3->name);
+			permute2(nodetmp,nodedata,(nodetmp3->nextl)->name,s2);
+			swap2(nodetmp,nodetmp2->name,nodetmp3->name);
+			nodetmp3 = nodetmp3->nextl;
+		}
+	}
 }
 
 void	swap2(t_node **nodetmp,char *s1,char *s2)
