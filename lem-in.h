@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/05 16:03:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/05 18:08:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,9 @@ t_node	*ft_maketree(t_node *maintree,char *strbegi);
 int		ft_countelem_lv1(t_node *node1);
 void	ft_solv(t_node *node1,t_node *noderef,char *strend,t_node **path1begi,char *strbegi,int *ind1);
 t_node *ft_cursref(t_node *node1,t_node *noderef);
+t_node *ft_cursref_first(t_node *node1,t_node *noderef);
 void	ft_roam(t_node *node1,t_node  **processnodes,t_node **lvnodes,char *strend,char *strbegi,int *ind1);
 t_node		*lst_rmtop(t_node **node1);
 void	ft_roam2(t_node *node1,t_node  **processnodes,t_node **path1begi,char *strend,char *strbegi,int *ind1);
+void permute(char *a, int l, int r);
+void swap(char *x, char *y);

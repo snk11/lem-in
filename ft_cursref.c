@@ -6,12 +6,34 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 19:28:16 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/04 20:49:04 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/05 17:15:04 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem-in.h"
 
+t_node *ft_cursref_first(t_node *node1,t_node *noderef)
+{
+
+	t_node	*nodetmp;
+	int		ind2;
+
+	ind2 = 0;
+	nodetmp = node1;
+	if (noderef)
+	{
+		while (nodetmp && ind2 == 0)
+		{
+			if(ft_strcmp((nodetmp->name),noderef->name) == 0)
+				ind2 = 1;
+			else
+				nodetmp = nodetmp->nextl;
+		}
+	}
+	else
+		return (NULL);
+	return (nodetmp);
+}
 t_node *ft_cursref(t_node *node1,t_node *noderef)
 {
 
