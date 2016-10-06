@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 09:31:12 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 10:53:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct			s_node
 	struct s_node	*nextl;
 	struct s_node	*nextr;
 }						t_node;
+
 
 t_lst		*create_lst1(void *content);
 t_lst2		*create_lst2(void *content);
@@ -57,3 +58,5 @@ void permute2(t_node **nodetmp, t_node **nodedata,int r1,int r2);
 void	swap2(t_node **nodetmp,char *s1,char *s2);
 t_node	*ft_generate(t_node *node1,char *strbegi);
 t_node	*ft_screen(t_node **nodedata,t_node *nodedummie,t_node *node1,char *strbegi,char *strend);
+int		ft_checknode3(t_node *node,char *strend,char *s);
+t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend);

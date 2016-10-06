@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 09:24:57 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 11:08:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -101,7 +101,9 @@ int main(int ac,char **av)
 	t_node	*lvnodes;
 	t_node	*nodedata;
 	t_node	*nodedummie;
+	t_node	*nodebest;
 
+	nodebest = NULL;
 	nodedata = NULL;
 	nodedummie = NULL;
 	path1begi = NULL;
@@ -158,8 +160,9 @@ int main(int ac,char **av)
 //	ft_printfpath(path1begi);
 	nodedummie = ft_generate(node1,"0");
 	nodedata = ft_screen(&nodedata,nodedummie,node1,"0","1");
-
+	nodebest = ft_screenbest(&nodebest,nodedata,"1");
 	ft_printfpath(nodedata);
+	ft_printfpath(nodebest);
 //	char str[] = "0123";
 //	int n = strlen(str);
 //	permute(str, 0, n-1);
