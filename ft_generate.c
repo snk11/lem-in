@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/05 17:01:50 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 08:09:40 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 09:14:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ t_node	*ft_generate(t_node *node1,char *strbegi)
 
 	nbelem = ft_countelem_lv1(nodetmp);
 	permute2(&nodetmp,&nodedata,0,nbelem - 1);
-	ft_printfpath(nodedata);
 	return (nodedata);
 }
 

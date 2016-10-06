@@ -6,10 +6,24 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 13:24:18 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/05 15:14:55 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 08:37:44 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
+
+int		ft_checknode2(t_node *node,char *s)
+{
+	int	r;
+
+	r = 0;
+	while (node->nextr && r == 0)
+	{
+		node = node->nextr;
+		if (ft_strcmp(node->name,s) == 0)
+			r = 1;
+	}
+	return (r);
+}
 
 int		ft_checknode(t_node *path1,char *s)
 {
