@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/29 16:20:28 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/05 15:48:04 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 17:23:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,29 @@ void	ft_printfpath(t_node *path1begi)
 		while (path1ind2)
 		{
 			printf("path = %s\n",(path1ind2)->name);
+			path1ind2 = (path1ind2)->nextr;
+		}
+		(path1ind2) = path1ind;
+		(path1ind2) = (path1ind2)->nextl;
+		printf("===============\n");
+	}
+		printf("==============================end PATH\n");
+}
+
+void	ft_printfpath_room(t_room *path1begi)
+{
+	t_room	*path1ind2;
+	t_room	*path1ind;
+
+		printf("============================begi PATH\n");
+	path1ind2 = (path1begi);
+	path1ind = NULL;
+	while(path1ind2)
+	{
+		path1ind = path1ind2;
+		while (path1ind2)
+		{
+			printf("room = %s , client = %d\n",(path1ind2)->name,(path1ind2)->client);
 			path1ind2 = (path1ind2)->nextr;
 		}
 		(path1ind2) = path1ind;

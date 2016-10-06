@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 14:54:19 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 17:17:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,103 @@ t_node		*lst_add_downlrnew(t_node **node1,char *strbegi)
 	nodetmp = nodetmp2->nextl;
 	nodetmp3 = nodetmp;
 	*node1 = lst_add_downl(node1,strbegi);
+	return (*node1);
+}
+
+t_room		*lst_add_downlrnew_room(t_room **node1,char *strbegi)
+{
+//	printf("newnormal\n");
+	t_room	*nodetmp;
+	t_room	*nodetmp2;
+	t_room	*nodetmp3;
+	t_room	*nodetmp4;
+	int		ind1;
+	int cnt1;
+
+	ind1 = 0;
+	cnt1 = 0;
+	nodetmp2 = *node1;
+	nodetmp = NULL;
+	nodetmp4 = NULL;
+	if(*node1 == NULL)
+	{
+		*node1 = lst_add_downl_room(node1,strbegi);
+		return (*node1);
+	}
+	while(nodetmp2 && nodetmp2->nextl)
+		nodetmp2 = (nodetmp2)->nextl;
+//	nodetmp = ft_createnode(nodetmp2->name);
+//	nodetmp3 = nodetmp;
+	nodetmp2 = *node1;
+	nodetmp = NULL;
+	nodetmp4 = NULL;
+	while(nodetmp2 && nodetmp2->nextl)
+		nodetmp2 = (nodetmp2)->nextl;
+	nodetmp = nodetmp2->nextl;
+	nodetmp3 = nodetmp;
+	*node1 = lst_add_downl_room(node1,strbegi);
+	return (*node1);
+}
+
+t_room		*lst_add_downl_room(t_room **node1,char *s)
+{
+	t_room	*nodetmp;
+	t_room	*nodetmp2;
+
+	nodetmp2 = *node1;
+	nodetmp = NULL;
+	nodetmp = ft_createnode_room(s);
+	if (!(nodetmp2))
+		return (nodetmp);
+	while ((nodetmp2)->nextl)
+		nodetmp2 = (nodetmp2)->nextl;
+	(nodetmp2)->nextl = nodetmp;
+	return (*node1);
+}
+
+t_room		*ft_createnode_room(char *s)
+{
+	t_room	*curlst;
+
+	curlst = NULL;
+	if (!(curlst = (t_room*)malloc(sizeof(t_room))))
+		return (NULL);
+	if (s == NULL)
+	{
+		curlst->name = NULL;
+	}
+	else
+	{
+		if (!(curlst->name = malloc(sizeof(s))))
+			return (NULL);
+		curlst->name = ft_memmove(curlst->name, s, sizeof(s));
+	}
+	curlst->client = 0;
+	curlst->nextl = NULL;
+	curlst->nextr = NULL;
+	return (curlst);
+}
+
+t_room		*lst_add_down_downr_room(t_room **node1,char *s)
+{
+	t_room	*nodetmp;
+	t_room	*nodetmp2;
+	int		ind1;
+
+	ind1 = 0;
+	nodetmp2 = *node1;
+	nodetmp = NULL;
+	nodetmp = ft_createnode_room(s);
+	if (!(nodetmp2))
+		return (nodetmp);
+	while(nodetmp2 && nodetmp2->nextl)
+	{
+		nodetmp2 = (nodetmp2)->nextl;
+	}
+
+	while ((nodetmp2)->nextr)
+		nodetmp2 = (nodetmp2)->nextr;
+	(nodetmp2)->nextr = nodetmp;
 	return (*node1);
 }
 

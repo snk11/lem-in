@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 13:38:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 17:27:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -165,6 +165,7 @@ int main(int ac,char **av)
 	ft_printfpath(nodebest);
 	if (av[1])
 		ft_read_map(av[1]);
+	ft_simul(nodebest,"0","1",3);
 //	char str[] = "0123";
 //	int n = strlen(str);
 //	permute(str, 0, n-1);

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 15:23:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 17:25:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,14 @@ typedef struct			s_node
 	struct s_node	*nextl;
 	struct s_node	*nextr;
 }						t_node;
+
+typedef struct			s_room
+{
+	char				*name;
+	int				client;
+	struct s_room	*nextl;
+	struct s_room	*nextr;
+}						t_room;
 
 typedef struct			s_data
 {
@@ -81,3 +89,11 @@ void			ft_read_map(char *file);
 int		ft_checknbant(char *s);
 int		ft_checktube(char *s);
 int		ft_checkroom(char *s);
+t_room		*lst_add_downlrnew_room(t_room **node1,char *strbegi);
+t_room		*lst_add_downl_room(t_room **node1,char *s);
+t_room		*ft_createnode_room(char *s);
+t_room		*lst_add_down_downr_room(t_room **node1,char *s);
+t_room	*ft_createroom(t_room **rooms,t_node *nodebest);
+void	ft_printfpath_room(t_room *path1begi);
+void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int nbant);
+
