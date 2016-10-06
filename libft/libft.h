@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 13:00:41 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/14 08:08:12 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 13:49:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,13 @@
 # include <sys/uio.h>
 # include <fcntl.h>
 # include <limits.h>
+
+typedef struct		s_list
+{
+	void			*content;
+	size_t			content_size;
+	struct s_list	*next;
+}					t_list;
 
 /*
 typedef struct		s_lst
@@ -38,7 +45,7 @@ typedef struct		s_list
 }					t_list;
 */
 
-//void				ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstadd(t_list **alst, t_list *new1);
 //void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
 //t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 //void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
