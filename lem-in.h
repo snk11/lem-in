@@ -6,11 +6,21 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 10:53:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 13:51:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
+
+# define BUFF_SIZE 8192
+
+typedef struct		s_env
+{
+	int		fd;
+	int		ret;
+	char	buf[BUFF_SIZE + 1];
+	int		index;
+}					t_env;
 
 typedef struct			s_lst
 {
@@ -32,6 +42,12 @@ typedef struct			s_node
 	struct s_node	*nextr;
 }						t_node;
 
+typedef struct			s_data
+{
+	int					nbant;
+	char				strbegi;
+	char				strend;
+}						t_data;
 
 t_lst		*create_lst1(void *content);
 t_lst2		*create_lst2(void *content);
@@ -60,3 +76,5 @@ t_node	*ft_generate(t_node *node1,char *strbegi);
 t_node	*ft_screen(t_node **nodedata,t_node *nodedummie,t_node *node1,char *strbegi,char *strend);
 int		ft_checknode3(t_node *node,char *strend,char *s);
 t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend);
+int		get_next_line(int const fd, char **line);
+void			ft_read_map(char *file);
