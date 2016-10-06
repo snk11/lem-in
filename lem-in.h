@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 13:51:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 14:05:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,3 +78,4 @@ int		ft_checknode3(t_node *node,char *strend,char *s);
 t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend);
 int		get_next_line(int const fd, char **line);
 void			ft_read_map(char *file);
+int		ft_checknbant(char *s);
