@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/05 20:05:10 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 07:51:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -155,7 +155,7 @@ int main(int ac,char **av)
 //	ft_printfpath(processnodes);
 //	ft_printfpath(path1begi);
 	nodedumie = ft_generate(node1,"0");
-	ft_printfpath(nodedumie);
+//	ft_printfpath(nodedumie);
 //	char str[] = "0123";
 //	int n = strlen(str);
 //	permute(str, 0, n-1);

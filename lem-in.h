@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/05 19:54:19 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 07:38:29 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,6 @@ void permute(char *a, int l, int r);
 void swap(char *x, char *y);
 t_node	*ft_maketree2(t_node *maintree,char *strbegi);
 t_node *ft_copytree2(t_node *maintree,char *strbegi);
-void permute2(t_node **nodetmp, t_node **nodedata,char *s1,char *s2);
+void permute2(t_node **nodetmp, t_node **nodedata,int r1,int r2);
 void	swap2(t_node **nodetmp,char *s1,char *s2);
 t_node	*ft_generate(t_node *node1,char *strbegi);

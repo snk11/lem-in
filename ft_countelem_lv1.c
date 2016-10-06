@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 18:15:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/04 18:28:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 07:56:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		ft_countelem_lv1(t_node *node1)
 	cnt1 = 0;
 
 	nodetmp2 = node1;
-	while(nodetmp2 && nodetmp2->nextl)
+	while(nodetmp2)
 	{
 		nodetmp2 = (nodetmp2)->nextl;
 		cnt1++;

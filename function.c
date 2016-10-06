@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/05 13:46:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/06 08:10:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_node		*lst_rmtop(t_node **node1)
 
 t_node		*lst_add_downlrnew(t_node **node1,char *strbegi)
 {
-	printf("newnormal\n");
+//	printf("newnormal\n");
 	t_node	*nodetmp;
 	t_node	*nodetmp2;
 	t_node	*nodetmp3;
