@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/09 13:46:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/09 15:33:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,10 @@ t_node		*lst_add_downl(t_node **node1,char *s);
 t_node		*lst_add_downr(t_node **node1,t_node *noderef,char *s);
 t_node		*lst_add_down_downr(t_node **node1,char *s);
 t_node		*lst_add_downlrnew(t_node **node1,char *strbegi);
-int		ft_checknode(t_node *path1,char *s);
 int		ft_checknode2(t_node *node,char *s);
+int		ft_checknode3(t_node *node,char *strend,char *s);
+int		ft_checknode4(t_node *node,char *strend,char *s);
+int		ft_checknode5(t_node *node,char *s);
 void	ft_printfpath(t_node *path1begi);
 t_node *ft_copytree(t_node *maintree,char *strbegi);
 t_node	*ft_maketree(t_node *maintree,char *strbegi);
@@ -82,7 +84,6 @@ void permute2(t_node **nodetmp, t_node **nodedata,int r1,int r2);
 void	swap2(t_node **nodetmp,char *s1,char *s2);
 t_node	*ft_generate(t_node *node1,char *strbegi);
 t_node	*ft_screen(t_node **nodedata,t_node *nodedummie,t_node *node1,char *strbegi,char *strend);
-int		ft_checknode3(t_node *node,char *strend,char *s);
 t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend);
 int		get_next_line(int const fd, char **line);
 void			ft_read_map(char *file);
@@ -96,4 +97,6 @@ t_room		*lst_add_down_downr_room(t_room **node1,char *s);
 t_room	*ft_createroom(t_room **rooms,t_node *nodebest,char *strend);
 void	ft_printfpath_room(t_room *path1begi);
 void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int nbant);
+t_node		*lst_rmtop(t_node **node1);
+t_node		*lst_rmnoderef(t_node **node1,t_node *noderef);
 

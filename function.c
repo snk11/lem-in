@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 17:17:14 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/09 17:21:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,28 @@
 
 
 #include <stdio.h>
+
+t_node		*lst_rmnoderef(t_node **node1,t_node *noderef)
+{
+	t_node	*nodetmp;
+	t_node	*nodetmp4;
+
+	nodetmp = NULL;
+	nodetmp4 = NULL;
+	nodetmp = *node1;
+	while(nodetmp && nodetmp != noderef)
+	{
+		nodetmp4 = nodetmp;
+		nodetmp = nodetmp->nextl;
+	}
+	if(nodetmp == *node1)
+		*node1 = lst_rmtop(node1);
+	else if(nodetmp)
+	{
+		nodetmp4->nextl = nodetmp->nextl;
+	}
+	return (*node1);
+}
 
 t_node		*lst_rmtop(t_node **node1)
 {
