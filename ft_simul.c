@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:54:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/09 19:34:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/09 19:48:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,14 +63,15 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int nbant)
 	rooms = ft_createroom(&rooms,nodebest,strend);
 	nbtmp = nbant;
 	nodetmp = rooms;
-//	while(nbtmp > 0)
+	while(nbtmp > 0)
 	{
-//		while(nodetmp && nodetmp->nextl && nbtmp > 0)
-		if(nodetmp && nodetmp->nextl && nbtmp > 0)
+		nodetmp = rooms;
+		while(nodetmp && nbtmp > 0)
+//		if(nodetmp && nodetmp->nextl && nbtmp > 0)
 		{
 			nodetmp3 = nodetmp;
-//			while(nodetmp && nodetmp->nextr && nodetmp->client != 0)
-			if(nodetmp && nodetmp->nextr && nodetmp->client != 0)
+			while(nodetmp && nodetmp->nextr && nodetmp->client != 0)
+//			if(nodetmp && nodetmp->nextr && nodetmp->client != 0)
 			{
 				cnt1++;
 				nodetmp4 = nodetmp;
@@ -95,7 +96,8 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int nbant)
 			nodetmp = nodetmp3;
 			nodetmp = nodetmp->nextl;
 		}
+		printf("nbtmp = %d\n",nbtmp);
+		ft_printfpath_room(rooms);
 	}
-	ft_printfpath_room(rooms);
 
 }
