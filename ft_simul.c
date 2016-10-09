@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:54:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 17:34:23 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/09 13:44:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int nbant)
 
 	}
 	*/
-	rooms = ft_createroom(&rooms,nodebest);
+	rooms = ft_createroom(&rooms,nodebest,strend);
 	ft_printfpath_room(rooms);
 
 }
