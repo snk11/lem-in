@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/10 16:04:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/10 20:28:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,4 +100,6 @@ t_node		*lst_rmtop(t_node **node1);
 t_node		*lst_rmnoderef(t_node **node1,t_node *noderef);
 int	ft_checkzero(t_room *rooms);
 void			ft_read_map(t_node **node1,char *file);
+int		ft_checknewant(t_room *room,t_room *node,int nbant);
+int		ft_checkafter(t_room *rooms,t_room *nodetmp5);
 
