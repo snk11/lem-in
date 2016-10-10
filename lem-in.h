@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/10 15:10:43 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/10 16:04:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,6 @@ t_node	*ft_generate(t_node *node1,char *strbegi);
 t_node	*ft_screen(t_node **nodedata,t_node *nodedummie,t_node *node1,char *strbegi,char *strend);
 t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend);
 int		get_next_line(int const fd, char **line);
-void			ft_read_map(char *file);
 int		ft_checknbant(char *s);
 int		ft_checktube(char *s);
 int		ft_checkroom(char *s);
@@ -100,4 +99,5 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int nbant);
 t_node		*lst_rmtop(t_node **node1);
 t_node		*lst_rmnoderef(t_node **node1,t_node *noderef);
 int	ft_checkzero(t_room *rooms);
+void			ft_read_map(t_node **node1,char *file);
 

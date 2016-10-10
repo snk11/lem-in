@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:54:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/10 12:38:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/10 17:01:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,14 +71,14 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int nbant)
 			{
 				printf("L%d-%s\n",nodetmp4->client,nodetmp->name);
 				nodetmp->client = nodetmp4->client;
+				nodetmp4->client = 0;
 			}
 			nodetmp = nodetmp3;
 			nodetmp = nodetmp->nextl;
 		}
 		printf("nbtmp = %d\n",nbtmp);
 	}
-
-
+	
 	nodetmp = rooms;
 	while(ft_checkzero(rooms) == 0)
 	{
@@ -86,7 +86,7 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int nbant)
 		while(nodetmp)
 		{
 			nodetmp3 = nodetmp;
-			while(nodetmp && nodetmp->nextr && nodetmp->client != 0)
+			while(nodetmp && nodetmp->nextr && (nodetmp->client != 0 || nodetmp->nextr))
 			{
 				cnt1++;
 				nodetmp4 = nodetmp;
@@ -104,6 +104,7 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int nbant)
 			{
 				printf("L%d-%s\n",nodetmp4->client,nodetmp->name);
 				nodetmp->client = nodetmp4->client;
+				nodetmp4->client = 0;
 			}
 			nodetmp = nodetmp3;
 			nodetmp = nodetmp->nextl;
