@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/10 12:16:17 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/10 15:10:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ typedef struct			s_room
 typedef struct			s_data
 {
 	int					nbant;
-	char				strbegi;
-	char				strend;
+	char				*strbegi;
+	char				*strend;
 }						t_data;
 
 t_lst		*create_lst1(void *content);

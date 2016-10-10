@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 17:25:10 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/10 15:26:42 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,18 @@ void			ft_read_map(char *file)
 	char	*line;
 	int		j;
 	int		c;
+	int		i;
+	char	*strbegi;
+	char	*strend;
 	t_data	dt1;
 
 	dt1.nbant = 0;
 	c = 0;
+	strbegi = NULL;
+	strend = NULL;
 	line = NULL;
 	j = 0;
+	i = 0;
 	fd = open(file, O_RDONLY);
 	while (get_next_line(fd, &line) > 0)
 	{
@@ -45,12 +51,34 @@ void			ft_read_map(char *file)
 		if(ft_strcmp(line,"##start") == 0)
 		{
 			get_next_line(fd,&line);
-			printf("start = %s\n",line);
+			i = 0;
+			while(line[i] != ' ')
+				i++;
+			strbegi = (char*)malloc(sizeof(char)*i+1);
+			i = 0;
+			while(line[i] != ' ')
+			{
+				strbegi[i] = line[i];
+				i++;
+			}
+			strbegi[i] = 0;
+			printf("start = %s\n",strbegi);
 		}
 		if(ft_strcmp(line,"##end") == 0)
 		{
 			get_next_line(fd,&line);
-			printf("end = %s\n",line);
+			i = 0;
+			while(line[i] != ' ')
+				i++;
+			strend = (char*)malloc(sizeof(char)*i+1);
+			i = 0;
+			while(line[i] != ' ')
+			{
+				strend[i] = line[i];
+				i++;
+			}
+			strend[i] = 0;
+			printf("end = %s\n",strend);
 		}
 	}
 	close(fd);
