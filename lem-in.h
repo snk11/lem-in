@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/09 18:09:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/10 12:16:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,5 @@ void	ft_printfpath_room(t_room *path1begi);
 void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int nbant);
 t_node		*lst_rmtop(t_node **node1);
 t_node		*lst_rmnoderef(t_node **node1,t_node *noderef);
+int	ft_checkzero(t_room *rooms);
 
