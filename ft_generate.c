@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/05 17:01:50 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 09:14:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/13 11:53:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ t_node	*ft_generate(t_node *node1,char *strbegi)
 
 
 	nbelem = ft_countelem_lv1(nodetmp);
-	permute2(&nodetmp,&nodedata,0,nbelem - 1);
+	permute2(&nodetmp,&nodedata,0,nbelem - 1,strbegi);
 	return (nodedata);
 }
 
-void permute2(t_node **nodetmp, t_node **nodedata,int r1,int r2)
+void permute2(t_node **nodetmp, t_node **nodedata,int r1,int r2,char *strbegi)
 {
 	int	i;
 	int	r;
@@ -40,7 +40,7 @@ void permute2(t_node **nodetmp, t_node **nodedata,int r1,int r2)
 	nodetmp3 = *nodetmp;
 
 	r = r1;
-	if (r1 == r2)
+	if (r1 == r2 && ft_strcmp(nodetmp3->name,strbegi) == 0)
 	{
 		*nodedata = lst_add_downlrnew(nodedata,nodetmp3->name);
 		nodetmp3 = nodetmp3->nextl;
@@ -62,7 +62,7 @@ void permute2(t_node **nodetmp, t_node **nodedata,int r1,int r2)
 		while(r <= r2)
 		{
 			swap2(nodetmp,nodetmp2->name,nodetmp3->name);
-			permute2(nodetmp,nodedata,r1 + 1,r2);
+			permute2(nodetmp,nodedata,r1 + 1,r2,strbegi);
 			swap2(nodetmp,nodetmp2->name,nodetmp3->name);
 			nodetmp3 = nodetmp3->nextl;
 			r++;
