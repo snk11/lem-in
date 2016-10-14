@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/11 13:55:42 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/14 19:40:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -28,7 +28,9 @@ int main(int ac,char **av)
 	t_node	*nodedata;
 	t_node	*nodedummie;
 	t_node	*nodebest;
+	t_data	data1;
 
+//	data1 = NULL;
 	node2 = NULL;
 	nodebest = NULL;
 	nodedata = NULL;
@@ -38,6 +40,14 @@ int main(int ac,char **av)
 	path1ind = NULL;
 	processnodes = NULL;
 	lvnodes = NULL;
+
+
+//	if (!(data1 = (t_data*)malloc(sizeof(t_data))))
+//		return (0);
+	data1.nbant = 0;
+
+
+
 	nodetmp = node1;
 	node1 = ft_createnode("0");
 
@@ -81,26 +91,38 @@ int main(int ac,char **av)
 		node1 = lst_add_downr(&node1,nodetmp,"2");
 	}
 
-//	ft_proceed(node1,&processnodes,&path1begi,"0","1");
+	//	ft_proceed(node1,&processnodes,&path1begi,"0","1");
 
-//	ft_printfpath(processnodes);
-//	ft_printfpath(path1begi);
+	//	ft_printfpath(processnodes);
+	//	ft_printfpath(path1begi);
 	if (av[1])
-		ft_read_map(&node2,av[1]);
+		ft_read_map(&node2,av[1],&data1);
+
+	if (ft_checkmindata(data1) == 0)
+	{
+		write(1,"ERROR",5);
+		return (0);
+	}
+
 
 	nodedummie = ft_generate(node2,"0");
 	nodedata = ft_screen(&nodedata,nodedummie,node2,"0","1");
-	
-	
+	if(nodedata == NULL)
+	{
+		write(1,"ERROR",5);
+		return (0);
+	}
+
+
 	nodebest = ft_screenbest(&nodebest,nodedata,"1");
 	ft_printfpath(nodedata);
 	ft_printfpath(nodebest);
-//	ft_printfpath(node2);
+	//	ft_printfpath(node2);
 	ft_simul(nodebest,"0","1",3);
-//	char str[] = "0123";
-//	int n = strlen(str);
-//	permute(str, 0, n-1);
-//	return 0;
+	//	char str[] = "0123";
+	//	int n = strlen(str);
+	//	permute(str, 0, n-1);
+	//	return 0;
 	//	ft_printfpath(node1);
 
 	//	t_node *tree1;

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/10 16:20:38 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/14 19:43:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,21 @@
 
 
 #include <stdio.h>
-void	ft_read_map(t_node **node1,char *file)
+int	ft_read_map(t_node **node1,char *file,t_data *data1)
 {
 	int		fd;
 	char	*line;
 	int		j;
 	int		c;
 	int		i;
+	int		l1;
 	char	*s1;
 	char	*s2;
 	char	*strbegi;
 	char	*strend;
-	t_data	dt1;
+	int		ant1;
 
-	dt1.nbant = 0;
+	ant1 = 0;
 	c = 0;
 	s1 = NULL;
 	s2 = NULL;
@@ -37,11 +38,14 @@ void	ft_read_map(t_node **node1,char *file)
 	line = NULL;
 	j = 0;
 	i = 0;
+	l1 = 0;
+
+	l1 = ft_returnvaline(file);
 	fd = open(file, O_RDONLY);
 	while (get_next_line(fd, &line) > 0)
 	{
 		if(ft_checknbant(line))
-			dt1.nbant = ft_atoi(line);
+			ant1 = ft_atoi(line);
 		else if(ft_checkroom(line))
 		{
 			i = 0;
@@ -55,7 +59,8 @@ void	ft_read_map(t_node **node1,char *file)
 				i++;
 			}
 			s1[i] = 0;
-			*node1 = lst_add_downl(node1,s1);
+//			if (ft_checkdouble_l(*node1,s1))
+				*node1 = lst_add_downl(node1,s1);
 			printf("room = %s\n",line);
 		}
 		else if(ft_checktube(line))
@@ -88,12 +93,14 @@ void	ft_read_map(t_node **node1,char *file)
 				i++;
 			}
 			s2[j] = 0;
-			*node1 = lst_add_downr(node1,ft_cursref_first(*node1,s1),s2);
+//			if (ft_checkdouble_r(ft_cursref_first(*node1,s1),s1))
+				*node1 = lst_add_downr(node1,ft_cursref_first(*node1,s1),s2);
 			printf("tube = %s\n",line);
 		}
+		l1--;
 	}
-	printf("nbant = %d\n",dt1.nbant);
 	close(fd);
+	l1 = ft_returnvaline(file);
 	fd = open(file, O_RDONLY);
 	while (get_next_line(fd, &line) > 0)
 	{
@@ -129,6 +136,15 @@ void	ft_read_map(t_node **node1,char *file)
 			strend[i] = 0;
 			printf("end = %s\n",strend);
 		}
+		l1--;
 	}
+
+	if (ant1 > 0)
+		(data1)->nbant = ant1;
+	if (strbegi)
+		(data1)->strbegi = strbegi;
+	if (strend)
+		(data1)->strend = strend;
 	close(fd);
+	return (1);
 }
