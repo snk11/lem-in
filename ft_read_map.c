@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/15 13:40:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/15 14:17:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 		}
 		l1--;
 	}
-//	close(fd);
+	//	close(fd);
 	l1 = ft_returnvaline(file);
 
 	fd = open(file, O_RDONLY);
@@ -108,34 +108,40 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 		if(ft_strcmp(line,"##start") == 0)
 		{
 			get_next_line(fd,&line);
-			i = 0;
-			while(line[i] != ' ')
-				i++;
-			strbegi = (char*)malloc(sizeof(char)*i+1);
-			i = 0;
-			while(line[i] != ' ')
+			if(ft_checkroom(line))
 			{
-				strbegi[i] = line[i];
-				i++;
+				i = 0;
+				while(line[i] != ' ')
+					i++;
+				strbegi = (char*)malloc(sizeof(char)*i+1);
+				i = 0;
+				while(line[i] != ' ')
+				{
+					strbegi[i] = line[i];
+					i++;
+				}
+				strbegi[i] = 0;
+				printf("start = %s\n",strbegi);
 			}
-			strbegi[i] = 0;
-			printf("start = %s\n",strbegi);
 		}
 		if(ft_strcmp(line,"##end") == 0)
 		{
 			get_next_line(fd,&line);
-			i = 0;
-			while(line[i] != ' ')
-				i++;
-			strend = (char*)malloc(sizeof(char)*i+1);
-			i = 0;
-			while(line[i] != ' ')
+			if(ft_checkroom(line))
 			{
-				strend[i] = line[i];
-				i++;
+				i = 0;
+				while(line[i] != ' ')
+					i++;
+				strend = (char*)malloc(sizeof(char)*i+1);
+				i = 0;
+				while(line[i] != ' ')
+				{
+					strend[i] = line[i];
+					i++;
+				}
+				strend[i] = 0;
+				printf("end = %s\n",strend);
 			}
-			strend[i] = 0;
-			printf("end = %s\n",strend);
 		}
 		l1--;
 	}
