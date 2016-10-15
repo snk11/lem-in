@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/14 20:37:24 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/15 12:44:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 
 	l1 = ft_returnvaline(file);
 	fd = open(file, O_RDONLY);
-	while (get_next_line(fd, &line) > 0)
+	while (get_next_line(fd, &line) > 0 && l1 > 0)
 	{
 		if(ft_checknbant(line))
 			ant1 = ft_atoi(line);
@@ -59,7 +59,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 				i++;
 			}
 			s1[i] = 0;
-//			if (ft_checkdouble_l(*node1,s1))
+			if (ft_checkdouble_l(*node1,s1))
 				*node1 = lst_add_downl(node1,s1);
 			printf("room = %s\n",line);
 		}
@@ -93,7 +93,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 				i++;
 			}
 			s2[j] = 0;
-//			if (ft_checkdouble_r(ft_cursref_first(*node1,s1),s1))
+			if (ft_checkdouble_r(ft_cursref_first(*node1,s1),s2))
 				*node1 = lst_add_downr(node1,ft_cursref_first(*node1,s1),s2);
 			printf("tube = %s\n",line);
 		}
@@ -102,7 +102,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 	close(fd);
 	l1 = ft_returnvaline(file);
 	fd = open(file, O_RDONLY);
-	while (get_next_line(fd, &line) > 0)
+	while (get_next_line(fd, &line) > 0 && l1 > 0)
 	{
 		if(ft_strcmp(line,"##start") == 0)
 		{
