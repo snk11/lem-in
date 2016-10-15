@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 17:56:36 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/15 13:37:17 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/15 15:23:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int		ft_returnvaline(char *file)
 		else if(ft_checkroom(line))
 		{
 		}
-		else if(ft_checktube(line))
-		{
-		}
+//		else if(ft_checktube2(line))
+//		{
+//		}
 		else if(ft_strcmp(line,"##start") == 0)
 		{
 			if(r2 >= 1)

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/15 14:17:00 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/15 15:58:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 
 
-#include <stdio.h>
 int	ft_read_map(t_node **node1,char *file,t_data *data1)
 {
 	int		fd;
@@ -22,7 +21,10 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 	int		j;
 	int		c;
 	int		i;
-	int		l1;
+	int		r1;
+	int		r2;
+	int		r3;
+	int		r4;
 	char	*s1;
 	char	*s2;
 	char	*strbegi;
@@ -38,113 +40,93 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 	line = NULL;
 	j = 0;
 	i = 0;
-	l1 = 0;
+	r1 = 0;
+	r2 = 0;
+	r3 = 0;
+	r4 = 0;
 
-	l1 = ft_returnvaline(file);
+	//	l1 = ft_returnvaline(file);
 	fd = open(file, O_RDONLY);
-	while (get_next_line(fd, &line) > 0 && l1 > 0)
+	while (get_next_line(fd, &line) > 0 && r1 == 0)
 	{
 		if(ft_checknbant(line))
-			ant1 = ft_atoi(line);
+		{
+			if(r2 >= 1)
+				r1 = 1;
+			else
+			{
+				r2++;
+				ant1 = ft_atoi(line);
+			}
+		}
+		else if(ft_strcmp(line,"##start") == 0)
+		{
+			if(r3 >= 1)
+				r1 = 1;
+			else
+			{
+				get_next_line(fd,&line);
+				if(ft_checkroom(line))
+				{
+					*node1 = ft_add_node_l(node1,line);
+					i = 0;
+					while(line[i] != ' ')
+						i++;
+					strbegi = (char*)malloc(sizeof(char)*i+1);
+					i = 0;
+					while(line[i] != ' ')
+					{
+						strbegi[i] = line[i];
+						i++;
+					}
+					strbegi[i] = 0;
+					printf("start = %s\n",strbegi);
+				}
+				else
+					r1 = 1;
+				r3++;
+			}
+		}
+		else if(ft_strcmp(line,"##end") == 0)
+		{
+			if(r4 >= 1)
+				r1 = 1;
+			else
+			{
+				get_next_line(fd,&line);
+				if(ft_checkroom(line))
+				{
+					*node1 = ft_add_node_l(node1,line);
+					i = 0;
+					while(line[i] != ' ')
+						i++;
+					strend = (char*)malloc(sizeof(char)*i+1);
+					i = 0;
+					while(line[i] != ' ')
+					{
+						strend[i] = line[i];
+						i++;
+					}
+					strend[i] = 0;
+					printf("end = %s\n",strend);
+				}
+				else
+					r1 = 1;
+				r4++;
+			}
+		}
 		else if(ft_checkroom(line))
+			*node1 = ft_add_node_l(node1,line);
+		else if(ft_checktube2(line,*node1))
+			*node1 = ft_add_node_r(node1,line);
+		else if(line[0] == '#' && line[1] != '#')
 		{
-			i = 0;
-			while(line[i] != ' ')
-				i++;
-			s1 = (char*)malloc(sizeof(char)*i+1);
-			i = 0;
-			while(line[i] != ' ')
-			{
-				s1[i] = line[i];
-				i++;
-			}
-			s1[i] = 0;
-			if (ft_checkdouble_l(*node1,s1))
-				*node1 = lst_add_downl(node1,s1);
-			printf("room = %s\n",line);
 		}
-		else if(ft_checktube(line))
-		{
-			i = 0;
-			while(line[i] != '-')
-				i++;
-			s1 = (char*)malloc(sizeof(char)*i+1);
-			i = 0;
-			while(line[i] != '-')
-			{
-				s1[i] = line[i];
-				i++;
-			}
-			s1[i] = 0;
-			i++;
-			j = 0;
-			while(line[i] != '\n' && line[i] != EOF)
-			{
-				j++;
-				i++;
-			}
-			i = i - j;
-			s2 = (char*)malloc(sizeof(char)*j+1);
-			j = 0;
-			while(line[i] != '\n' && line[i] != EOF)
-			{
-				s2[j] = line[i];
-				j++;
-				i++;
-			}
-			s2[j] = 0;
-			if (ft_checkdouble_r(ft_cursref_first(*node1,s1),s2))
-				*node1 = lst_add_downr(node1,ft_cursref_first(*node1,s1),s2);
-			printf("tube = %s\n",line);
-		}
-		l1--;
+		else
+			r1 = 1;
 	}
 	//	close(fd);
-	l1 = ft_returnvaline(file);
-
-	fd = open(file, O_RDONLY);
-	while (get_next_line(fd, &line) > 0 && l1 > 0)
-	{
-		if(ft_strcmp(line,"##start") == 0)
-		{
-			get_next_line(fd,&line);
-			if(ft_checkroom(line))
-			{
-				i = 0;
-				while(line[i] != ' ')
-					i++;
-				strbegi = (char*)malloc(sizeof(char)*i+1);
-				i = 0;
-				while(line[i] != ' ')
-				{
-					strbegi[i] = line[i];
-					i++;
-				}
-				strbegi[i] = 0;
-				printf("start = %s\n",strbegi);
-			}
-		}
-		if(ft_strcmp(line,"##end") == 0)
-		{
-			get_next_line(fd,&line);
-			if(ft_checkroom(line))
-			{
-				i = 0;
-				while(line[i] != ' ')
-					i++;
-				strend = (char*)malloc(sizeof(char)*i+1);
-				i = 0;
-				while(line[i] != ' ')
-				{
-					strend[i] = line[i];
-					i++;
-				}
-				strend[i] = 0;
-				printf("end = %s\n",strend);
-			}
-		}
-		l1--;
-	}
+	//	l1 = ft_returnvaline(file);
 
 	if (ant1 > 0)
 		(data1)->nbant = ant1;

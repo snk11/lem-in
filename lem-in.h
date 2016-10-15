@@ -6,11 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/14 19:40:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/15 15:56:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
+#include <stdio.h>
 
 # define BUFF_SIZE 8192
 
@@ -87,7 +88,8 @@ t_node	*ft_screen(t_node **nodedata,t_node *nodedummie,t_node *node1,char *strbe
 t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend);
 int		get_next_line(int const fd, char **line);
 int		ft_checknbant(char *s);
-int		ft_checktube(char *s);
+int		ft_checktube1(char *s);
+int		ft_checktube2(char *line,t_node *node1);
 int		ft_checkroom(char *s);
 t_room		*lst_add_downlrnew_room(t_room **node1,char *strbegi);
 t_room		*lst_add_downl_room(t_room **node1,char *s);
@@ -105,4 +107,6 @@ int		ft_returnvaline(char *file);
 int	ft_checkmindata(t_data data1);
 int		ft_checkdouble_l(t_node *node,char *s);
 int		ft_checkdouble_r(t_node *node,char *s);
+t_node	*ft_add_node_l(t_node **node1,char *line);
+t_node	*ft_add_node_r(t_node **node1,char *line);
 
