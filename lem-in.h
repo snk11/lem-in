@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/15 15:56:38 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/15 16:03:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,6 @@ t_node		*lst_rmnoderef(t_node **node1,t_node *noderef);
 int	ft_checkzero(t_room *rooms);
 int	ft_read_map(t_node **node1,char *file,t_data *data1);
 int		ft_checknewant(t_room *room,t_room *node,int nbant);
-int		ft_returnvaline(char *file);
 int	ft_checkmindata(t_data data1);
 int		ft_checkdouble_l(t_node *node,char *s);
 int		ft_checkdouble_r(t_node *node,char *s);
