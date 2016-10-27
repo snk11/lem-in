@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/15 14:17:09 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/27 15:33:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -98,6 +98,8 @@ int main(int ac,char **av)
 	if (av[1])
 		ft_read_map(&node2,av[1],&data1);
 
+	ft_printfpath(node2);
+
 	if (ft_checkmindata(data1) == 0)
 	{
 		write(1,"ERROR",5);
@@ -114,8 +116,8 @@ int main(int ac,char **av)
 	}
 
 
-	nodebest = ft_screenbest(&nodebest,nodedata,"1");
 	ft_printfpath(nodedata);
+	nodebest = ft_screenbest(&nodebest,nodedata,"1");
 	ft_printfpath(nodebest);
 	ft_simul(nodebest,"0","1",3);
 
