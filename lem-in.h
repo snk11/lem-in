@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/30 16:32:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/30 18:41:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ int		ft_checknbant(char *s);
 int		ft_checktube1(char *s);
 int		ft_checktube2(char *line,t_node *node1);
 int		ft_checkroom(char *s);
+int		ft_checkroom2(char *line, t_node **node1, t_node **node2);
 t_room		*lst_add_downlrnew_room(t_room **node1,char *strbegi);
 t_room		*lst_add_downl_room(t_room **node1,char *s);
 t_room		*ft_createnode_room(char *s);
@@ -99,8 +100,8 @@ t_room		*lst_add_down_downr_room(t_room **node1,char *s);
 t_room	*ft_createroom(t_room **rooms,t_node *nodebest,char *strend);
 void	ft_printfpath_room(t_room *path1begi);
 void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int nbant);
-t_node		*lst_rmtop(t_node **node1);
-t_node		*lst_rmnoderef(t_node **node1,t_node *noderef);
+//t_node		*lst_rmtop(t_node **node1);
+//t_node		*lst_rmnoderef(t_node **node1,t_node *noderef);
 int	ft_checkzero(t_room *rooms);
 int	ft_read_map(t_node **node1,char *file,t_data *data1);
 int		ft_checknewant(t_room *room,t_room *node,int nbant);
@@ -109,4 +110,5 @@ int		ft_checkdouble_l(t_node *node,char *s);
 int		ft_checkdouble_r(t_node *node,char *s);
 t_node	*ft_add_node_l(t_node **node1,char *line);
 t_node	*ft_add_node_r(t_node **node1,char *line);
+t_node		*ft_remove_last_l(t_node **node1);
 

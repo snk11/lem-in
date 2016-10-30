@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/30 16:02:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/30 18:50:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -118,7 +118,7 @@ int main(int ac,char **av)
 	}
 
 
-	ft_printfpath(nodedata);
+//	ft_printfpath(nodedata);
 	nodebest = ft_screenbest(&nodebest,nodedata,"1");
 	ft_printfpath(nodebest);
 //	ft_simul(nodebest,"0","1",3);

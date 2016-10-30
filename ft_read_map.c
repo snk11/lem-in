@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/15 15:58:22 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/30 18:50:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 	char	*strbegi;
 	char	*strend;
 	int		ant1;
+	t_node	*node2;
 
+	node2 = NULL;
 	ant1 = 0;
 	c = 0;
 	s1 = NULL;
@@ -68,19 +70,27 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 				get_next_line(fd,&line);
 				if(ft_checkroom(line))
 				{
-					*node1 = ft_add_node_l(node1,line);
-					i = 0;
-					while(line[i] != ' ')
-						i++;
-					strbegi = (char*)malloc(sizeof(char)*i+1);
-					i = 0;
-					while(line[i] != ' ')
+//					*node1 = ft_add_node_l(node1,line);
+					if (ft_checkroom2(line,node1,&node2) == 0)
 					{
-						strbegi[i] = line[i];
-						i++;
+						r1 = 1;
+//						*node1 = ft_remove_last_l(node1);
 					}
-					strbegi[i] = 0;
-					printf("start = %s\n",strbegi);
+					else
+					{
+						i = 0;
+						while(line[i] != ' ')
+							i++;
+						strbegi = (char*)malloc(sizeof(char)*i+1);
+						i = 0;
+						while(line[i] != ' ')
+						{
+							strbegi[i] = line[i];
+							i++;
+						}
+						strbegi[i] = 0;
+						printf("start = %s\n",strbegi);
+					}
 				}
 				else
 					r1 = 1;
@@ -96,7 +106,12 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 				get_next_line(fd,&line);
 				if(ft_checkroom(line))
 				{
-					*node1 = ft_add_node_l(node1,line);
+//					*node1 = ft_add_node_l(node1,line);
+					if (ft_checkroom2(line,node1,&node2) == 0)
+					{
+						r1 = 1;
+//						*node1 = ft_remove_last_l(node1);
+					}
 					i = 0;
 					while(line[i] != ' ')
 						i++;
@@ -116,7 +131,16 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 			}
 		}
 		else if(ft_checkroom(line))
-			*node1 = ft_add_node_l(node1,line);
+		{
+//			*node1 = ft_add_node_l(node1,line);
+			if (ft_checkroom2(line,node1,&node2) == 0)
+			{
+				r1 = 1;
+//				ft_printfpath(*node1);
+//				*node1 = ft_remove_last_l(node1);
+//				ft_printfpath(*node1);
+			}
+		}
 		else if(ft_checktube2(line,*node1))
 			*node1 = ft_add_node_r(node1,line);
 		else if(line[0] == '#' && line[1] != '#')
