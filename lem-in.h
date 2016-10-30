@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/27 15:41:01 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/30 16:32:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ int		ft_checknode2(t_node *node,char *s);
 int		ft_checknode3(t_node *node,char *strend,char *s);
 int		ft_checknode4(t_node *node,char *strend,char *s);
 int		ft_checknode5(t_node *node,char *s);
+int		ft_checknode6(t_node *node,char *strend,char *s);
 void	ft_printfpath(t_node *path1begi);
 t_node *ft_copytree(t_node *maintree,char *strbegi);
 t_node	*ft_maketree(t_node *maintree,char *strbegi);

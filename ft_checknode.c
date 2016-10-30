@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 13:24:18 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/09 17:09:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/30 16:32:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -42,6 +42,28 @@ int		ft_checknode4(t_node *node,char *strend,char *s)
 		node = node->nextl;
 	}
 	return (1);
+}
+
+int		ft_checknode6(t_node *node,char *strend,char *s)
+{
+	t_node *nodetmp3;
+	int		r;
+
+	r = 1;
+	nodetmp3 = NULL;
+	while (node)
+	{
+		nodetmp3 = node;
+		while (node->nextr && ft_strcmp(node->name,strend) != 0)
+		{
+			node = node->nextr;
+			if (ft_strcmp(node->name,s) == 0)
+				r = 0;
+		}
+		node = nodetmp3;
+		node = node->nextl;
+	}
+	return (r);
 }
 
 int		ft_checknode3(t_node *node,char *strend,char *s)

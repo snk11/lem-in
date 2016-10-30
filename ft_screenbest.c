@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 09:54:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/09 17:47:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/30 16:32:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 			{
 				while(nodetmp && ft_strcmp(nodetmp->name,strend) != 0 && r == 0)
 				{
-					if(*nodebest && ft_checknode4(*nodebest,strend,nodetmp->name) == 0)
+					if(*nodebest && ft_checknode6(*nodebest,strend,nodetmp->name) == 0)
 						r = 1;
 					nodetmp = nodetmp->nextr;
 				}
