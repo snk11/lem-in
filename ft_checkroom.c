@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 14:52:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/30 18:58:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/10/30 19:14:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,14 @@ int		ft_checkroom2(char *line, t_node **node1, t_node **node2)
 		}
 		s2[j] = 0;
 //		printf("s1 = %s, s2 = %s\n",s1,s2);
-		if (ft_checkdouble_l(*node2,s2))
+		if (ft_checkdouble_l(*node2,s2) && ft_checkdouble_l(*node1,s1) == 1)
 		{
 			*node1 = ft_add_node_l(node1,s1);
 			*node2 = lst_add_downl(node2,s2);
 		}
 		else if(ft_checkdouble_l(*node2,s2) == 0 && ft_checkdouble_l(*node1,s1) == 1)
+			return (0);
+		else if (ft_checkdouble_l(*node1,s1) == 0 && ft_checkdouble_l(*node2,s2) == 1)
 			return (0);
 	}
 	return (1);
