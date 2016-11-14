@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/14 17:45:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 17:55:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,8 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 //		printf("%s\n",line);
 //	}
 
-	fd = open(file, O_RDONLY);
+//	fd = open(file, O_RDONLY);
+	fd = 0;
 	while (get_next_line(fd, &line) > 0 && r1 == 0)
 	{
 		if(ft_checknbant(line))
