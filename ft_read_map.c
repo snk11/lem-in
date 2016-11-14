@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/30 18:50:16 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 17:30:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 	r4 = 0;
 
 	//	l1 = ft_returnvaline(file);
+//	while(get_next_line(0, &line) > 0)
+//	{
+//		printf("%s",line);
+//	}
 	fd = open(file, O_RDONLY);
 	while (get_next_line(fd, &line) > 0 && r1 == 0)
 	{
@@ -159,5 +163,8 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 	if (strend)
 		(data1)->strend = strend;
 	close(fd);
+
+
+
 	return (1);
 }

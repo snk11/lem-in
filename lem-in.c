@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/30 21:15:47 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 17:29:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "lem-in.h"
@@ -29,7 +29,9 @@ int main(int ac,char **av)
 	t_node	*nodedummie;
 	t_node	*nodebest;
 	t_data	data1;
+	char	*line;
 
+	line = NULL;
 //	data1 = NULL;
 	node2 = NULL;
 	nodebest = NULL;
@@ -97,6 +99,7 @@ int main(int ac,char **av)
 	//	ft_printfpath(path1begi);
 	if (av[1])
 		ft_read_map(&node2,av[1],&data1);
+
 
 //	ft_printfpath(node2);
 
