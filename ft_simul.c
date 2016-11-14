@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:54:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/30 22:33:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 18:04:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,9 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int totant)
 	t_room *nodetmp4;
 	t_room *nodetmp5;
 	t_room	*rooms;
+	t_lst	*lstop;
 
+	lstop = NULL;
 	rooms = NULL;
 	n = 0;
 	nbtmp = 0;

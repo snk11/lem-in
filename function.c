@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/30 18:23:19 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 18:11:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,64 @@ t_node		*lst_rmtop(t_node **node1)
 	return (*node1);
 }
 */
+void		ft_lstop_add_down(t_lst **toplist, char *s)
+{
+	t_op	*e;
+	t_lst	*lstmp;
+	t_lst		*lstmp2;
+	int		i;
+
+	i = 0;
+	lstmp = NULL;
+	lstmp2 = *toplist;
+	e = NULL;
+	e = (t_op*)malloc(sizeof(t_op));
+	e->val = (char*)malloc(sizeof(char)*ft_strlen(s)+1);
+	while(*s)
+	{
+		e->val[i] = *s;
+		s++;
+		i++;
+	}
+		lstmp = create_lst(e);
+		free(e);
+		e = NULL;
+
+	if (*toplist == NULL)
+	{
+//		ft_freelst(toplist);
+		*toplist = lstmp;
+	}
+	else
+	{
+		while(lstmp2 && lstmp2->next)
+			lstmp2 = lstmp2->next;
+		lstmp2->next = lstmp;
+	}
+}
+
+t_lst		*create_lst(void *content)
+{
+	t_lst	*curlst;
+
+	curlst = NULL;
+	if (!(curlst = (t_lst*)malloc(sizeof(t_lst))))
+		return (NULL);
+	if (content == NULL)
+	{
+		curlst->content = NULL;
+	}
+	else
+	{
+//		if (!(curlst->content = malloc(sizeof(content))))
+//			return (NULL);
+//		curlst->content = ft_memmove(curlst->content, content, sizeof(content));
+		curlst->content = ft_memmove2(content);
+	}
+	curlst->next = NULL;
+	return (curlst);
+}
+
 t_node		*ft_remove_last_l(t_node **node1)
 {
 	t_node	*nodetmp;

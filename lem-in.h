@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/30 18:41:23 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/14 18:11:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,10 @@ typedef struct			s_room
 	struct s_room	*nextl;
 	struct s_room	*nextr;
 }						t_room;
-
+typedef struct			s_op
+{
+	char				*val;
+}						t_op;
 typedef struct			s_data
 {
 	int					nbant;
@@ -111,4 +114,6 @@ int		ft_checkdouble_r(t_node *node,char *s);
 t_node	*ft_add_node_l(t_node **node1,char *line);
 t_node	*ft_add_node_r(t_node **node1,char *line);
 t_node		*ft_remove_last_l(t_node **node1);
+void		ft_lstop_add_down(t_lst **toplist, char *s);
+t_lst		*create_lst(void *content);
 
