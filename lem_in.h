@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 16:01:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 16:34:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,7 @@ int						ft_checkint_p2_p2_p42(char *s1);
 int						ft_checkint_p2_p2_p8(char *s1);
 int						ft_checkint_p2_p2_p3(char *s1);
 void					ft_init(t_data *data1);
-int						ft_getminpath(t_node *nodetmp,t_node *numberlist, int iter, int minbest,char *strend);
+int						ft_getminpath(t_node *nodetmp,t_node *numberlist, char *strend);
+int						ft_checkdirect(t_node *node1, char *strend);
 
 #endif

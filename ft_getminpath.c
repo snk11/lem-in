@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 14:05:33 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 16:02:24 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 16:12:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int		ft_getminpath(t_node *nodedata,t_node *numberlist, int iter, int minbest,char *strend)
+int		ft_getminpath(t_node *nodedata,t_node *numberlist, char *strend)
 {
 	t_node		*nodetmp;
 	t_node		*nodetmp3;
