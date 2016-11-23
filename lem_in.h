@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 16:34:35 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 17:17:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,5 +144,6 @@ int						ft_checkint_p2_p2_p3(char *s1);
 void					ft_init(t_data *data1);
 int						ft_getminpath(t_node *nodetmp,t_node *numberlist, char *strend);
 int						ft_checkdirect(t_node *node1, char *strend);
+void					ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant);
 
 #endif

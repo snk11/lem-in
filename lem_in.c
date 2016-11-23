@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 17:04:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 17:17:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,7 @@ int main(int ac,char **av)
 		ft_simul(nodebest, data1.strbegi, data1.strend,3);
 	else if (nodebest && ft_checkdirect(nodebest, data1.strend))
 	{
+		ft_simuldirect(nodebest, data1.strbegi, data1.strend,3);
 	}
 
 	//	char str[] = "0123";
