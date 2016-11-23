@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 09:54:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 14:13:38 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 16:06:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 	int	minbest2;
 	int cnt;
 	int nb1;
+	int ind1;
+	int	 index;
 	int r;
+	int i;
 	int	iter;
 	int nbelemnodedata;
 	t_node	*nodetmp;
@@ -45,58 +48,71 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 	nbelemnodedata = ft_countelem_lv1(nodedata);
 	nodetmp = nodedata;
 	nodetmp3 = nodetmp;
-/*
-	while(nodetmp)
-	{
-		if(iter == 0)
-			numberlist = lst_add_downlrnew(&numberlist,ft_itoa(iter));
-		else
-			numberlist = lst_add_downl(&numberlist,ft_itoa(iter));
-		iter++;
-		nodetmp = nodetmp->nextl;
-	}
-	*/
+	/*
+	   while(nodetmp)
+	   {
+	   if(iter == 0)
+	   numberlist = lst_add_downlrnew(&numberlist,ft_itoa(iter));
+	   else
+	   numberlist = lst_add_downl(&numberlist,ft_itoa(iter));
+	   iter++;
+	   nodetmp = nodetmp->nextl;
+	   }
+	   */
 	iter = 0;
 	nodetmp = nodedata;
 	nodetmp3 = nodetmp;
-	while(iter <= nbelemnodedata)
+	while(iter < nbelemnodedata)
 	{
-		/*
-		nodetmp = nodedata;
-		nodetmp3 = nodetmp;
-		min = 0;
-		cnt = 0;
-		while(nodetmp && ft_strcmp(nodetmp->name,strend) != 0)
+//		printf("mini = %d, minbesti = %d\n",min,minbest);
+		index = ft_getminpath(nodedata, numberlist, iter, minbest, strend);
+
+			printf("index = %d\n",index);
+//		printf("min = %d, minbest = %d\n",min,minbest);
+		//		nodetmp = nodedata;
+		if (index >= 0)
 		{
-			cnt++;
-			nodetmp = nodetmp->nextr;
-		}
-		if(cnt > minbest)
-			min = cnt;
-		nodetmp = nodetmp3;
-		nodetmp = nodetmp->nextl;
-		while(nodetmp)
-		{
-			nodetmp3 = nodetmp;
-			cnt = 0;
-			while(nodetmp && ft_strcmp(nodetmp->name,strend) != 0)
+			if(iter == 0)
+				numberlist = lst_add_downlrnew(&numberlist,ft_itoa(index));
+			else
+				numberlist = lst_add_downl(&numberlist,ft_itoa(index));
+			i = index;
+			nodetmp = nodedata;
+			while (nodetmp && i > 0)
 			{
-				cnt++;
+				nodetmp = nodetmp->nextl;
+				i--;
+			}
+			nodetmp3 = nodetmp;
+			while(nodetmp && ft_strcmp(nodetmp->name,strend) != 0 && r == 0)
+			{
+				if(*nodebest && ft_checknode6(*nodebest,strend,nodetmp->name) == 0)
+					r = 1;
 				nodetmp = nodetmp->nextr;
 			}
-			if(min == 0 && cnt > minbest)
-				min = cnt;
-			else if(cnt > minbest && cnt < min)
-				min = cnt;
+			printf("r = %d\n",r);
 			nodetmp = nodetmp3;
-			nodetmp = nodetmp->nextl;
+			if(r == 0)
+			{
+				*nodebest = lst_add_downlrnew(nodebest,nodetmp->name);
+				nodetmp = nodetmp->nextr;
+				while(nodetmp)
+				{
+					*nodebest = lst_add_down_downr(nodebest,nodetmp->name);
+					nodetmp = nodetmp->nextr;
+				}
+			}
 		}
-		*/
-		min = ft_getminpath(nodedata, minbest, strend);
+//		if (minbest < min)
+//			minbest = min;
+		iter++;
 
-		nodetmp = nodedata;
+
+/*
 		cnt = 0;
-		while(nodetmp && min > 0)
+		ind1 = 0;
+		i = 0;
+		while(nodetmp && min > 0 && ind1 == 0)
 		{
 			nodetmp3 = nodetmp;
 			cnt = 0;
@@ -115,6 +131,7 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 						r = 1;
 					nodetmp = nodetmp->nextr;
 				}
+				printf("r = %d\n",r);
 				nodetmp = nodetmp3;
 				if(r == 0)
 				{
@@ -126,13 +143,16 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 						nodetmp = nodetmp->nextr;
 					}
 				}
+				ind1 = 1;
 			}
 			nodetmp = nodetmp3;
 			nodetmp = nodetmp->nextl;
+			i++;
 		}
 		if (minbest < min)
 			minbest = min;
 		iter++;
+		*/
 	}
 	return (*nodebest);
 }
