@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 11:57:43 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 12:16:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ int main(int ac,char **av)
 	//	ft_printfpath(processnodes);
 	//	ft_printfpath(path1begi);
 //	if (av[1])
+//
+		ft_init(&data1);
 		ft_read_map(&node2,av[1],&data1);
 
 

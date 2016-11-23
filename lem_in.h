@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 12:00:12 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 12:58:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ typedef struct			s_op
 {
 	char				*val;
 }						t_op;
+
 typedef struct			s_data
 {
 	int					nbant;
@@ -98,6 +99,7 @@ int		ft_checknbant(char *s);
 int		ft_checktube1(char *s);
 int		ft_checktube2(char *line,t_node *node1);
 int		ft_checkroom(char *s);
+int		ft_checkroom_p1(char *s);
 int		ft_checkroom2(char *line, t_node **node1, t_node **node2);
 t_room		*lst_add_downlrnew_room(t_room **node1,char *strbegi);
 t_room		*lst_add_downl_room(t_room **node1,char *s);
@@ -138,5 +140,6 @@ int						ft_checkint_p2_p2_p7(char *s1);
 int						ft_checkint_p2_p2_p42(char *s1);
 int						ft_checkint_p2_p2_p8(char *s1);
 int						ft_checkint_p2_p2_p3(char *s1);
+void					ft_init(t_data *data1);
 
 #endif

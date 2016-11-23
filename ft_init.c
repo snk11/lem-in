@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_init.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
+/*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/04 13:24:29 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 18:31:52 by syusof           ###   ########.fr       */
+/*   Created: 2016/11/23 12:09:52 by syusof            #+#    #+#             */
+/*   Updated: 2016/11/23 12:11:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "lem_in.h"
 
-void	*ft_memset(void *s, int c, size_t n)
+void		ft_init(t_data *data1)
 {
-	size_t	i;
-	char	*str;
-
-	str = (char*)s;
-	i = 0;
-	while (i < n)
-	{
-		str[i] = c;
-		i++;
-	}
-	return (str);
+	data1->nbant = 0;
+	data1->strbegi = NULL;
+	data1->strend = NULL;
 }

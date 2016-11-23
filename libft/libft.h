@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 13:00:41 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 13:49:05 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/18 18:34:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,33 +28,11 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-/*
-typedef struct		s_lst
-{
-	void			*content;
-	struct s_lst	*next;
-}					t_lst;
-*/
-
-/*
-typedef struct		s_list
-{
-	void			*content;
-	size_t			content_size;
-	struct s_list	*next;
-}					t_list;
-*/
-
-void	ft_lstadd(t_list **alst, t_list *new1);
-//void				ft_lstdel(t_list **alst, void (*del)(void*, size_t));
-//t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-//void				ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
-//void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-//t_list				*ft_lstnew(void const *content, size_t content_size);
-char			*ft_lldtoa(long long int n);
-char			*ft_ustoa(unsigned short n);
-int		ft_strcmp2(const char *s1, const char *s2);
-char	*ft_memmove2(char *src);
+void				ft_lstadd(t_list **alst, t_list *new1);
+char				*ft_lldtoa(long long int n);
+char				*ft_ustoa(unsigned short n);
+int					ft_strcmp2(const char *s1, const char *s2);
+char				*ft_memmove2(char *src);
 size_t				ft_strlen(const char *s);
 char				*ft_strcpy(char *s1, const char *s2);
 char				*ft_strdup(const char *str);
