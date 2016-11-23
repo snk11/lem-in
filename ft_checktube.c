@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:14:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 12:45:58 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 13:15:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,28 @@ int		ft_checktube1(char *s)
 	t = 0;
 	while(*s)
 	{
+		if (ft_checktube1_p1(s) == 0)
+			return (0);
 		if(*s == '-')
 			t++;
 		if (t > 1)
 			return (0);
 		s++;
 	}
-	if(t == 1)
-		return (1);
-	return (0);
+	if(t == 0)
+		return (0);
+	return (1);
+}
+
+int		ft_checktube1_p1(char *s)
+{
+	while (*s && *s != '-')
+	{
+		if (!ft_isalnum(*s))
+			return (0);
+		s++;
+	}
+	return (1);
 }
 
 int		ft_checktube2(char *line,t_node *node1)

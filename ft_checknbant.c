@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 14:00:45 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 12:04:39 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 13:23:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,16 @@ int		ft_checknbant(char *s)
 	char	*s1;
 
 	s1 = s;
-	while(*s)
+	while (*s && *s != ' ' & *s != '\t')
 	{
 		if(!(*s >= '0' && *s <= '9') )
 			return (0);
 		s++;
 	}
+	while (*s && (*s == ' ' || *s == '\t'))
+		s++;
+	if (*s)
+		return (0);
 	s = s1;
 	if (ft_checkint(s) == 0)
 		return (0);

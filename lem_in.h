@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 12:58:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 13:13:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,7 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend);
 int		get_next_line(int const fd, char **line);
 int		ft_checknbant(char *s);
 int		ft_checktube1(char *s);
+int		ft_checktube1_p1(char *s);
 int		ft_checktube2(char *line,t_node *node1);
 int		ft_checkroom(char *s);
 int		ft_checkroom_p1(char *s);

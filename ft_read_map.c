@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 13:01:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 13:15:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,13 +147,11 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 //				ft_printfpath(*node1);
 			}
 		}
-		/*
 		else if(ft_checktube2(line,*node1))
 			*node1 = ft_add_node_r(node1,line);
 		else if(line[0] == '#' && line[1] != '#')
 		{
 		}
-		*/
 		else
 			r1 = 1;
 	}
