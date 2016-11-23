@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 19:36:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 19:44:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,50 +49,6 @@ int main(int ac,char **av)
 //		return (0);
 	data1.nbant = 0;
 
-
-
-	nodetmp = node1;
-	node1 = ft_createnode("0");
-
-	node1 = lst_add_downl(&node1,"1");
-	node1 = lst_add_downl(&node1,"2");
-	node1 = lst_add_downl(&node1,"3");
-
-	nodetmp = node1;
-	if(nodetmp)
-	{
-		node1 = lst_add_downr(&node1,nodetmp,"2");
-		node1 = lst_add_downr(&node1,nodetmp,"3");
-	}
-
-	nodetmp = node1;
-	nodetmp = nodetmp->nextl;
-	if(nodetmp)
-	{
-		node1 = lst_add_downr(&node1,nodetmp,"2");
-		node1 = lst_add_downr(&node1,nodetmp,"3");
-	}
-
-	nodetmp = node1;
-	nodetmp = nodetmp->nextl;
-	nodetmp = nodetmp->nextl;
-	if(nodetmp)
-	{
-		node1 = lst_add_downr(&node1,nodetmp,"0");
-		node1 = lst_add_downr(&node1,nodetmp,"1");
-		node1 = lst_add_downr(&node1,nodetmp,"3");
-	}
-
-	nodetmp = node1;
-	nodetmp = nodetmp->nextl;
-	nodetmp = nodetmp->nextl;
-	nodetmp = nodetmp->nextl;
-	if(nodetmp)
-	{
-		node1 = lst_add_downr(&node1,nodetmp,"0");
-		node1 = lst_add_downr(&node1,nodetmp,"1");
-		node1 = lst_add_downr(&node1,nodetmp,"2");
-	}
 
 	//	ft_proceed(node1,&processnodes,&path1begi,"0","1");
 
