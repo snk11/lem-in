@@ -6,11 +6,11 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 12:09:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/10 12:30:04 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 11:54:29 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 int	ft_checkzero(t_room *rooms)
 {

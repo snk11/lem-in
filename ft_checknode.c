@@ -6,10 +6,11 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/22 13:24:18 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/30 16:32:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 11:54:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include "lem-in.h"
+
+#include "lem_in.h"
 
 int		ft_checknode5(t_node *node,char *s)
 {

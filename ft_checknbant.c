@@ -6,19 +6,23 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 14:00:45 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 14:35:30 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 11:53:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 int		ft_checknbant(char *s)
 {
+	char	*s1;
+
+	s1 = s;
 	while(*s)
 	{
 		if(!(*s >= '0' && *s <= '9') )
 			return (0);
 		s++;
 	}
+	s = s1;
 	return (1);
 }

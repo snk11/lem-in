@@ -6,12 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/15 15:51:08 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/30 18:59:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 11:52:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-# include "lem-in.h"
+# include "lem_in.h"
 
 t_node	*ft_add_node_r(t_node **node1,char *line)
 {

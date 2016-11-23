@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkdouble_l.c                                 :+:      :+:    :+:   */
+/*   ft_strlen_isdigit.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/14 19:22:59 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 11:53:06 by syusof           ###   ########.fr       */
+/*   Created: 2016/11/14 22:00:30 by syusof            #+#    #+#             */
+/*   Updated: 2016/11/23 11:59:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "lem_in.h"
 
-int		ft_checkdouble_l(t_node *node,char *s)
+int		ft_strlen_isdigit(char *s)
 {
-	while(node)
+	int		i;
+
+	i = 0;
+	if (*s && *(s + 1) && (*s == '-' || *s == '+') && ft_isdigit(*(s + 1)))
 	{
-		if(ft_strcmp(node->name,s) == 0)
-			return (0);
-		node = node->nextl;
+		s++;
+		i++;
 	}
-	return (1);
+	while (*s && ft_isdigit(*s))
+	{
+		s++;
+		i++;
+	}
+	return (i);
 }

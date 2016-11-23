@@ -6,11 +6,11 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:14:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/15 15:54:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 11:54:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "lem-in.h"
+# include "lem_in.h"
 
 int		ft_checktube1(char *s)
 {

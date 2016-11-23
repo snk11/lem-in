@@ -6,11 +6,11 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 17:25:32 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/10 19:37:19 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 11:54:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "lem-in.h"
+# include "lem_in.h"
 
 int		ft_checknewant(t_room *room,t_room *node,int nbant)
 {

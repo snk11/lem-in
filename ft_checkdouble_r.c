@@ -6,12 +6,12 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 19:21:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/14 19:22:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 11:53:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 int		ft_checkdouble_r(t_node *node,char *s)
 {

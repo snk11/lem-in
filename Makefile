@@ -6,7 +6,7 @@
 #    By: syusof <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/22 15:50:15 by syusof            #+#    #+#              #
-#    Updated: 2016/09/22 15:51:37 by syusof           ###   ########.fr        #
+#    Updated: 2016/11/23 11:57:07 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ OFILES = $(SRCS:.c=.o)
 
 FLAGS = -I libft/includes/ -c
 
-MAIN = lem-in.c
+MAIN = lem_in.c
 
 OMAIN = $(MAIN:.c=.o)
 

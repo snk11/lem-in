@@ -6,11 +6,11 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 19:28:16 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/06 08:46:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 11:54:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 t_node *ft_cursref_first(t_node *node1,char *s)
 {

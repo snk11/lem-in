@@ -6,11 +6,11 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 18:53:01 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/14 19:32:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 11:53:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "lem-in.h"
+# include "lem_in.h"
 
 int	ft_checkmindata(t_data data1)
 {

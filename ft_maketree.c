@@ -6,11 +6,11 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 16:09:47 by syusof            #+#    #+#             */
-/*   Updated: 2016/10/05 19:59:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 11:55:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "lem-in.h"
+#include "lem_in.h"
 
 
 t_node	*ft_maketree2(t_node *maintree,char *strbegi)

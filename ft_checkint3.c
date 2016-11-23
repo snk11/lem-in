@@ -1,25 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_checkdouble_l.c                                 :+:      :+:    :+:   */
+/*   ft_checkint3.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/14 19:22:59 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 11:53:06 by syusof           ###   ########.fr       */
+/*   Created: 2016/11/18 15:18:47 by syusof            #+#    #+#             */
+/*   Updated: 2016/11/23 11:53:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "lem_in.h"
 
-int		ft_checkdouble_l(t_node *node,char *s)
+int		ft_checkint_p2_p2_p3(char *s1)
 {
-	while(node)
+	s1++;
+	if (*s1 == '3')
 	{
-		if(ft_strcmp(node->name,s) == 0)
+		s1++;
+		if (*s1 == '6')
+		{
+			s1++;
+			if (*s1 == '4')
+			{
+				s1++;
+				if (*s1 == '7')
+				{
+				}
+				else if (*s1 > '7')
+					return (0);
+			}
+			else if (*s1 > '4')
+				return (0);
+		}
+		else if (*s1 > '6')
 			return (0);
-		node = node->nextl;
 	}
+	else if (*s1 > '3')
+		return (0);
+	return (1);
+}
+
+int		ft_checkint_p2(char *s1)
+{
+	if (*s1 == '2')
+		return (ft_checkint_p2_p2_p1(s1));
+	else if (*s1 > '2')
+		return (0);
 	return (1);
 }
