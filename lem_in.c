@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 12:16:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 13:46:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,18 +105,16 @@ int main(int ac,char **av)
 
 
 //	ft_printfpath(node2);
-
 	if (ft_checkmindata(data1) == 0)
 	{
 		write(1,"ERROR",5);
 		return (0);
 	}
 
-
-	nodedummie = ft_generate(node2,"0");
+	nodedummie = ft_generate(node2,data1.strbegi);
 //	ft_printfpath(nodedummie);
 
-	nodedata = ft_screen(&nodedata,nodedummie,node2,"0","1");
+	nodedata = ft_screen(&nodedata, nodedummie, node2, data1.strbegi, data1.strend);
 	if(nodedata == NULL)
 	{
 		write(1,"ERROR",5);
@@ -124,10 +122,12 @@ int main(int ac,char **av)
 	}
 
 
-//	ft_printfpath(nodedata);
-	nodebest = ft_screenbest(&nodebest,nodedata,"1");
+	ft_printfpath(nodedata);
+	nodebest = ft_screenbest(&nodebest,nodedata,data1.strend);
 	ft_printfpath(nodebest);
-	ft_simul(nodebest,"0","1",3);
+	/*
+	ft_simul(nodebest, data1.strbegi, data1.strend,3);
+	*/
 
 	//	char str[] = "0123";
 	//	int n = strlen(str);
@@ -139,4 +139,3 @@ int main(int ac,char **av)
 
 	//	tree1 = ft_maketree(node1,"0");
 }
-

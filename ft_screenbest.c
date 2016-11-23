@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 09:54:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 11:55:42 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 14:13:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 	nbelemnodedata = ft_countelem_lv1(nodedata);
 	nodetmp = nodedata;
 	nodetmp3 = nodetmp;
-
+/*
 	while(nodetmp)
 	{
 		if(iter == 0)
@@ -55,11 +55,13 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 		iter++;
 		nodetmp = nodetmp->nextl;
 	}
+	*/
 	iter = 0;
 	nodetmp = nodedata;
 	nodetmp3 = nodetmp;
 	while(iter <= nbelemnodedata)
 	{
+		/*
 		nodetmp = nodedata;
 		nodetmp3 = nodetmp;
 		min = 0;
@@ -84,11 +86,13 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 			}
 			if(min == 0 && cnt > minbest)
 				min = cnt;
-			if(cnt > minbest && cnt < min)
+			else if(cnt > minbest && cnt < min)
 				min = cnt;
 			nodetmp = nodetmp3;
 			nodetmp = nodetmp->nextl;
 		}
+		*/
+		min = ft_getminpath(nodedata, minbest, strend);
 
 		nodetmp = nodedata;
 		cnt = 0;
