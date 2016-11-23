@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 09:54:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 16:57:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 16:59:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 		//		printf("mini = %d, minbesti = %d\n",min,minbest);
 		index = ft_getminpath(nodedata, numberlist, strend);
 
-		printf("index = %d\n",index);
 		//		printf("min = %d, minbest = %d\n",min,minbest);
 		//		nodetmp = nodedata;
 		if (index >= 0)
@@ -78,7 +77,6 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 				indirect = 1;
 				countdirect++;
 			}
-			printf("indirect = %d, countdirect = %d\n",indirect, countdirect);
 			if (indirect == 0 || (indirect == 1 && countdirect <= 1))
 			{
 				while (nodetmp && ft_strcmp(nodetmp->name,strend) != 0 && r == 0)
@@ -87,7 +85,6 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 						r = 1;
 					nodetmp = nodetmp->nextr;
 				}
-				printf("r = %d\n",r);
 				nodetmp = nodetmp3;
 				if(r == 0)
 				{
