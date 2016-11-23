@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 17:13:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 18:01:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 18:09:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,11 +64,8 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 				nodetmp = nodetmp->nextr;
 			nodetmp5 = nodetmp;
 			nodetmp4 = nodetmp;
-			//while(nodetmp4 != NULL)
-			int i = 0;
-			while (i < 3)
+			while(nodetmp4 != NULL)
 			{
-				printf("i = %d,nbtmp = %d\n",i,nbtmp);
 				nodetmp = nodetmp3;
 				nodetmp4 = NULL;
 				while(nodetmp && nodetmp->nextr && nodetmp != nodetmp5)
@@ -80,19 +77,19 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 				{
 					if (nodetmp->client != 0)
 					{
-						printf("RL%d-%s ",nodetmp->client,strend);
+//						printf("RL%d-%s ",nodetmp->client,strend);
 						nodetmp->client = 0;
 					}
 					if(nbtmp > 0 && nodetmp == nodetmp3 && nodetmp->client == 0 && ft_checknewant(rooms,nodetmp3,nbtmp))
 					{
-						printf("SL%d-%s ",totant - nbtmp + 1,nodetmp->name);
+						printf("L%d-%s ",totant - nbtmp + 1,nodetmp->name);
 						nodetmp->client = totant - nbtmp + 1;
 						nbtmp--;
 					}
 					else if(nodetmp != nodetmp3)
 					{
-						if (nodetmp4->client != 0)
-							printf("L%d-%s ",nodetmp4->client,nodetmp->name);
+//						if (nodetmp4->client != 0)
+//							printf("L%d-%s ",nodetmp4->client,nodetmp->name);
 						nodetmp->client = nodetmp4->client;
 						nodetmp4->client = 0;
 						nodetmp5 = nodetmp;
