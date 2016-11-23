@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 17:17:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 19:15:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,5 +145,6 @@ void					ft_init(t_data *data1);
 int						ft_getminpath(t_node *nodetmp,t_node *numberlist, char *strend);
 int						ft_checkdirect(t_node *node1, char *strend);
 void					ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant);
+int						ft_countelemroom_lvr(t_room *room1);
 
 #endif
