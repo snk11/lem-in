@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 09:54:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 16:06:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 16:09:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 	nodetmp3 = nodetmp;
 	while(iter < nbelemnodedata)
 	{
+		r = 0;
 //		printf("mini = %d, minbesti = %d\n",min,minbest);
 		index = ft_getminpath(nodedata, numberlist, iter, minbest, strend);
 
