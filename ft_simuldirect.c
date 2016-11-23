@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 17:13:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 19:33:32 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 19:38:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 					{
 						if (nodetmp->client != 0)
 						{
-							//						printf("RL%d-%s ",nodetmp->client,strend);
+							printf("L%d-%s ",nodetmp->client,strend);
 							nodetmp->client = 0;
 						}
 						if(nbtmp > 0 && nodetmp == nodetmp3 && nodetmp->client == 0 && ft_checknewant(rooms,nodetmp3,nbtmp))
