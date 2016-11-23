@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 17:13:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 18:26:26 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 18:47:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,8 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 	rooms = ft_createroom(&rooms,nodebest,strend);
 	nbtmp = totant;
 	nodetmp = rooms;
+	ft_printfpath_room(rooms);
+	/*
 	r1 = 0;
 	while(r1 == 0)
 	{
@@ -123,4 +125,5 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 //		printf("nbtmp = %d\n",nbtmp);
 	}
 	ft_printfpath_room(rooms);
+		*/
 }

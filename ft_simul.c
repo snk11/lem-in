@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:54:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 18:28:08 by syusof           ###   ########.fr       */
+/*   Updated: 2016/11/23 18:53:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,12 +67,12 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int totant)
 			{
 				nodetmp = nodetmp3;
 				nodetmp4 = NULL;
-				while(nodetmp && nodetmp->nextr && nodetmp != nodetmp5)
+				while(nodetmp && nodetmp->nextr && nodetmp != nodetmp5 && ft_strcmp((nodetmp->nextr)->name,strend) != 0)
 				{
 					nodetmp4 = nodetmp;
 					nodetmp = nodetmp->nextr;
 				}
-				if(!(nodetmp->nextr))
+				if(ft_strcmp((nodetmp->nextr)->name, strend) == 0)
 				{
 					if (nodetmp->client != 0)
 					{
