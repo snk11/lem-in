@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/15 15:51:08 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 11:52:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/14 18:00:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ t_node	*ft_add_node_r(t_node **node1,char *line)
 	s1[i] = 0;
 	i++;
 	j = 0;
-	while(line[i] != '\n' && line[i] != EOF)
+	while(line[i] && line[i] != EOF && line[i] != ' ' && line[i] != '\t')
 	{
 		j++;
 		i++;
@@ -44,7 +44,7 @@ t_node	*ft_add_node_r(t_node **node1,char *line)
 	i = i - j;
 	s2 = (char*)malloc(sizeof(char)*j+1);
 	j = 0;
-	while(line[i] != '\n' && line[i] != EOF)
+	while(line[i] && line[i] != EOF && line[i] != ' ' && line[i] != '\t')
 	{
 		s2[j] = line[i];
 		j++;
