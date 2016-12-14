@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 19:44:47 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/14 12:59:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,6 @@ int main(int ac,char **av)
 		return (0);
 	}
 
-
 	ft_printfpath(nodedata);
 	nodebest = ft_screenbest(&nodebest,nodedata,data1.strend);
 	ft_printfpath(nodebest);
@@ -87,7 +86,6 @@ int main(int ac,char **av)
 	{
 		ft_simuldirect(nodebest, data1.strbegi, data1.strend, data1.nbant);
 	}
-
 	//	char str[] = "0123";
 	//	int n = strlen(str);
 	//	permute(str, 0, n-1);
