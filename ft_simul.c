@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:54:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/14 19:20:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/14 20:51:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,17 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int totant)
 	int nbtmp;
 	int	r1;
 	int	r2;
+	t_node *node1;
 	t_room *nodetmp;
 	t_room *nodetmp3;
 	t_room *nodetmp4;
 	t_room *nodetmp5;
 	t_room	*rooms;
 	t_lst	*lstop;
+	char	*s1;
 
+	node1 = NULL;
+	s1 = NULL;
 	lstop = NULL;
 	rooms = NULL;
 	n = 0;
@@ -63,6 +67,7 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int totant)
 				nodetmp = nodetmp->nextr;
 			nodetmp5 = nodetmp;
 			nodetmp4 = nodetmp;
+//			node1 = NULL;
 			while(nodetmp4 != NULL)
 			{
 				nodetmp = nodetmp3;
@@ -77,6 +82,8 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int totant)
 					if (nodetmp->client != 0)
 					{
 						printf("%s ",ft_makestring(nodetmp->client,strend));
+						s1 = ft_makestring(nodetmp->client,strend);
+						node1 = lst_add_downl(&node1,s1);
 //						printf("L%d-%s ",nodetmp->client,strend);
 						nodetmp->client = 0;
 					}
@@ -121,11 +128,13 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int totant)
 			nodetmp = nodetmp->nextl;
 		}
 
-
+		ft_printfpath(node1);
 		if (ft_checkzero(rooms) == 1)
 			r1 = 1;
 		printf("\n");
 //		printf("nbtmp = %d\n",nbtmp);
 	}
 	ft_printfpath_room(rooms);
+	ft_sort(&node1);
+	ft_printfpath(node1);
 }

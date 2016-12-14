@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/14 19:00:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/14 20:50:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,5 +147,6 @@ int						ft_checkdirect(t_node *node1, char *strend);
 void					ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant);
 int						ft_countelemroom_lvr(t_room *room1);
 char					*ft_makestring(int nb, char *name);
+void					ft_sort(t_node **node1);
 
 #endif
