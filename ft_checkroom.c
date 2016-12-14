@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 14:52:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 13:03:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/14 16:13:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,19 @@ int		ft_checkroom(char *s)
 	space = 0;
 	if(*s == 'L' || *s == '#')
 		return (0);
-	while(*s)
+	while(*s && space <= 2)
 	{
 		if (ft_checkroom_p1(s) == 0)
 			return (0);
 		if(*s == ' ')
 			space++;
-		if(space > 2)
-			return (0);
 		s++;
 	}
-	if (space == 0)
+	if (space == 0 || space == 1)
+		return (0);
+	while (*s && (*s == ' ' || *s == '\t'))
+		s++;
+	if (*s)
 		return (0);
 	return (1);
 }
