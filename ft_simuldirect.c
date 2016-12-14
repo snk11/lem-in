@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 17:13:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 19:38:30 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/14 19:08:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 						}
 						if(nbtmp > 0 && nodetmp == nodetmp3 && nodetmp->client == 0 && ft_checknewant(rooms,nodetmp3,nbtmp))
 						{
+//							printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
 							printf("L%d-%s ",totant - nbtmp + 1,nodetmp->name);
 							nodetmp->client = totant - nbtmp + 1;
 							nbtmp--;

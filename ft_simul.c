@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:54:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 19:07:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/14 19:20:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,19 +76,24 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int totant)
 				{
 					if (nodetmp->client != 0)
 					{
-						printf("L%d-%s ",nodetmp->client,strend);
+						printf("%s ",ft_makestring(nodetmp->client,strend));
+//						printf("L%d-%s ",nodetmp->client,strend);
 						nodetmp->client = 0;
 					}
 					if(nbtmp > 0 && nodetmp == nodetmp3 && nodetmp->client == 0 && ft_checknewant(rooms,nodetmp3,nbtmp))
 					{
-						printf("L%d-%s ",totant - nbtmp + 1,nodetmp->name);
+						printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
+//						printf("L%d-%s ",totant - nbtmp + 1,nodetmp->name);
 						nodetmp->client = totant - nbtmp + 1;
 						nbtmp--;
 					}
 					else if(nodetmp != nodetmp3)
 					{
 						if (nodetmp4->client != 0)
-							printf("L%d-%s ",nodetmp4->client,nodetmp->name);
+						{
+							printf("%s ",ft_makestring(nodetmp4->client,nodetmp->name));
+//							printf("L%d-%s ",nodetmp4->client,nodetmp->name);
+						}
 						nodetmp->client = nodetmp4->client;
 						nodetmp4->client = 0;
 						nodetmp5 = nodetmp;
@@ -97,7 +102,8 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int totant)
 				}
 				else if(nodetmp != nodetmp3)
 				{
-					printf("L%d-%s ",nodetmp4->client,nodetmp->name);
+					printf("%s ",ft_makestring(nodetmp4->client,nodetmp->name));
+//					printf("L%d-%s ",nodetmp4->client,nodetmp->name);
 					nodetmp->client = nodetmp4->client;
 					nodetmp4->client = 0;
 					nodetmp5 = nodetmp;
@@ -105,7 +111,8 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int totant)
 				else if(nbtmp > 0 && nodetmp == nodetmp3 && nodetmp->client == 0 && ft_checknewant(rooms,nodetmp3,nbtmp))
 //			if(nbant && nodetmp == nodetmp3 && nodetmp->client == 0)
 				{
-					printf("L%d-%s ",totant - nbtmp + 1,nodetmp->name);
+					printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
+//					printf("L%d-%s ",totant - nbtmp + 1,nodetmp->name);
 					nodetmp->client = totant - nbtmp + 1;
 					nbtmp--;
 				}
