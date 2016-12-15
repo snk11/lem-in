@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 11:55:57 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 10:13:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -395,9 +395,12 @@ t_node		*lst_add_downr(t_node **node1,t_node *noderef,char *s)
 			nodetmp2 = (nodetmp2)->nextl;
 	}
 
-	while ((nodetmp2)->nextr)
-		nodetmp2 = (nodetmp2)->nextr;
-	(nodetmp2)->nextr = nodetmp;
+	if (nodetmp2)
+	{
+		while ((nodetmp2)->nextr)
+			nodetmp2 = (nodetmp2)->nextr;
+		(nodetmp2)->nextr = nodetmp;
+	}
 	return (*node1);
 }
 
