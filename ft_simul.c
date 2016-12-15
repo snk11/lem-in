@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:54:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/14 20:51:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 10:28:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int totant)
 					{
 						printf("%s ",ft_makestring(nodetmp->client,strend));
 						s1 = ft_makestring(nodetmp->client,strend);
-						node1 = lst_add_downl(&node1,s1);
+						node1 = lst_add_down_downr(&node1,s1);
 //						printf("L%d-%s ",nodetmp->client,strend);
 						nodetmp->client = 0;
 					}

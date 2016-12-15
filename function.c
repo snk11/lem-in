@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 10:13:01 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 10:57:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -133,11 +133,12 @@ t_node		*lst_add_downlrnew(t_node **node1,char *strbegi)
 	nodetmp2 = *node1;
 	nodetmp = NULL;
 	nodetmp4 = NULL;
-	if(*node1 == NULL)
+//	if(*node1 == NULL)
 	{
 		*node1 = lst_add_downl(node1,strbegi);
 		return (*node1);
 	}
+	/*
 	while(nodetmp2 && nodetmp2->nextl)
 		nodetmp2 = (nodetmp2)->nextl;
 //	nodetmp = ft_createnode(nodetmp2->name);
@@ -151,6 +152,7 @@ t_node		*lst_add_downlrnew(t_node **node1,char *strbegi)
 	nodetmp3 = nodetmp;
 	*node1 = lst_add_downl(node1,strbegi);
 	return (*node1);
+	*/
 }
 
 t_room		*lst_add_downlrnew_room(t_room **node1,char *strbegi)
@@ -168,11 +170,12 @@ t_room		*lst_add_downlrnew_room(t_room **node1,char *strbegi)
 	nodetmp2 = *node1;
 	nodetmp = NULL;
 	nodetmp4 = NULL;
-	if(*node1 == NULL)
+//	if(*node1 == NULL)
 	{
 		*node1 = lst_add_downl_room(node1,strbegi);
 		return (*node1);
 	}
+	/*
 	while(nodetmp2 && nodetmp2->nextl)
 		nodetmp2 = (nodetmp2)->nextl;
 //	nodetmp = ft_createnode(nodetmp2->name);
@@ -186,6 +189,7 @@ t_room		*lst_add_downlrnew_room(t_room **node1,char *strbegi)
 	nodetmp3 = nodetmp;
 	*node1 = lst_add_downl_room(node1,strbegi);
 	return (*node1);
+	*/
 }
 
 t_room		*lst_add_downl_room(t_room **node1,char *s)
