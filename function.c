@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 14:19:17 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 14:34:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -432,6 +432,7 @@ t_node		*lst_add_down_downr(t_node **node1,char *s)
 	return (*node1);
 }
 
+/*
 t_lst		*create_lst1(void *content)
 {
 	t_lst	*curlst;
@@ -473,3 +474,4 @@ t_lst2		*create_lst2(void *content)
 	curlst->nextr = NULL;
 	return (curlst);
 }
+*/
