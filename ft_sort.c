@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 20:27:03 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 11:39:25 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 12:15:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_sort(t_node **node1)
 			nodetmp3 = nodetmp2->nextr;
 		while (nodetmp3)
 		{
-			if (ft_strcmp(nodetmp2->name,nodetmp3->name) < 0)
+			if (ft_strcmp(nodetmp2->name,nodetmp3->name) > 0)
 			{
 				swap2r(&nodetmp,nodetmp2->name,nodetmp3->name);
 				r = 1;
