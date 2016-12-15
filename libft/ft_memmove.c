@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 14:52:52 by syusof            #+#    #+#             */
-/*   Updated: 2014/11/11 23:49:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 14:00:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,15 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
+	if (dest == NULL)
+		return (NULL);
+	if (src <= dest)
+		while (n--)
+			((unsigned char *)dest)[n] = ((unsigned char *)src)[n];
+	else
+		ft_memcpy(dest, src, n);
+	return ((void *)dest);
+	/*
 	size_t	i;
 	char	*s1;
 	char	*s2;
@@ -35,4 +44,5 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		i++;
 	}
 	return (s1);
+	*/
 }
