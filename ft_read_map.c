@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 18:43:12 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 19:04:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,11 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 	int		fd;
 	char	*line;
 	int		j;
-	int		c;
 	int		i;
 	int		r1;
 	int		r2;
 	int		r3;
 	int		r4;
-	char	*s1;
-	char	*s2;
 	char	*strbegi;
 	char	*strend;
 	int		ant1;
@@ -34,9 +31,6 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 
 	node2 = NULL;
 	ant1 = 0;
-	c = 0;
-	s1 = NULL;
-	s2 = NULL;
 	strbegi = NULL;
 	strend = NULL;
 	line = NULL;
@@ -46,14 +40,6 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 	r2 = 0;
 	r3 = 0;
 	r4 = 0;
-
-	//	l1 = ft_returnvaline(file);
-//	while(get_next_line(0, &line) > 0)
-//	{
-//		printf("%s\n",line);
-//	}
-
-//	fd = open(file, O_RDONLY);
 	fd = 0;
 	while (get_next_line(fd, &line) > 0 && r1 == 0)
 	{
