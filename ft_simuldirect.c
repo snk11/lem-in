@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 17:13:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/14 19:27:17 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 13:52:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,9 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 	int nbtmp;
 	int	r1;
 	int	r2;
+	char	*s1;
+	t_node *node1;
+	t_node *node2;
 	t_room *nodetmp;
 	t_room *nodetmp3;
 	t_room *nodetmp4;
@@ -32,6 +35,7 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 	t_room	*rooms;
 	t_lst	*lstop;
 
+	s1 = NULL;
 	lstop = NULL;
 	rooms = NULL;
 	n = 0;
@@ -39,6 +43,8 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 	nbelem = 0;
 	cnt = 0;
 	cnt2 = 0;
+	node1 = NULL;
+	node2 = NULL;
 	nodetmp = NULL;
 	nodetmp3 = NULL;
 	nodetmp4 = NULL;
@@ -55,6 +61,7 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 	while(r1 == 0)
 	{
 		nodetmp = rooms;
+		node1 = NULL;
 		while(nodetmp)
 		{
 			if(nodetmp && ft_countelemroom_lvr(nodetmp) == 1)
@@ -77,7 +84,9 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 						}
 						if(nbtmp > 0 && nodetmp == nodetmp3 && nodetmp->client == 0 && ft_checknewant(rooms,nodetmp3,nbtmp))
 						{
-							printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
+//							printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
+							s1 = ft_makestring(totant - nbtmp + 1,nodetmp->name);
+							node1 = lst_add_down_downr(&node1,s1);
 //							printf("L%d-%s ",totant - nbtmp + 1,nodetmp->name);
 							nodetmp->client = totant - nbtmp + 1;
 							nbtmp--;
@@ -87,7 +96,9 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 					else if(nbtmp > 0 && nodetmp == nodetmp3 && nodetmp->client == 0 && ft_checknewant(rooms,nodetmp3,nbtmp))
 						//			if(nbant && nodetmp == nodetmp3 && nodetmp->client == 0)
 					{
-						printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
+//						printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
+						s1 = ft_makestring(totant - nbtmp + 1,nodetmp->name);
+						node1 = lst_add_down_downr(&node1,s1);
 //						printf("L%d-%s ",totant - nbtmp + 1,nodetmp->name);
 						nodetmp->client = totant - nbtmp + 1;
 						nbtmp--;
@@ -114,13 +125,24 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 					{
 						if (nodetmp->client != 0)
 						{
-							printf("%s ",ft_makestring(nodetmp->client,strend));
+//							printf("%s ",ft_makestring(nodetmp->client,strend));
+							s1 = ft_makestring(nodetmp->client, strend);
+							node1 = lst_add_down_downr(&node1,s1);
+							/*
+							t_node *ntmp1 = node1;
+							while (ntmp1 && ntmp1->nextr)
+								ntmp1 = ntmp1->nextr;
+							if(ntmp1)
+								printf("ntmp1 = %s\n",ntmp1->name);
+							*/
 //							printf("L%d-%s ",nodetmp->client,strend);
 							nodetmp->client = 0;
 						}
 						if(nbtmp > 0 && nodetmp == nodetmp3 && nodetmp->client == 0 && ft_checknewant(rooms,nodetmp3,nbtmp))
 						{
-							printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
+//							printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
+							s1 = ft_makestring(totant - nbtmp + 1,nodetmp->name);
+							node1 = lst_add_down_downr(&node1,s1);
 //							printf("L%d-%s ",totant - nbtmp + 1,nodetmp->name);
 							nodetmp->client = totant - nbtmp + 1;
 							nbtmp--;
@@ -137,7 +159,9 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 					}
 					else if(nodetmp != nodetmp3)
 					{
-						printf("%s ",ft_makestring(nodetmp4->client, nodetmp->name));
+//						printf("%s ",ft_makestring(nodetmp4->client, nodetmp->name));
+						s1 = ft_makestring(nodetmp4->client,nodetmp->name);
+						node1 = lst_add_down_downr(&node1,s1);
 //						printf("L%d-%s ",nodetmp4->client,nodetmp->name);
 						nodetmp->client = nodetmp4->client;
 						nodetmp4->client = 0;
@@ -146,7 +170,9 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 					else if(nbtmp > 0 && nodetmp == nodetmp3 && nodetmp->client == 0 && ft_checknewant(rooms,nodetmp3,nbtmp))
 						//			if(nbant && nodetmp == nodetmp3 && nodetmp->client == 0)
 					{
-						printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
+//						printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
+						s1 = ft_makestring(totant - nbtmp + 1,nodetmp->name);
+						node1 = lst_add_down_downr(&node1,s1);
 //						printf("L%d-%s ",totant - nbtmp + 1,nodetmp->name);
 						nodetmp->client = totant - nbtmp + 1;
 						nbtmp--;
@@ -162,6 +188,9 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 			r1 = 1;
 		printf("\n");
 		//		printf("nbtmp = %d\n",nbtmp);
+		ft_sort(&node1);
+		ft_addseries(&node2,node1);
 	}
 	ft_printfpath_room(rooms);
+	ft_printfpath(node2);
 }
