@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 20:27:03 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 10:58:20 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 11:39:25 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_sort(t_node **node1)
 	t_node	*nodetmp2;
 	t_node	*nodetmp3;
 	int		r;
+
+	nodetmp3 = NULL;
 
 	r = 1;
 	nodetmp = *node1;
