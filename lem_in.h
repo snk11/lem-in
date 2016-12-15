@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 11:20:42 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 16:26:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,5 +150,6 @@ char					*ft_makestring(int nb, char *name);
 void					ft_sort(t_node **node1);
 void					swap2r(t_node **nodetmp,char *s1,char *s2);
 void					ft_addseries(t_node **node2, t_node *node1);
+void					ft_printsol(t_node *node);
 
 #endif

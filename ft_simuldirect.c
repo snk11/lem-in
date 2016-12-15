@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 17:13:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 13:52:16 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 16:29:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,5 +192,5 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 		ft_addseries(&node2,node1);
 	}
 	ft_printfpath_room(rooms);
-	ft_printfpath(node2);
+	ft_printsol(node2);
 }
