@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 10:57:47 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 11:45:54 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -253,7 +253,7 @@ t_room		*lst_add_down_downr_room(t_room **node1,char *s)
 	(nodetmp2)->nextr = nodetmp;
 	return (*node1);
 }
-
+/*
 t_node		*lst_add_downlrnew_minus(t_node **node1, int p,char *strbegi)
 {
 	printf("newminus\n");
@@ -303,6 +303,7 @@ t_node		*lst_add_downlrnew_minus(t_node **node1, int p,char *strbegi)
 	}
 	return (*node1);
 }
+*/
 
 t_node		*ft_createnode(char *s)
 {
