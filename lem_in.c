@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 18:41:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 18:58:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,8 @@
 #include <stdio.h>
 int main(int ac,char **av)
 {
-	t_node	*node1;
 	t_node	*node2;
 	t_node	*nodetmp;
-	t_node	*path1begi;
-	t_node	*path1;
-	t_node	*path1ind;
-	t_node	*processnodes;
-	t_node	*lvnodes;
 	t_node	*nodedata;
 	t_node	*nodedummie;
 	t_node	*nodebest;
@@ -33,16 +27,10 @@ int main(int ac,char **av)
 	char	*line;
 
 	line = NULL;
-//	data1 = NULL;
 	node2 = NULL;
 	nodebest = NULL;
 	nodedata = NULL;
 	nodedummie = NULL;
-	path1begi = NULL;
-	path1 = NULL;
-	path1ind = NULL;
-	processnodes = NULL;
-	lvnodes = NULL;
 	data1.nbant = 0;
 	ft_init(&data1);
 	ft_read_map(&node2,av[1],&data1);
