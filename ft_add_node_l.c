@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/15 15:46:36 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 11:52:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 18:43:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ t_node	*ft_add_node_l(t_node **node1,char *line)
 	if (ft_checkdouble_l(*node1,s1))
 	{
 		*node1 = lst_add_downl(node1,s1);
-		printf("room = %s\n",line);
+//		printf("room = %s\n",line);
 	}
 	return (*node1);
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:54:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 16:27:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 18:46:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,11 +140,11 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int totant)
 
 		if (ft_checkzero(rooms) == 1)
 			r1 = 1;
-		printf("\n");
+//		printf("\n");
 //		printf("nbtmp = %d\n",nbtmp);
 		ft_sort(&node1);
 		ft_addseries(&node2,node1);
 	}
-	ft_printfpath_room(rooms);
+//	ft_printfpath_room(rooms);
 	ft_printsol(node2);
 }

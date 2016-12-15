@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/15 15:51:08 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/14 18:00:06 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/15 18:44:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ t_node	*ft_add_node_r(t_node **node1,char *line)
 	if (ft_checkdouble_r(ft_cursref_first(*node1,s1),s2))
 	{
 		*node1 = lst_add_downr(node1,ft_cursref_first(*node1,s1),s2);
-		printf("tube = %s\n",line);
+//		printf("tube = %s\n",line);
 	}
 	if (ft_checkdouble_r(ft_cursref_first(*node1,s2),s1))
 	{
 		*node1 = lst_add_downr(node1,ft_cursref_first(*node1,s2),s1);
-		printf("tube = %s\n",line);
+//		printf("tube = %s\n",line);
 	}
 	return (*node1);
 }
