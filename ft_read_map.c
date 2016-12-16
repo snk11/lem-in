@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/16 14:55:10 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/16 15:22:30 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 						}
 						strbegi[i] = 0;
 //						printf("start = %s\n",strbegi);
-						map1->nodestart = lst_add_down_downr(&(map1->nodestart), line);
+						map1->nodestart = lst_add_downl(&(map1->nodestart), line);
 					}
 				}
 				else
@@ -119,7 +119,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 					}
 					strend[i] = 0;
 //					printf("end = %s\n",strend);
-					map1->nodeend = lst_add_down_downr(&(map1->nodeend), line);
+					map1->nodeend = lst_add_downl(&(map1->nodeend), line);
 				}
 				else
 					r1 = 1;
@@ -132,16 +132,18 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 			if (ft_checkroom2(line,node1,&node2) == 0)
 			{
 				r1 = 1;
-				map1->noderoom = lst_add_down_downr(&(map1->noderoom), line);
 //				ft_printfpath(*node1);
 //				*node1 = ft_remove_last_l(node1);
 //				ft_printfpath(*node1);
 			}
+			else
+				map1->noderoom = lst_add_downl(&(map1->noderoom), line);
+
 		}
 		else if(ft_checktube2(line,*node1))
 		{
 			*node1 = ft_add_node_r(node1,line);
-			map1->nodetube = lst_add_down_downr(&(map1->nodetube), line);
+			map1->nodetube = lst_add_downl(&(map1->nodetube), line);
 		}
 		else if(line[0] == '#' && line[1] != '#')
 		{
