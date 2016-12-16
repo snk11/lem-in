@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 16:26:23 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/16 14:36:57 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,10 +53,20 @@ typedef struct			s_room
 	struct s_room	*nextl;
 	struct s_room	*nextr;
 }						t_room;
+
 typedef struct			s_op
 {
 	char				*val;
 }						t_op;
+
+typedef struct			s_map
+{
+
+	t_node				*nodestart;
+	t_node				*nodeend;
+	t_node				*noderoom;
+	t_node				*nodetube;
+}						t_map;
 
 typedef struct			s_data
 {
@@ -112,7 +122,7 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int nbant);
 //t_node		*lst_rmtop(t_node **node1);
 //t_node		*lst_rmnoderef(t_node **node1,t_node *noderef);
 int	ft_checkzero(t_room *rooms);
-int	ft_read_map(t_node **node1,char *file,t_data *data1);
+int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1);
 int		ft_checknewant(t_room *room,t_room *node,int nbant);
 int	ft_checkmindata(t_data data1);
 int		ft_checkdouble_l(t_node *node,char *s);
@@ -151,5 +161,6 @@ void					ft_sort(t_node **node1);
 void					swap2r(t_node **nodetmp,char *s1,char *s2);
 void					ft_addseries(t_node **node2, t_node *node1);
 void					ft_printsol(t_node *node);
+void					ft_init2(t_map *map1);
 
 #endif

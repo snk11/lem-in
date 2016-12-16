@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 19:04:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/16 14:50:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 
 
-int	ft_read_map(t_node **node1,char *file,t_data *data1)
+int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 {
 	int		fd;
 	char	*line;
@@ -28,7 +28,9 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 	char	*strend;
 	int		ant1;
 	t_node	*node2;
+	char	*s1;
 
+	s1 = NULL;
 	node2 = NULL;
 	ant1 = 0;
 	strbegi = NULL;
@@ -82,6 +84,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 						}
 						strbegi[i] = 0;
 //						printf("start = %s\n",strbegi);
+						map1->nodestart = lst_add_down_downr(&(map1->nodestart), line);
 					}
 				}
 				else
@@ -116,6 +119,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 					}
 					strend[i] = 0;
 //					printf("end = %s\n",strend);
+					map1->nodeend = lst_add_down_downr(&(map1->nodeend), line);
 				}
 				else
 					r1 = 1;
@@ -128,6 +132,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1)
 			if (ft_checkroom2(line,node1,&node2) == 0)
 			{
 				r1 = 1;
+				map1->noderoom = lst_add_down_downr(&(map1->noderoom), line);
 //				ft_printfpath(*node1);
 //				*node1 = ft_remove_last_l(node1);
 //				ft_printfpath(*node1);

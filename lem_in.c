@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 18:58:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/16 14:37:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int main(int ac,char **av)
 	t_node	*nodedummie;
 	t_node	*nodebest;
 	t_data	data1;
+	t_map	map1;
 	char	*line;
 
 	line = NULL;
@@ -33,7 +34,8 @@ int main(int ac,char **av)
 	nodedummie = NULL;
 	data1.nbant = 0;
 	ft_init(&data1);
-	ft_read_map(&node2,av[1],&data1);
+	ft_init2(&map1);
+	ft_read_map(&node2,av[1],&data1, &map1);
 	if (ft_checkmindata(data1) == 0)
 	{
 		write(1,"ERROR",5);
