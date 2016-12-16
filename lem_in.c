@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/16 14:37:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/16 15:14:33 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,7 @@ int main(int ac,char **av)
 		write(1,"ERROR",5);
 		return (0);
 	}
+	ft_printmap(map1, data1.nbant);
 //	ft_printfpath(nodedata);
 	nodebest = ft_screenbest(&nodebest,nodedata,data1.strend);
 //	ft_printfpath(nodebest);
