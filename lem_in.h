@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/16 15:13:49 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/16 18:48:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,15 @@ typedef struct			s_data
 	char				*strbegi;
 	char				*strend;
 }						t_data;
+
+typedef struct			s_pr
+{
+	t_node				*node2;
+	t_node				*nodetmp;
+	t_node				*nodedata;
+	t_node				*nodedummie;
+	t_node				*nodebest;
+}						t_pr;
 
 t_lst		*create_lst1(void *content);
 t_lst2		*create_lst2(void *content);
@@ -163,5 +172,6 @@ void					ft_addseries(t_node **node2, t_node *node1);
 void					ft_printsol(t_node *node);
 void					ft_init2(t_map *map1);
 void					ft_printmap(t_map map1, int nbant);
+void					ft_init3(t_pr *pr1);
 
 #endif

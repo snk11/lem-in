@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/16 15:14:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/16 18:51:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,42 +18,35 @@
 #include <stdio.h>
 int main(int ac,char **av)
 {
-	t_node	*node2;
-	t_node	*nodetmp;
-	t_node	*nodedata;
-	t_node	*nodedummie;
-	t_node	*nodebest;
+	t_pr	pr1;
 	t_data	data1;
 	t_map	map1;
 	char	*line;
 
 	line = NULL;
-	node2 = NULL;
-	nodebest = NULL;
-	nodedata = NULL;
-	nodedummie = NULL;
 	data1.nbant = 0;
 	ft_init(&data1);
 	ft_init2(&map1);
-	ft_read_map(&node2,av[1],&data1, &map1);
+	ft_init3(&pr1);
+	ft_read_map(&(pr1.node2),av[1],&data1, &map1);
 	if (ft_checkmindata(data1) == 0)
 	{
 		write(1,"ERROR",5);
 		return (0);
 	}
-	nodedummie = ft_generate(node2,data1.strbegi);
-	nodedata = ft_screen(&nodedata, nodedummie, node2, data1.strbegi, data1.strend);
-	if(nodedata == NULL)
+	pr1.nodedummie = ft_generate(pr1.node2,data1.strbegi);
+	pr1.nodedata = ft_screen(&(pr1.nodedata), pr1.nodedummie, pr1.node2, data1.strbegi, data1.strend);
+	if(pr1.nodedata == NULL)
 	{
 		write(1,"ERROR",5);
 		return (0);
 	}
 	ft_printmap(map1, data1.nbant);
 //	ft_printfpath(nodedata);
-	nodebest = ft_screenbest(&nodebest,nodedata,data1.strend);
+	pr1.nodebest = ft_screenbest(&(pr1.nodebest),pr1.nodedata,data1.strend);
 //	ft_printfpath(nodebest);
-	if (nodebest && !ft_checkdirect(nodebest, data1.strend))
-		ft_simul(nodebest, data1.strbegi, data1.strend, data1.nbant);
-	else if (nodebest && ft_checkdirect(nodebest, data1.strend))
-		ft_simuldirect(nodebest, data1.strbegi, data1.strend, data1.nbant);
+	if (pr1.nodebest && !ft_checkdirect(pr1.nodebest, data1.strend))
+		ft_simul(pr1.nodebest, data1.strbegi, data1.strend, data1.nbant);
+	else if (pr1.nodebest && ft_checkdirect(pr1.nodebest, data1.strend))
+		ft_simuldirect(pr1.nodebest, data1.strbegi, data1.strend, data1.nbant);
 }
