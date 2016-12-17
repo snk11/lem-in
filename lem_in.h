@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 12:31:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 13:12:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,6 +188,7 @@ void					ft_printmap(t_map map1, int nbant);
 void					ft_init3(t_pr *pr1);
 void					ft_init4(t_read *read1);
 void					ft_read_map_p1(char *line, t_read *read1);
-void					ft_read_map_p2(char *line, t_read *read1, t_node **node1 , t_map *map1, t_data *data1);
+void					ft_read_map_p2(char *line, t_read *read1, t_node **node1 , t_data *data1, t_map *map1);
+void					ft_read_map_p2_p1(char *line, t_node **node1, t_read *read1, t_data *data1, t_map *map1);
 
 #endif
