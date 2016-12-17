@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 10:32:23 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 10:38:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,11 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 	int		r2;
 	int		r3;
 	int		r4;
-	char	*strbegi;
-	char	*strend;
 	int		ant1;
-//	t_node	*node2;
 	char	*s1;
 
 	s1 = NULL;
-//	node2 = NULL;
 	ant1 = 0;
-	strbegi = NULL;
-	strend = NULL;
 	line = NULL;
 	j = 0;
 	i = 0;
@@ -75,14 +69,15 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 						i = 0;
 						while(line[i] != ' ')
 							i++;
-						strbegi = (char*)malloc(sizeof(char)*i+1);
+						s1 = (char*)malloc(sizeof(char)*i+1);
 						i = 0;
 						while(line[i] != ' ')
 						{
-							strbegi[i] = line[i];
+							s1[i] = line[i];
 							i++;
 						}
-						strbegi[i] = 0;
+						s1[i] = 0;
+						(data1)->strbegi = s1;
 //						printf("start = %s\n",strbegi);
 						map1->nodestart = lst_add_downl(&(map1->nodestart), line);
 					}
@@ -110,14 +105,15 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 					i = 0;
 					while(line[i] != ' ')
 						i++;
-					strend = (char*)malloc(sizeof(char)*i+1);
+					s1 = (char*)malloc(sizeof(char)*i+1);
 					i = 0;
 					while(line[i] != ' ')
 					{
-						strend[i] = line[i];
+						s1[i] = line[i];
 						i++;
 					}
-					strend[i] = 0;
+					s1[i] = 0;
+					(data1)->strend = s1;
 //					printf("end = %s\n",strend);
 					map1->nodeend = lst_add_downl(&(map1->nodeend), line);
 				}
@@ -156,10 +152,6 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 
 //	if (ant1 > 0)
 		(data1)->nbant = ant1;
-	if (strbegi)
-		(data1)->strbegi = strbegi;
-	if (strend)
-		(data1)->strend = strend;
 	close(fd);
 
 
