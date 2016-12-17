@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 13:57:55 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 14:18:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,38 +29,10 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 			ft_read_map_p2(line, &read1, node1, data1, map1);
 		else if(ft_strcmp(line,"##end") == 0)
 			ft_read_map_p3(line, &read1, node1, data1, map1);
-		else if(ft_checkroom(line))
-		{
-//			*node1 = ft_add_node_l(node1,line);
-			if (ft_checkroom2(line,node1) == 0)
-			{
-				read1.r1 = 1;
-//				ft_printfpath(*node1);
-//				*node1 = ft_remove_last_l(node1);
-//				ft_printfpath(*node1);
-			}
-			else
-				map1->noderoom = lst_add_downl(&(map1->noderoom), line);
-
-		}
-		else if(ft_checktube2(line,*node1))
-		{
-			*node1 = ft_add_node_r(node1,line);
-			map1->nodetube = lst_add_downl(&(map1->nodetube), line);
-		}
-		else if(line[0] == '#' && line[1] != '#')
-		{
-		}
 		else
-			read1.r1 = 1;
+			ft_read_map_p4(line, &read1, node1, map1);
 	}
-	//	close(fd);
-	//	l1 = ft_returnvaline(file);
-
 	(data1)->nbant = read1.ant1;
 	close(read1.fd);
-
-
-
 	return (1);
 }
