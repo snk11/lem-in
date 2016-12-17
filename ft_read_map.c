@@ -6,13 +6,11 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 14:18:26 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 14:19:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
-
 
 int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 {
