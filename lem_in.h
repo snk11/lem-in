@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 14:17:20 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 14:52:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -193,5 +193,6 @@ void					ft_read_map_p2_p1(char *line, t_read *read1, t_node **node1, t_data *da
 void		ft_read_map_p3(char *line, t_read *read1, t_node **node1, t_data *data1, t_map *map1);
 void		ft_read_map_p3_p1(char *line, t_read *read1, t_node **node1, t_data *data1, t_map *map1);
 void						ft_read_map_p4(char *line, t_read *read1, t_node **node1 , t_map *map1);
+void					permute_p1(t_node **nodedata, t_node *nodetmp3);
 
 #endif
