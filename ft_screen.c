@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 08:19:51 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 15:32:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 15:58:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,7 @@ t_node    *ft_screen(t_node **nodedata,t_node *nodedummie,t_node *node1,char *st
 			screen1.ind1 = 0;
 			screen1.ind2 = 0;
 			while(screen1.nodetmp && screen1.ind2 == 0 && screen1.ind1 == 0)
-			{
-				while(screen1.nodetmp && screen1.nodetmp->nextr && screen1.ind2 == 0 && screen1.ind1 == 0)
-				{
-					if(ft_checknode2(ft_cursref_first(node1,screen1.nodetmp->name),(screen1.nodetmp->nextr)->name) == 0)
-						screen1.ind1 = 1;
-					if(ft_strcmp((screen1.nodetmp->nextr)->name,strend) == 0)
-						screen1.ind2 = 1;
-					screen1.nodetmp = screen1.nodetmp->nextr;
-				}
-				screen1.nodetmp = screen1.nodetmp->nextr;
-			}
+				ft_screen_p1(node1, &screen1, strend);
 			screen1.nodetmp = screen1.nodetmp3;
 			if (screen1.ind1 == 0 && screen1.ind2 == 1)
 			{
@@ -55,6 +45,15 @@ t_node    *ft_screen(t_node **nodedata,t_node *nodedummie,t_node *node1,char *st
 	return (*nodedata);
 }
 
-void		ft_screen_p1()
+void		ft_screen_p1(t_node *node1, t_screen *screen1, char *strend)
 {
+				while(screen1->nodetmp && screen1->nodetmp->nextr && screen1->ind2 == 0 && screen1->ind1 == 0)
+				{
+					if(ft_checknode2(ft_cursref_first(node1,screen1->nodetmp->name),(screen1->nodetmp->nextr)->name) == 0)
+						screen1->ind1 = 1;
+					if(ft_strcmp((screen1->nodetmp->nextr)->name,strend) == 0)
+						screen1->ind2 = 1;
+					screen1->nodetmp = screen1->nodetmp->nextr;
+				}
+				screen1->nodetmp = screen1->nodetmp->nextr;
 }
