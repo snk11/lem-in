@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 10:38:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 10:52:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,110 +16,94 @@
 
 int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 {
-	int		fd;
+	t_read	read1;
 	char	*line;
-	int		j;
-	int		i;
-	int		r1;
-	int		r2;
-	int		r3;
-	int		r4;
-	int		ant1;
-	char	*s1;
 
-	s1 = NULL;
-	ant1 = 0;
-	line = NULL;
-	j = 0;
-	i = 0;
-	r1 = 0;
-	r2 = 0;
-	r3 = 0;
-	r4 = 0;
-	fd = 0;
-	while (get_next_line(fd, &line) > 0 && r1 == 0)
+	ft_init4(&read1);
+	read1.fd = 0;
+	while (get_next_line(read1.fd, &line) > 0 && read1.r1 == 0)
 	{
 		if(ft_checknbant(line))
 		{
-			if(r2 >= 1)
-				r1 = 1;
+			if(read1.r2 >= 1)
+				read1.r1 = 1;
 			else
 			{
-				r2++;
-				ant1 = ft_atoi(line);
+				read1.r2++;
+				read1.ant1 = ft_atoi(line);
 			}
 		}
 		else if(ft_strcmp(line,"##start") == 0)
 		{
-			if(r3 >= 1)
-				r1 = 1;
+			if(read1.r3 >= 1)
+				read1.r1 = 1;
 			else
 			{
-				get_next_line(fd,&line);
+				get_next_line(read1.fd,&line);
 				if(ft_checkroom(line))
 				{
 //					*node1 = ft_add_node_l(node1,line);
 					if (ft_checkroom2(line,node1) == 0)
 					{
-						r1 = 1;
+						read1.r1 = 1;
 //						*node1 = ft_remove_last_l(node1);
 					}
 					else
 					{
-						i = 0;
-						while(line[i] != ' ')
-							i++;
-						s1 = (char*)malloc(sizeof(char)*i+1);
-						i = 0;
-						while(line[i] != ' ')
+						read1.i = 0;
+						while(line[read1.i] != ' ')
+							read1.i++;
+						read1.s1 = (char*)malloc(sizeof(char)*read1.i+1);
+						read1.i = 0;
+						while(line[read1.i] != ' ')
 						{
-							s1[i] = line[i];
-							i++;
+							read1.s1[read1.i] = line[read1.i];
+							read1.i++;
 						}
-						s1[i] = 0;
-						(data1)->strbegi = s1;
+						read1.s1[read1.i] = 0;
+						(data1)->strbegi = read1.s1;
 //						printf("start = %s\n",strbegi);
 						map1->nodestart = lst_add_downl(&(map1->nodestart), line);
 					}
 				}
 				else
-					r1 = 1;
-				r3++;
+					read1.r1 = 1;
+				read1.r3++;
 			}
 		}
 		else if(ft_strcmp(line,"##end") == 0)
 		{
-			if(r4 >= 1)
-				r1 = 1;
+			if(read1.r4 >= 1)
+				read1.r1 = 1;
 			else
 			{
-				get_next_line(fd,&line);
+				get_next_line(read1.fd,&line);
 				if(ft_checkroom(line))
 				{
 //					*node1 = ft_add_node_l(node1,line);
 					if (ft_checkroom2(line,node1) == 0)
 					{
-						r1 = 1;
+						read1.r1 = 1;
 //						*node1 = ft_remove_last_l(node1);
 					}
-					i = 0;
-					while(line[i] != ' ')
-						i++;
-					s1 = (char*)malloc(sizeof(char)*i+1);
-					i = 0;
-					while(line[i] != ' ')
+					read1.i = 0;
+					while(line[read1.i] != ' ')
+						read1.i++;
+					read1.s1 = (char*)malloc(sizeof(char)*read1.i+1);
+					read1.i = 0;
+					while(line[read1.i] != ' ')
 					{
-						s1[i] = line[i];
-						i++;
+						read1.s1[read1.i] = line[read1.i];
+						read1.i++;
 					}
-					s1[i] = 0;
-					(data1)->strend = s1;
+					read1.s1[read1.i] = 0;
+					(data1)->strend = read1.s1;
 //					printf("end = %s\n",strend);
 					map1->nodeend = lst_add_downl(&(map1->nodeend), line);
 				}
 				else
-					r1 = 1;
-				r4++;
+					read1.r1 = 1;
+				read1.r4++;
 			}
 		}
 		else if(ft_checkroom(line))
@@ -127,7 +111,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 //			*node1 = ft_add_node_l(node1,line);
 			if (ft_checkroom2(line,node1) == 0)
 			{
-				r1 = 1;
+				read1.r1 = 1;
 //				ft_printfpath(*node1);
 //				*node1 = ft_remove_last_l(node1);
 //				ft_printfpath(*node1);
@@ -145,14 +129,13 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 		{
 		}
 		else
-			r1 = 1;
+			read1.r1 = 1;
 	}
 	//	close(fd);
 	//	l1 = ft_returnvaline(file);
 
-//	if (ant1 > 0)
-		(data1)->nbant = ant1;
-	close(fd);
+	(data1)->nbant = read1.ant1;
+	close(read1.fd);
 
 
 

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 10:31:15 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 10:47:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,19 @@ typedef struct			s_pr
 	t_node				*nodedummie;
 	t_node				*nodebest;
 }						t_pr;
+
+typedef struct			s_read
+{
+	int					fd;
+	int					j;
+	int					i;
+	int					r1;
+	int					r2;
+	int					r3;
+	int					r4;
+	int					ant1;
+	char				*s1;
+}						t_read;
 
 t_lst		*create_lst1(void *content);
 t_lst2		*create_lst2(void *content);
@@ -173,5 +186,6 @@ void					ft_printsol(t_node *node);
 void					ft_init2(t_map *map1);
 void					ft_printmap(t_map map1, int nbant);
 void					ft_init3(t_pr *pr1);
+void					ft_init4(t_read *read1);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 12:09:52 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/16 18:46:44 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 10:45:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,17 @@ void		ft_init3(t_pr *pr1)
 	pr1->nodebest = NULL;
 	pr1->nodedata = NULL;
 	pr1->nodedummie = NULL;
+}
+
+void		ft_init4(t_read *read1)
+{
+	read1->s1 = NULL;
+	read1->ant1 = 0;
+	read1->j = 0;
+	read1->i = 0;
+	read1->r1 = 0;
+	read1->r2 = 0;
+	read1->r3 = 0;
+	read1->r4 = 0;
+	read1->fd = 0;
 }
