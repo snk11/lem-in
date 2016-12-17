@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/16 15:22:30 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 10:32:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 	char	*strbegi;
 	char	*strend;
 	int		ant1;
-	t_node	*node2;
+//	t_node	*node2;
 	char	*s1;
 
 	s1 = NULL;
-	node2 = NULL;
+//	node2 = NULL;
 	ant1 = 0;
 	strbegi = NULL;
 	strend = NULL;
@@ -65,7 +65,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 				if(ft_checkroom(line))
 				{
 //					*node1 = ft_add_node_l(node1,line);
-					if (ft_checkroom2(line,node1,&node2) == 0)
+					if (ft_checkroom2(line,node1) == 0)
 					{
 						r1 = 1;
 //						*node1 = ft_remove_last_l(node1);
@@ -102,7 +102,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 				if(ft_checkroom(line))
 				{
 //					*node1 = ft_add_node_l(node1,line);
-					if (ft_checkroom2(line,node1,&node2) == 0)
+					if (ft_checkroom2(line,node1) == 0)
 					{
 						r1 = 1;
 //						*node1 = ft_remove_last_l(node1);
@@ -129,7 +129,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 		else if(ft_checkroom(line))
 		{
 //			*node1 = ft_add_node_l(node1,line);
-			if (ft_checkroom2(line,node1,&node2) == 0)
+			if (ft_checkroom2(line,node1) == 0)
 			{
 				r1 = 1;
 //				ft_printfpath(*node1);
