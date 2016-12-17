@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 11:23:24 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 12:36:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,43 +26,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 		if(ft_checknbant(line))
 			ft_read_map_p1(line, &read1);
 		else if(ft_strcmp(line,"##start") == 0)
-		{
-			if(read1.r3 >= 1)
-				read1.r1 = 1;
-			else
-			{
-				get_next_line(read1.fd,&line);
-				if(ft_checkroom(line))
-				{
-//					*node1 = ft_add_node_l(node1,line);
-					if (ft_checkroom2(line,node1) == 0)
-					{
-						read1.r1 = 1;
-//						*node1 = ft_remove_last_l(node1);
-					}
-					else
-					{
-						read1.i = 0;
-						while(line[read1.i] != ' ')
-							read1.i++;
-						read1.s1 = (char*)malloc(sizeof(char)*read1.i+1);
-						read1.i = 0;
-						while(line[read1.i] != ' ')
-						{
-							read1.s1[read1.i] = line[read1.i];
-							read1.i++;
-						}
-						read1.s1[read1.i] = 0;
-						(data1)->strbegi = read1.s1;
-//						printf("start = %s\n",strbegi);
-						map1->nodestart = lst_add_downl(&(map1->nodestart), line);
-					}
-				}
-				else
-					read1.r1 = 1;
-				read1.r3++;
-			}
-		}
+			ft_read_map_p2(line, &read1, node1, map1, data1);
 		else if(ft_strcmp(line,"##end") == 0)
 		{
 			if(read1.r4 >= 1)
