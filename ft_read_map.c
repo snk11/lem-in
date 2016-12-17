@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 10:52:37 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 11:23:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,7 @@ int	ft_read_map(t_node **node1,char *file,t_data *data1, t_map *map1)
 	while (get_next_line(read1.fd, &line) > 0 && read1.r1 == 0)
 	{
 		if(ft_checknbant(line))
-		{
-			if(read1.r2 >= 1)
-				read1.r1 = 1;
-			else
-			{
-				read1.r2++;
-				read1.ant1 = ft_atoi(line);
-			}
-		}
+			ft_read_map_p1(line, &read1);
 		else if(ft_strcmp(line,"##start") == 0)
 		{
 			if(read1.r3 >= 1)
