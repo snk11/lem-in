@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 08:19:51 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 15:58:32 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 16:08:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,7 @@ t_node    *ft_screen(t_node **nodedata,t_node *nodedummie,t_node *node1,char *st
 				ft_screen_p1(node1, &screen1, strend);
 			screen1.nodetmp = screen1.nodetmp3;
 			if (screen1.ind1 == 0 && screen1.ind2 == 1)
-			{
-				*nodedata = lst_add_downlrnew(nodedata,screen1.nodetmp->name);
-				screen1.nodetmp = screen1.nodetmp->nextr;
-				while(screen1.nodetmp)
-				{
-					*nodedata = lst_add_down_downr(nodedata,screen1.nodetmp->name);
-					screen1.nodetmp = screen1.nodetmp->nextr;
-				}
-			}
+				ft_screen_p2(&nodedata, &screen1);
 			screen1.nodetmp = screen1.nodetmp3;
 		}
 		screen1.nodetmp = screen1.nodetmp->nextl;
@@ -56,4 +48,15 @@ void		ft_screen_p1(t_node *node1, t_screen *screen1, char *strend)
 					screen1->nodetmp = screen1->nodetmp->nextr;
 				}
 				screen1->nodetmp = screen1->nodetmp->nextr;
+}
+
+void		ft_screen_p2(t_node ***nodedata, t_screen *screen1)
+{
+				**nodedata = lst_add_downlrnew(*nodedata,screen1->nodetmp->name);
+				screen1->nodetmp = screen1->nodetmp->nextr;
+				while(screen1->nodetmp)
+				{
+					**nodedata = lst_add_down_downr(*nodedata,screen1->nodetmp->name);
+					screen1->nodetmp = screen1->nodetmp->nextr;
+				}
 }
