@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 12:09:52 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 10:45:40 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 15:26:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,12 @@ void		ft_init4(t_read *read1)
 	read1->r3 = 0;
 	read1->r4 = 0;
 	read1->fd = 0;
+}
+
+void		ft_init5(t_screen *screen1)
+{
+	screen1->nodetmp = NULL;
+	screen1->nodetmp3 = NULL;
+	screen1->ind1 = 0;
+	screen1->ind2 = 0;
 }

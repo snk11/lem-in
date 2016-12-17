@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 08:19:51 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 11:55:36 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 15:32:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,49 +14,47 @@
 
 t_node    *ft_screen(t_node **nodedata,t_node *nodedummie,t_node *node1,char *strbegi,char *strend)
 {
-	t_node    *nodetmp;
-	t_node    *nodetmp3;
-	int        ind1;
-	int        ind2;
+	t_screen	screen1;
 
-	nodetmp = NULL;
-	nodetmp3 = NULL;
-	ind1 = 0;
-	ind2 = 0;
-	nodetmp = nodedummie;
-	while(nodetmp)
+	ft_init5(&screen1);
+	screen1.nodetmp = nodedummie;
+	while(screen1.nodetmp)
 	{
-		nodetmp3 = nodetmp;
-		if (ft_strcmp(nodetmp->name,strbegi) == 0)
+		screen1.nodetmp3 = screen1.nodetmp;
+		if (ft_strcmp(screen1.nodetmp->name,strbegi) == 0)
 		{
-			ind1 = 0;
-			ind2 = 0;
-			while(nodetmp && ind2 == 0 && ind1 == 0)
+			screen1.ind1 = 0;
+			screen1.ind2 = 0;
+			while(screen1.nodetmp && screen1.ind2 == 0 && screen1.ind1 == 0)
 			{
-				while(nodetmp && nodetmp->nextr && ind2 == 0 && ind1 == 0)
+				while(screen1.nodetmp && screen1.nodetmp->nextr && screen1.ind2 == 0 && screen1.ind1 == 0)
 				{
-					if(ft_checknode2(ft_cursref_first(node1,nodetmp->name),(nodetmp->nextr)->name) == 0)
-						ind1 = 1;
-					if(ft_strcmp((nodetmp->nextr)->name,strend) == 0)
-						ind2 = 1;
-					nodetmp = nodetmp->nextr;
+					if(ft_checknode2(ft_cursref_first(node1,screen1.nodetmp->name),(screen1.nodetmp->nextr)->name) == 0)
+						screen1.ind1 = 1;
+					if(ft_strcmp((screen1.nodetmp->nextr)->name,strend) == 0)
+						screen1.ind2 = 1;
+					screen1.nodetmp = screen1.nodetmp->nextr;
 				}
-				nodetmp = nodetmp->nextr;
+				screen1.nodetmp = screen1.nodetmp->nextr;
 			}
-			nodetmp = nodetmp3;
-			if (ind1 == 0 && ind2 == 1)
+			screen1.nodetmp = screen1.nodetmp3;
+			if (screen1.ind1 == 0 && screen1.ind2 == 1)
 			{
-				*nodedata = lst_add_downlrnew(nodedata,nodetmp->name);
-				nodetmp = nodetmp->nextr;
-				while(nodetmp)
+				*nodedata = lst_add_downlrnew(nodedata,screen1.nodetmp->name);
+				screen1.nodetmp = screen1.nodetmp->nextr;
+				while(screen1.nodetmp)
 				{
-					*nodedata = lst_add_down_downr(nodedata,nodetmp->name);
-					nodetmp = nodetmp->nextr;
+					*nodedata = lst_add_down_downr(nodedata,screen1.nodetmp->name);
+					screen1.nodetmp = screen1.nodetmp->nextr;
 				}
 			}
-			nodetmp = nodetmp3;
+			screen1.nodetmp = screen1.nodetmp3;
 		}
-		nodetmp = nodetmp->nextl;
+		screen1.nodetmp = screen1.nodetmp->nextl;
 	}
 	return (*nodedata);
+}
+
+void		ft_screen_p1()
+{
 }

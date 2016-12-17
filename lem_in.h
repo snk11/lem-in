@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 14:52:13 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/17 15:26:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,14 @@ typedef struct			s_read
 	int					ant1;
 	char				*s1;
 }						t_read;
+
+typedef struct			s_screen
+{
+	t_node				*nodetmp;
+	t_node				*nodetmp3;
+	int					ind1;
+	int					ind2;
+}						t_screen;
 
 t_lst		*create_lst1(void *content);
 t_lst2		*create_lst2(void *content);
@@ -187,6 +195,7 @@ void					ft_init2(t_map *map1);
 void					ft_printmap(t_map map1, int nbant);
 void					ft_init3(t_pr *pr1);
 void					ft_init4(t_read *read1);
+void					ft_init5(t_screen *screen1);
 void					ft_read_map_p1(char *line, t_read *read1);
 void					ft_read_map_p2(char *line, t_read *read1, t_node **node1 , t_data *data1, t_map *map1);
 void					ft_read_map_p2_p1(char *line, t_read *read1, t_node **node1, t_data *data1, t_map *map1);
