@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:54:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/20 15:44:00 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/20 15:45:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ void		ft_simul_p1(t_simul *simul1, char *strend, int totant)
 				ft_simul_p1_p2(simul1);
 			else if(simul1->nbtmp > 0 && simul1->nodetmp == simul1->nodetmp3
 					&& (simul1->nodetmp)->client == 0
-					&& ft_checknewant(simul1->rooms,simul1->nodetmp3,simul1->nbtmp))
+					&& ft_checknewant(simul1->rooms,
+						simul1->nodetmp3,simul1->nbtmp))
 				ft_simul_p1_p3(simul1, totant);
 		}
 		simul1->nodetmp = simul1->nodetmp3;
