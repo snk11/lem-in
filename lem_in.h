@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/20 14:33:08 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/20 15:13:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -241,5 +241,6 @@ void		ft_init6(t_scbest *scbest1);
 void		ft_screenbest_p1(t_scbest *scbest1, t_node ***nodebest, t_node *nodedata, char *strend);
 void		ft_screenbest_p1_p1(t_scbest *scbest1, t_node *nodedata, char *strend);
 void		ft_init7(t_simul *simul1);
+void		ft_simul_p1(t_simul *simul1, char *strend, int totant);
 
 #endif
