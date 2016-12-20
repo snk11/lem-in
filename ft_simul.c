@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:54:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 18:46:31 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/20 14:16:50 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,10 @@
 #include<stdio.h>
 void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int totant)
 {
-	int	i;
-	int	cnt;
-	int	cnt2;
 	int nbelem;
-	int n;
 	int nbtmp;
 	int	r1;
-	int	r2;
+	int cnt1;
 	t_node *node1;
 	t_node *node2;
 	t_room *nodetmp;
@@ -32,33 +28,24 @@ void	ft_simul(t_node *nodebest,char *strbegi,char *strend,int totant)
 	t_room *nodetmp4;
 	t_room *nodetmp5;
 	t_room	*rooms;
-	t_lst	*lstop;
 	char	*s1;
 
 	node1 = NULL;
 	node2 = NULL;
 	s1 = NULL;
-	lstop = NULL;
 	rooms = NULL;
-	n = 0;
 	nbtmp = 0;
 	nbelem = 0;
-	i = 0;
-	cnt = 0;
-	cnt2 = 0;
 	nodetmp = NULL;
 	nodetmp3 = NULL;
 	nodetmp4 = NULL;
 	nodetmp5 = NULL;
 
-	int cnt1;
 	cnt1 = 0;
 	r1 = 0;
-	r2 = 0;
 	rooms = ft_createroom(&rooms,nodebest,strend);
 	nbtmp = totant;
 	nodetmp = rooms;
-	r1 = 0;
 	while(r1 == 0)
 	{
 		nodetmp = rooms;
