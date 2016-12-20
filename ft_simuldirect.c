@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 17:13:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/20 18:37:53 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/20 18:38:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,8 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 		{
 			if(simul1.nodetmp && ft_countelemroom_lvr(simul1.nodetmp) == 1)
 				ft_simuldirect_p1(&simul1, totant);
-			else if (simul1.nodetmp && ft_countelemroom_lvr(simul1.nodetmp) >= 1)
+			else if (simul1.nodetmp
+					&& ft_countelemroom_lvr(simul1.nodetmp) >= 1)
 				ft_simuldirect_p2(&simul1, strend, totant);
 			simul1.nodetmp = simul1.nodetmp3;
 			simul1.nodetmp = simul1.nodetmp->nextl;
