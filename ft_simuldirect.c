@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 17:13:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 18:46:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/20 16:50:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,116 +18,82 @@
 #include<stdio.h>
 void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 {
-	int	cnt;
-	int	cnt2;
-	int nbelem;
-	int n;
-	int nbtmp;
-	int	r1;
-	int	r2;
-	char	*s1;
-	t_node *node1;
-	t_node *node2;
-	t_room *nodetmp;
-	t_room *nodetmp3;
-	t_room *nodetmp4;
-	t_room *nodetmp5;
-	t_room	*rooms;
-	t_lst	*lstop;
+	t_simul		simul1;
 
-	s1 = NULL;
-	lstop = NULL;
-	rooms = NULL;
-	n = 0;
-	nbtmp = 0;
-	nbelem = 0;
-	cnt = 0;
-	cnt2 = 0;
-	node1 = NULL;
-	node2 = NULL;
-	nodetmp = NULL;
-	nodetmp3 = NULL;
-	nodetmp4 = NULL;
-	nodetmp5 = NULL;
-
-	int cnt1;
-	cnt1 = 0;
-	r1 = 0;
-	r2 = 0;
-	rooms = ft_createroom(&rooms,nodebest,strend);
-	nbtmp = totant;
-	nodetmp = rooms;
-	r1 = 0;
-	while(r1 == 0)
+	ft_init7(&simul1);
+	simul1.rooms = ft_createroom(&(simul1.rooms),nodebest,strend);
+	simul1.nbtmp = totant;
+	simul1.nodetmp = simul1.rooms;
+	while(simul1.r1 == 0)
 	{
-		nodetmp = rooms;
-		node1 = NULL;
-		while(nodetmp)
+		simul1.nodetmp = simul1.rooms;
+		simul1.node1 = NULL;
+		while(simul1.nodetmp)
 		{
-			if(nodetmp && ft_countelemroom_lvr(nodetmp) == 1)
+			if(simul1.nodetmp && ft_countelemroom_lvr(simul1.nodetmp) == 1)
 			{
-				nodetmp3 = nodetmp;
-				while(nodetmp && nodetmp->nextr)
-					nodetmp = nodetmp->nextr;
-				nodetmp5 = nodetmp;
-				nodetmp4 = nodetmp;
-				while(nodetmp4 != NULL)
+				simul1.nodetmp3 = simul1.nodetmp;
+				while(simul1.nodetmp && (simul1.nodetmp)->nextr)
+					simul1.nodetmp = simul1.nodetmp->nextr;
+				simul1.nodetmp5 = simul1.nodetmp;
+				simul1.nodetmp4 = simul1.nodetmp;
+				while(simul1.nodetmp4 != NULL)
 				{
-					nodetmp = nodetmp3;
-					nodetmp4 = NULL;
-					if(!nodetmp->nextr)
+					simul1.nodetmp = simul1.nodetmp3;
+					simul1.nodetmp4 = NULL;
+					if(!(simul1.nodetmp)->nextr)
 					{
-						if (nodetmp->client != 0)
+						if ((simul1.nodetmp)->client != 0)
 						{
 							//						printf("RL%d-%s ",nodetmp->client,strend);
-							nodetmp->client = 0;
+							simul1.nodetmp->client = 0;
 						}
-						if(nbtmp > 0 && nodetmp == nodetmp3 && nodetmp->client == 0 && ft_checknewant(rooms,nodetmp3,nbtmp))
+						if(simul1.nbtmp > 0 && simul1.nodetmp == simul1.nodetmp3 && simul1.nodetmp->client == 0 && ft_checknewant(simul1.rooms,simul1.nodetmp3,simul1.nbtmp))
 						{
 //							printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
-							s1 = ft_makestring(totant - nbtmp + 1,nodetmp->name);
-							node1 = lst_add_down_downr(&node1,s1);
+							simul1.s1 = ft_makestring(totant - simul1.nbtmp + 1,simul1.nodetmp->name);
+							simul1.node1 = lst_add_down_downr(&(simul1.node1),simul1.s1);
 //							printf("L%d-%s ",totant - nbtmp + 1,nodetmp->name);
-							nodetmp->client = totant - nbtmp + 1;
-							nbtmp--;
+							(simul1.nodetmp)->client = totant - simul1.nbtmp + 1;
+							(simul1.nbtmp)--;
 						}
-						nodetmp5 = nodetmp4;
+						simul1.nodetmp5 = simul1.nodetmp4;
 					}
-					else if(nbtmp > 0 && nodetmp == nodetmp3 && nodetmp->client == 0 && ft_checknewant(rooms,nodetmp3,nbtmp))
+					else if(simul1.nbtmp > 0 && simul1.nodetmp == simul1.nodetmp3 && simul1.nodetmp->client == 0 && ft_checknewant(simul1.rooms,simul1.nodetmp3,simul1.nbtmp))
 						//			if(nbant && nodetmp == nodetmp3 && nodetmp->client == 0)
 					{
 //						printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
-						s1 = ft_makestring(totant - nbtmp + 1,nodetmp->name);
-						node1 = lst_add_down_downr(&node1,s1);
+						simul1.s1 = ft_makestring(totant - simul1.nbtmp + 1,simul1.nodetmp->name);
+						simul1.node1 = lst_add_down_downr(&(simul1.node1),simul1.s1);
 //						printf("L%d-%s ",totant - nbtmp + 1,nodetmp->name);
-						nodetmp->client = totant - nbtmp + 1;
-						nbtmp--;
+						simul1.nodetmp->client = totant - simul1.nbtmp + 1;
+						simul1.nbtmp--;
 					}
 				}
 			}
-			else if (nodetmp && ft_countelemroom_lvr(nodetmp) >= 1)
+			else if (simul1.nodetmp && ft_countelemroom_lvr(simul1.nodetmp) >= 1)
 			{
-				nodetmp3 = nodetmp;
-				while(nodetmp && nodetmp->nextr)
-					nodetmp = nodetmp->nextr;
-				nodetmp5 = nodetmp;
-				nodetmp4 = nodetmp;
-				while(nodetmp4 != NULL)
+				simul1.nodetmp3 = simul1.nodetmp;
+				while(simul1.nodetmp && simul1.nodetmp->nextr)
+					simul1.nodetmp = simul1.nodetmp->nextr;
+				simul1.nodetmp5 = simul1.nodetmp;
+				simul1.nodetmp4 = simul1.nodetmp;
+				while(simul1.nodetmp4 != NULL)
 				{
-					nodetmp = nodetmp3;
-					nodetmp4 = NULL;
-					while(nodetmp && nodetmp->nextr && nodetmp != nodetmp5 && ft_strcmp((nodetmp->nextr)->name,strend) != 0)
+					simul1.nodetmp = simul1.nodetmp3;
+					simul1.nodetmp4 = NULL;
+					while(simul1.nodetmp && simul1.nodetmp->nextr && simul1.nodetmp != simul1.nodetmp5 && ft_strcmp((simul1.nodetmp->nextr)->name,strend) != 0)
 					{
-						nodetmp4 = nodetmp;
-						nodetmp = nodetmp->nextr;
+						simul1.nodetmp4 = simul1.nodetmp;
+						simul1.nodetmp = simul1.nodetmp->nextr;
 					}
-					if(nodetmp->nextr && ft_strcmp((nodetmp->nextr)->name, strend) == 0)
+					if(simul1.nodetmp->nextr && ft_strcmp((simul1.nodetmp->nextr)->name, strend) == 0)
 					{
-						if (nodetmp->client != 0)
+						if (simul1.nodetmp->client != 0)
 						{
 //							printf("%s ",ft_makestring(nodetmp->client,strend));
-							s1 = ft_makestring(nodetmp->client, strend);
-							node1 = lst_add_down_downr(&node1,s1);
+							simul1.s1 = ft_makestring(simul1.nodetmp->client, strend);
+							simul1.node1 = lst_add_down_downr(&(simul1.node1),simul1.s1);
 							/*
 							t_node *ntmp1 = node1;
 							while (ntmp1 && ntmp1->nextr)
@@ -136,61 +102,61 @@ void	ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant)
 								printf("ntmp1 = %s\n",ntmp1->name);
 							*/
 //							printf("L%d-%s ",nodetmp->client,strend);
-							nodetmp->client = 0;
+							simul1.nodetmp->client = 0;
 						}
-						if(nbtmp > 0 && nodetmp == nodetmp3 && nodetmp->client == 0 && ft_checknewant(rooms,nodetmp3,nbtmp))
+						if(simul1.nbtmp > 0 && simul1.nodetmp == simul1.nodetmp3 && simul1.nodetmp->client == 0 && ft_checknewant(simul1.rooms,simul1.nodetmp3,simul1.nbtmp))
 						{
 //							printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
-							s1 = ft_makestring(totant - nbtmp + 1,nodetmp->name);
-							node1 = lst_add_down_downr(&node1,s1);
+							simul1.s1 = ft_makestring(totant - simul1.nbtmp + 1,simul1.nodetmp->name);
+							simul1.node1 = lst_add_down_downr(&(simul1.node1),simul1.s1);
 //							printf("L%d-%s ",totant - nbtmp + 1,nodetmp->name);
-							nodetmp->client = totant - nbtmp + 1;
-							nbtmp--;
+							simul1.nodetmp->client = totant - simul1.nbtmp + 1;
+							simul1.nbtmp--;
 						}
-						else if(nodetmp != nodetmp3)
+						else if(simul1.nodetmp != simul1.nodetmp3)
 						{
 							//						if (nodetmp4->client != 0)
 							//							printf("L%d-%s ",nodetmp4->client,nodetmp->name);
-							nodetmp->client = nodetmp4->client;
-							nodetmp4->client = 0;
-							nodetmp5 = nodetmp;
+							simul1.nodetmp->client = simul1.nodetmp4->client;
+							simul1.nodetmp4->client = 0;
+							simul1.nodetmp5 = simul1.nodetmp;
 						}
-						nodetmp5 = nodetmp4;
+						simul1.nodetmp5 = simul1.nodetmp4;
 					}
-					else if(nodetmp != nodetmp3)
+					else if(simul1.nodetmp != simul1.nodetmp3)
 					{
 //						printf("%s ",ft_makestring(nodetmp4->client, nodetmp->name));
-						s1 = ft_makestring(nodetmp4->client,nodetmp->name);
-						node1 = lst_add_down_downr(&node1,s1);
+						simul1.s1 = ft_makestring(simul1.nodetmp4->client,simul1.nodetmp->name);
+						simul1.node1 = lst_add_down_downr(&(simul1.node1),simul1.s1);
 //						printf("L%d-%s ",nodetmp4->client,nodetmp->name);
-						nodetmp->client = nodetmp4->client;
-						nodetmp4->client = 0;
-						nodetmp5 = nodetmp;
+						simul1.nodetmp->client = simul1.nodetmp4->client;
+						simul1.nodetmp4->client = 0;
+						simul1.nodetmp5 = simul1.nodetmp;
 					}
-					else if(nbtmp > 0 && nodetmp == nodetmp3 && nodetmp->client == 0 && ft_checknewant(rooms,nodetmp3,nbtmp))
+					else if(simul1.nbtmp > 0 && simul1.nodetmp == simul1.nodetmp3 && simul1.nodetmp->client == 0 && ft_checknewant(simul1.rooms,simul1.nodetmp3,simul1.nbtmp))
 						//			if(nbant && nodetmp == nodetmp3 && nodetmp->client == 0)
 					{
 //						printf("%s ",ft_makestring(totant - nbtmp + 1,nodetmp->name));
-						s1 = ft_makestring(totant - nbtmp + 1,nodetmp->name);
-						node1 = lst_add_down_downr(&node1,s1);
+						simul1.s1 = ft_makestring(totant - simul1.nbtmp + 1,simul1.nodetmp->name);
+						simul1.node1 = lst_add_down_downr(&(simul1.node1),simul1.s1);
 //						printf("L%d-%s ",totant - nbtmp + 1,nodetmp->name);
-						nodetmp->client = totant - nbtmp + 1;
-						nbtmp--;
+						simul1.nodetmp->client = totant - simul1.nbtmp + 1;
+						simul1.nbtmp--;
 					}
 				}
 			}
-			nodetmp = nodetmp3;
-			nodetmp = nodetmp->nextl;
+			simul1.nodetmp = simul1.nodetmp3;
+			simul1.nodetmp = simul1.nodetmp->nextl;
 		}
 
 
-		if (ft_checkzero(rooms) == 1)
-			r1 = 1;
+		if (ft_checkzero(simul1.rooms) == 1)
+			simul1.r1 = 1;
 //		printf("\n");
 		//		printf("nbtmp = %d\n",nbtmp);
-		ft_sort(&node1);
-		ft_addseries(&node2,node1);
+		ft_sort(&simul1.node1);
+		ft_addseries(&(simul1.node2),simul1.node1);
 	}
 //	ft_printfpath_room(rooms);
-	ft_printsol(node2);
+	ft_printsol(simul1.node2);
 }
