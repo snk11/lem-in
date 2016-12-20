@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/20 18:37:47 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/20 18:59:49 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,17 @@ typedef struct			s_simul
 	char	*s1;
 }						t_simul;
 
+typedef struct			s_swap
+{
+	t_node	*nodetmp3;
+	t_node	*nodetmp4;
+	t_node	*nodetmp5;
+	t_node	*w;
+	t_node	*z;
+	int		cnt1;
+	int		cnt2;
+}						t_swap;
+
 t_lst		*create_lst1(void *content);
 t_lst2		*create_lst2(void *content);
 t_node		*ft_createnode(char *s);
@@ -162,7 +173,7 @@ void swap(char *x, char *y);
 t_node	*ft_maketree2(t_node *maintree,char *strbegi);
 t_node *ft_copytree2(t_node *maintree,char *strbegi);
 void permute2(t_node **nodetmp, t_node **nodedata,int r1,int r2,char *strbegi);
-void	swap2(t_node **nodetmp,char *s1,char *s2);
+void	ft_swap2(t_node **nodetmp,char *s1,char *s2);
 t_node	*ft_generate(t_node *node1,char *strbegi);
 t_node	*ft_screen(t_node **nodedata,t_node *nodedummie,t_node *node1,char *strbegi,char *strend);
 t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend);
@@ -220,7 +231,7 @@ void					ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant);
 int						ft_countelemroom_lvr(t_room *room1);
 char					*ft_makestring(int nb, char *name);
 void					ft_sort(t_node **node1);
-void					swap2r(t_node **nodetmp,char *s1,char *s2);
+void					ft_swap2r(t_node **nodetmp,char *s1,char *s2);
 void					ft_addseries(t_node **node2, t_node *node1);
 void					ft_printsol(t_node *node);
 void					ft_init2(t_map *map1);
@@ -257,5 +268,6 @@ void		ft_simuldirect_p2_p1(t_simul *simul1, char *strend);
 void		ft_simuldirect_p2_p2(t_simul *simul1, char *strend, int totant);
 void		ft_simuldirect_p2_p3(t_simul *simul1);
 void		ft_simuldirect_p2_p4(t_simul *simul1, int totant);
+void		ft_init8(t_swap *swap1);
 
 #endif

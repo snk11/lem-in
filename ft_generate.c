@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/05 17:01:50 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 14:52:21 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/20 18:58:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ void permute2(t_node **nodetmp, t_node **nodedata,int r1,int r2,char *strbegi)
 		nodetmp2 = nodetmp3;
 		while(r <= r2)
 		{
-			swap2(nodetmp,nodetmp2->name,nodetmp3->name);
+			ft_swap2(nodetmp,nodetmp2->name,nodetmp3->name);
 			permute2(nodetmp,nodedata,r1 + 1,r2,strbegi);
-			swap2(nodetmp,nodetmp2->name,nodetmp3->name);
+			ft_swap2(nodetmp,nodetmp2->name,nodetmp3->name);
 			nodetmp3 = nodetmp3->nextl;
 			r++;
 		}

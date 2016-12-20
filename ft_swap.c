@@ -6,99 +6,86 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 10:30:10 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 10:57:02 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/20 19:05:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "lem_in.h"
 
-void	swap2(t_node **nodetmp,char *s1,char *s2)
+void	ft_swap2(t_node **nodetmp,char *s1,char *s2)
 {
-	t_node	*nodetmp3;
-	t_node	*nodetmp4;
-	t_node	*nodetmp5;
-	t_node	*w;
-	t_node	*z;
-	int		cnt1;
-	int		cnt2;
-	int		sw;
+	t_swap		swap1;
 
-	sw = 0;
-	cnt1 = 0;
-	cnt2 = 0;
-	w = NULL;
-	z = NULL;
-	nodetmp3 = NULL;
-	nodetmp5 = NULL;
-	nodetmp3 = *nodetmp;
-	while(ft_strcmp(nodetmp3->name,s1) != 0)
+	ft_init8(&swap1);
+	swap1.nodetmp3 = *nodetmp;
+	while(ft_strcmp(swap1.nodetmp3->name,s1) != 0)
 	{
-		nodetmp3 = nodetmp3->nextl;
-		cnt1++;
+		swap1.nodetmp3 = swap1.nodetmp3->nextl;
+		swap1.cnt1++;
 	}
-	nodetmp4 = NULL;
-	nodetmp4 = *nodetmp;
-	while(ft_strcmp(nodetmp4->name,s2) != 0)
+	swap1.nodetmp4 = NULL;
+	swap1.nodetmp4 = *nodetmp;
+	while(ft_strcmp(swap1.nodetmp4->name,s2) != 0)
 	{
-		nodetmp4 = nodetmp4->nextl;
-		cnt2++;
+		swap1.nodetmp4 = swap1.nodetmp4->nextl;
+		swap1.cnt2++;
 	}
-	nodetmp5 = *nodetmp;
-	if (cnt1 < cnt2)
+	swap1.nodetmp5 = *nodetmp;
+	if (swap1.cnt1 < swap1.cnt2)
 	{
-		while(cnt1 - 1 > 0)
+		while(swap1.cnt1 - 1 > 0)
 		{
-			nodetmp5 = nodetmp5->nextl;
-			cnt1--;
+			swap1.nodetmp5 = swap1.nodetmp5->nextl;
+			swap1.cnt1--;
 		}
-		w = lst_add_downlrnew(&w,nodetmp4->name);
-		w->nextl = nodetmp3->nextl;
+		swap1.w = lst_add_downlrnew(&(swap1.w),swap1.nodetmp4->name);
+		swap1.w->nextl = swap1.nodetmp3->nextl;
 		if(ft_strcmp((*nodetmp)->name,s1) != 0)
-			nodetmp5->nextl = w;
+			swap1.nodetmp5->nextl = swap1.w;
 		else
-			*nodetmp = w;
+			*nodetmp = swap1.w;
 
-		nodetmp5 = *nodetmp;
-		while(cnt2 - 1 > 0)
+		swap1.nodetmp5 = *nodetmp;
+		while(swap1.cnt2 - 1 > 0)
 		{
-			nodetmp5 = nodetmp5->nextl;
-			cnt2--;
+			swap1.nodetmp5 = swap1.nodetmp5->nextl;
+			swap1.cnt2--;
 		}
 
 
-		z = lst_add_downlrnew(&z,nodetmp3->name);
-		z->nextl = nodetmp4->nextl;
-		nodetmp5->nextl = z;
+		swap1.z = lst_add_downlrnew(&(swap1.z),swap1.nodetmp3->name);
+		swap1.z->nextl = swap1.nodetmp4->nextl;
+		swap1.nodetmp5->nextl = swap1.z;
 	}
-	else if (cnt1 > cnt2)
+	else if (swap1.cnt1 > swap1.cnt2)
 	{
-		while(cnt2 - 1 > 0)
+		while(swap1.cnt2 - 1 > 0)
 		{
-			nodetmp5 = nodetmp5->nextl;
-			cnt2--;
+			swap1.nodetmp5 = swap1.nodetmp5->nextl;
+			swap1.cnt2--;
 		}
-		w = lst_add_downlrnew(&w,nodetmp3->name);
-		w->nextl = nodetmp4->nextl;
+		swap1.w = lst_add_downlrnew(&(swap1.w),swap1.nodetmp3->name);
+		swap1.w->nextl =swap1. nodetmp4->nextl;
 		if(ft_strcmp((*nodetmp)->name,s2) != 0)
-			nodetmp5->nextl = w;
+			swap1.nodetmp5->nextl = swap1.w;
 		else
-			*nodetmp = w;
+			*nodetmp = swap1.w;
 
-		nodetmp5 = *nodetmp;
-		while(cnt1 - 1 > 0)
+		swap1.nodetmp5 = *nodetmp;
+		while(swap1.cnt1 - 1 > 0)
 		{
-			nodetmp5 = nodetmp5->nextl;
-			cnt1--;
+			swap1.nodetmp5 = swap1.nodetmp5->nextl;
+			swap1.cnt1--;
 		}
 
 
-		z = lst_add_downlrnew(&z,nodetmp4->name);
-		z->nextl = nodetmp3->nextl;
-		nodetmp5->nextl = z;
+		swap1.z = lst_add_downlrnew(&(swap1.z),swap1.nodetmp4->name);
+		swap1.z->nextl = swap1.nodetmp3->nextl;
+		swap1.nodetmp5->nextl = swap1.z;
 	}
 }
 
-void	swap2r(t_node **nodetmp,char *s1,char *s2)
+void	ft_swap2r(t_node **nodetmp,char *s1,char *s2)
 {
 	t_node	*nodetmp3;
 	t_node	*nodetmp4;
@@ -107,9 +94,7 @@ void	swap2r(t_node **nodetmp,char *s1,char *s2)
 	t_node	*z;
 	int		cnt1;
 	int		cnt2;
-	int		sw;
 
-	sw = 0;
 	cnt1 = 0;
 	cnt2 = 0;
 	w = NULL;

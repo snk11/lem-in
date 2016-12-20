@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 12:55:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/20 14:32:48 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/20 18:53:58 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,14 @@ void		ft_init7(t_simul *simul1)
 	simul1->nodetmp5 = NULL;
 	simul1->cnt1 = 0;
 	simul1->r1 = 0;
+}
+
+void		ft_init8(t_swap *swap1)
+{
+	swap1->cnt1 = 0;
+	swap1->cnt2 = 0;
+	swap1->w = NULL;
+	swap1->z = NULL;
+	swap1->nodetmp3 = NULL;
+	swap1->nodetmp5 = NULL;
 }
