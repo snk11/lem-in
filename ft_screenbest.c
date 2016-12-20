@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 09:54:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 16:59:38 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/20 12:23:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@
 t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 {
 	int	min;
-	int cnt;
-	int nb1;
 	int	 index;
 	int r;
 	int i;
@@ -29,18 +27,14 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 	int nbelemnodedata;
 	t_node	*nodetmp;
 	t_node	*nodetmp3;
-	t_node	*nodetmp4;
 	t_node	*numberlist;
 
 	numberlist = NULL;
 	nodetmp = NULL;
 	nodetmp3= NULL;
-	nodetmp4= NULL;
-	nb1 = 0;
 	min = 0;
 	iter = 0;
 	nbelemnodedata = 0;
-	cnt = 0;
 	r = 0;
 	nbelemnodedata = ft_countelem_lv1(nodedata);
 	nodetmp = nodedata;
