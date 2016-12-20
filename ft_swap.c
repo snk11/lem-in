@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/15 10:30:10 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/20 19:05:08 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/20 21:25:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ void	ft_swap2(t_node **nodetmp,char *s1,char *s2)
 			swap1.nodetmp5 = swap1.nodetmp5->nextl;
 			swap1.cnt2--;
 		}
-
-
 		swap1.z = lst_add_downlrnew(&(swap1.z),swap1.nodetmp3->name);
 		swap1.z->nextl = swap1.nodetmp4->nextl;
 		swap1.nodetmp5->nextl = swap1.z;
@@ -70,21 +68,17 @@ void	ft_swap2(t_node **nodetmp,char *s1,char *s2)
 			swap1.nodetmp5->nextl = swap1.w;
 		else
 			*nodetmp = swap1.w;
-
 		swap1.nodetmp5 = *nodetmp;
 		while(swap1.cnt1 - 1 > 0)
 		{
 			swap1.nodetmp5 = swap1.nodetmp5->nextl;
 			swap1.cnt1--;
 		}
-
-
 		swap1.z = lst_add_downlrnew(&(swap1.z),swap1.nodetmp4->name);
 		swap1.z->nextl = swap1.nodetmp3->nextl;
 		swap1.nodetmp5->nextl = swap1.z;
 	}
 }
-
 void	ft_swap2r(t_node **nodetmp,char *s1,char *s2)
 {
 	t_node	*nodetmp3;
