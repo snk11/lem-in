@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/20 14:00:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/20 14:33:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,23 @@ typedef struct			s_scbest
 	t_node	*numberlist;
 }						t_scbest;
 
+
+typedef struct			s_simul
+{
+	int nbelem;
+	int nbtmp;
+	int	r1;
+	int cnt1;
+	t_node *node1;
+	t_node *node2;
+	t_room *nodetmp;
+	t_room *nodetmp3;
+	t_room *nodetmp4;
+	t_room *nodetmp5;
+	t_room	*rooms;
+	char	*s1;
+}						t_simul;
+
 t_lst		*create_lst1(void *content);
 t_lst2		*create_lst2(void *content);
 t_node		*ft_createnode(char *s);
@@ -223,5 +240,6 @@ void					ft_screen_p2(t_node ***nodedata, t_screen *screen1);
 void		ft_init6(t_scbest *scbest1);
 void		ft_screenbest_p1(t_scbest *scbest1, t_node ***nodebest, t_node *nodedata, char *strend);
 void		ft_screenbest_p1_p1(t_scbest *scbest1, t_node *nodedata, char *strend);
+void		ft_init7(t_simul *simul1);
 
 #endif
