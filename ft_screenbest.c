@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 09:54:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/20 13:21:46 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/20 13:43:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,46 +29,49 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 		scbest1.indirect = 0;
 		scbest1.index = ft_getminpath(nodedata, scbest1.numberlist, strend);
 		if (scbest1.index >= 0)
-		{
-			if(scbest1.iter == 0)
-				scbest1.numberlist = lst_add_downlrnew(&(scbest1.numberlist),ft_itoa(scbest1.index));
-			else
-				scbest1.numberlist = lst_add_downl(&(scbest1.numberlist),ft_itoa(scbest1.index));
-			scbest1.i = scbest1.index;
-			scbest1.nodetmp = nodedata;
-			while (scbest1.nodetmp && scbest1.i > 0)
-			{
-				scbest1.nodetmp = scbest1.nodetmp->nextl;
-				scbest1.i--;
-			}
-			scbest1.nodetmp3 = scbest1.nodetmp;
-			if (ft_checkdirect(scbest1.nodetmp, strend))
-			{
-				scbest1.indirect = 1;
-				scbest1.countdirect++;
-			}
-			if (scbest1.indirect == 0 || (scbest1.indirect == 1 && scbest1.countdirect <= 1))
-			{
-				while (scbest1.nodetmp && ft_strcmp(scbest1.nodetmp->name,strend) != 0 && scbest1.r == 0)
-				{
-					if(*nodebest && ft_checknode6(*nodebest,strend,scbest1.nodetmp->name) == 0)
-						scbest1.r = 1;
-					scbest1.nodetmp = scbest1.nodetmp->nextr;
-				}
-				scbest1.nodetmp = scbest1.nodetmp3;
-				if(scbest1.r == 0)
-				{
-					*nodebest = lst_add_downlrnew(nodebest,scbest1.nodetmp->name);
-					scbest1.nodetmp = scbest1.nodetmp->nextr;
-					while(scbest1.nodetmp)
-					{
-						*nodebest = lst_add_down_downr(nodebest,scbest1.nodetmp->name);
-						scbest1.nodetmp = scbest1.nodetmp->nextr;
-					}
-				}
-			}
-		}
+			ft_screenbest_p1(&scbest1, &nodebest, nodedata, strend);
 		scbest1.iter++;
 	}
 	return (*nodebest);
+}
+
+void		ft_screenbest_p1(t_scbest *scbest1, t_node ***nodebest, t_node *nodedata, char *strend)
+{
+	if(scbest1->iter == 0)
+		scbest1->numberlist = lst_add_downlrnew(&(scbest1->numberlist),ft_itoa(scbest1->index));
+	else
+		scbest1->numberlist = lst_add_downl(&(scbest1->numberlist),ft_itoa(scbest1->index));
+	scbest1->i = scbest1->index;
+	scbest1->nodetmp = nodedata;
+	while (scbest1->nodetmp && scbest1->i > 0)
+	{
+		scbest1->nodetmp = scbest1->nodetmp->nextl;
+		scbest1->i--;
+	}
+	scbest1->nodetmp3 = scbest1->nodetmp;
+	if (ft_checkdirect(scbest1->nodetmp, strend))
+	{
+		scbest1->indirect = 1;
+		scbest1->countdirect++;
+	}
+	if (scbest1->indirect == 0 || (scbest1->indirect == 1 && scbest1->countdirect <= 1))
+	{
+		while (scbest1->nodetmp && ft_strcmp((scbest1->nodetmp)->name,strend) != 0 && scbest1->r == 0)
+		{
+			if(*nodebest && ft_checknode6(**nodebest,strend,scbest1->nodetmp->name) == 0)
+				scbest1->r = 1;
+			scbest1->nodetmp = scbest1->nodetmp->nextr;
+		}
+		scbest1->nodetmp = scbest1->nodetmp3;
+		if(scbest1->r == 0)
+		{
+			**nodebest = lst_add_downlrnew(*nodebest,scbest1->nodetmp->name);
+			scbest1->nodetmp = scbest1->nodetmp->nextr;
+			while(scbest1->nodetmp)
+			{
+				**nodebest = lst_add_down_downr(*nodebest,scbest1->nodetmp->name);
+				scbest1->nodetmp = scbest1->nodetmp->nextr;
+			}
+		}
+	}
 }

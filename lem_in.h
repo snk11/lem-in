@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/20 13:20:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/20 13:41:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,5 +221,6 @@ void					permute_p1(t_node **nodedata, t_node *nodetmp3);
 void					ft_screen_p1(t_node *node1, t_screen *screen1, char *strend);
 void					ft_screen_p2(t_node ***nodedata, t_screen *screen1);
 void		ft_init6(t_scbest *scbest1);
+void		ft_screenbest_p1(t_scbest *scbest1, t_node ***nodebest, t_node *nodedata, char *strend);
 
 #endif
