@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:14:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/14 17:59:26 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 15:07:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,54 +48,55 @@ int		ft_checktube1_p1(char *s)
 
 int		ft_checktube2(char *line,t_node *node1)
 {
-	int	i;
-	int	j;
-	char	*s1;
-	char	*s2;
+	t_checkt checkt1;
 
-	s1 = NULL;
-	s2 = NULL;
-	i = 0;
-	j = 0;
+	ft_init10(&checkt1);
 	if(ft_checktube1(line))
 	{
-		i = 0;
-		while(line[i] != '-')
-			i++;
-		s1 = (char*)malloc(sizeof(char)*i+1);
-		i = 0;
-		while(line[i] != '-')
-		{
-			s1[i] = line[i];
-			i++;
-		}
-		s1[i] = 0;
-		i++;
-		j = 0;
-//		printf("line[i] = %s\n",&(line[i]));
-		while(line[i] && line[i] != EOF && line[i] != ' ' && line[i] != '\t')
-		{
-			j++;
-			i++;
-		}
-//		printf("j = %d, i = %d\n", j, i);
-		i = i - j;
-		s2 = (char*)malloc(sizeof(char)*j+1);
-		j = 0;
-		while(line[i] && line[i] != EOF && line[i] != ' ' && line[i] != '\t')
-		{
-			s2[j] = line[i];
-			j++;
-			i++;
-		}
-		s2[j] = 0;
-//		printf("s2 = %s\n",s2);
-		if (ft_cursref_first(node1,s1) == NULL)
+		ft_checktube2_p1(&checkt1, line);
+		ft_checktube2_p2(&checkt1, line);
+		if (ft_cursref_first(node1,checkt1.s1) == NULL)
 			return (0);
-		if (ft_cursref_first(node1,s2) == NULL)
+		if (ft_cursref_first(node1,checkt1.s2) == NULL)
 			return (0);
 	}
 	else
 		return (0);
 	return (1);
+}
+
+void		ft_checktube2_p1(t_checkt *checkt1, char *line)
+{
+		checkt1->i = 0;
+		while(line[checkt1->i] != '-')
+			checkt1->i++;
+		checkt1->s1 = (char*)malloc(sizeof(char)*checkt1->i+1);
+		checkt1->i = 0;
+		while(line[checkt1->i] != '-')
+		{
+			(checkt1->s1)[checkt1->i] = line[checkt1->i];
+			checkt1->i++;
+		}
+		(checkt1->s1)[checkt1->i] = 0;
+		checkt1->i++;
+		checkt1->j = 0;
+		while(line[checkt1->i] && line[checkt1->i] != EOF && line[checkt1->i] != ' ' && line[checkt1->i] != '\t')
+		{
+			checkt1->j++;
+			checkt1->i++;
+		}
+}
+
+void		ft_checktube2_p2(t_checkt *checkt1, char *line)
+{
+		checkt1->i = checkt1->i - checkt1->j;
+		checkt1->s2 = (char*)malloc(sizeof(char)*checkt1->j+1);
+		checkt1->j = 0;
+		while(line[checkt1->i] && line[checkt1->i] != EOF && line[checkt1->i] != ' ' && line[checkt1->i] != '\t')
+		{
+			(checkt1->s2)[checkt1->j] = line[checkt1->i];
+			checkt1->j++;
+			checkt1->i++;
+		}
+		checkt1->s2[checkt1->j] = 0;
 }

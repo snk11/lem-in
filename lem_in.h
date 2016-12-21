@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 14:17:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 15:06:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -158,6 +158,14 @@ typedef struct			s_minpath
 	int			index;
 }						t_minpath;
 
+typedef struct			s_checkt
+{
+	int	i;
+	int	j;
+	char	*s1;
+	char	*s2;
+}						t_checkt;
+
 t_lst		*create_lst1(void *content);
 t_lst2		*create_lst2(void *content);
 t_node		*ft_createnode(char *s);
@@ -285,5 +293,8 @@ void		ft_swapr_p1(t_swap *swap1, t_node *nodetmp, char *s1, char *s2);
 void		ft_swapr_p2(t_swap *swap1, t_node ***nodetmp, char *s1);
 void		ft_swapr_p3(t_swap *swap1, t_node ***nodetmp, char *s2);
 void		ft_init9(t_minpath *minpath1);
+void		ft_init10(t_checkt *checkt1);
+void		ft_checktube2_p1(t_checkt *checkt1, char *line);
+void		ft_checktube2_p2(t_checkt *checkt1, char *line);
 
 #endif

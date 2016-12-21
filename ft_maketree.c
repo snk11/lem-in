@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 16:09:47 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 14:18:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 14:19:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,3 @@ t_node	*ft_maketree(t_node *maintree,char *strbegi)
 
 	return (rtree);
 }
-/*
-t_node	*ft_maketree(t_node *maintree,char *strbegi)
-{
-	t_node	*rtree;
-	
-	rtree = ft_copytree(maintree,strbegi);
-
-	return (rtree);
-}
-*/

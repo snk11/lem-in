@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 12:55:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 14:02:59 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 14:53:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,4 +57,12 @@ void		ft_init9(t_minpath *minpath1)
 	minpath1->cnt = 0;
 	minpath1->i = 0;
 	minpath1->index = -1;
+}
+
+void		ft_init10(t_checkt *checkt1)
+{
+	checkt1->s1 = NULL;
+	checkt1->s2 = NULL;
+	checkt1->i = 0;
+	checkt1->j = 0;
 }
