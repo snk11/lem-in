@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 12:46:03 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 12:56:35 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -270,5 +270,6 @@ void		ft_simuldirect_p2_p3(t_simul *simul1);
 void		ft_simuldirect_p2_p4(t_simul *simul1, int totant);
 void		ft_init8(t_swap *swap1);
 void		ft_swap_p1(t_swap *swap1, t_node *nodetmp, char *s1, char *s2);
+void		ft_swap_p2(t_swap *swap1, t_node ***nodetmp, char *s1);
 
 #endif
