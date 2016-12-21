@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 17:25:32 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 11:54:00 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 15:14:31 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,7 @@ int		ft_checknewant(t_room *room,t_room *node,int nbant)
 		j1++;
 		nodetmp = nodetmp->nextr;
 	}
-	if(i1 == j1)
-		return (1);
-	if(i1 < j1 && nbant  > j1)
+	if(i1 == j1 || (i1 < j1 && nbant  > j1))
 		return (1);
 	return (0);
 }
