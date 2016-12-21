@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 13:02:34 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 13:38:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -272,5 +272,8 @@ void		ft_init8(t_swap *swap1);
 void		ft_swap_p1(t_swap *swap1, t_node *nodetmp, char *s1, char *s2);
 void		ft_swap_p2(t_swap *swap1, t_node ***nodetmp, char *s1);
 void		ft_swap_p3(t_swap *swap1, t_node ***nodetmp, char *s2);
+void		ft_swapr_p1(t_swap *swap1, t_node *nodetmp, char *s1, char *s2);
+void		ft_swapr_p2(t_swap *swap1, t_node ***nodetmp, char *s1);
+void		ft_swapr_p3(t_swap *swap1, t_node ***nodetmp, char *s2);
 
 #endif
