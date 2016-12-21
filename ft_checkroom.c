@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 14:52:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/17 10:33:26 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 15:41:13 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,58 +52,58 @@ int		ft_checkroom_p1(char *s)
 
 int		ft_checkroom2(char *line, t_node **node1)
 {
-	int i;
-	int j;
-	int k;
-	char	*s1;
-	char	*s2;
-	t_node	*node2;
+	t_checkr	checkr1;
 
-	node2 = NULL;
-	s1 = NULL;
-	s2 = NULL;
-	i = 0;
-	j = 0;
-	k = 0;
+	ft_init11(&checkr1);
 	if(ft_checkroom(line))
 	{
-		while(line[i] != ' ')
-			i++;
-		s1 = (char*)malloc(sizeof(char)*i+1);
-		i = 0;
-		while(line[i] != ' ')
+		ft_checkroom2_p1(&checkr1, line);
+		ft_checkroom2_p2(&checkr1, line);
+		if (ft_checkdouble_l(checkr1.node2,checkr1.s2) && ft_checkdouble_l(*node1,checkr1.s1) == 1)
 		{
-			s1[i] = line[i];
-			i++;
+			*node1 = ft_add_node_l(node1,checkr1.s1);
+			checkr1.node2 = lst_add_downl(&(checkr1.node2),checkr1.s2);
 		}
-		s1[i] = 0;
-		i++;
-		k = i;
-		while(line[i])
-		{
-			j++;
-			i++;
-		}
-		s2 = (char*)malloc(sizeof(char)*j+1);
-		i = k;
-		j = 0;
-		while(line[i])
-		{
-			s2[j] = line[i];
-			j++;
-			i++;
-		}
-		s2[j] = 0;
-//		printf("s1 = %s, s2 = %s\n",s1,s2);
-		if (ft_checkdouble_l(node2,s2) && ft_checkdouble_l(*node1,s1) == 1)
-		{
-			*node1 = ft_add_node_l(node1,s1);
-			node2 = lst_add_downl(&node2,s2);
-		}
-		else if(ft_checkdouble_l(node2,s2) == 0 && ft_checkdouble_l(*node1,s1) == 1)
+		else if(ft_checkdouble_l(checkr1.node2,checkr1.s2) == 0 && ft_checkdouble_l(*node1,checkr1.s1) == 1)
 			return (0);
-		else if (ft_checkdouble_l(*node1,s1) == 0 && ft_checkdouble_l(node2,s2) == 1)
+		else if (ft_checkdouble_l(*node1,checkr1.s1) == 0 && ft_checkdouble_l(checkr1.node2,checkr1.s2) == 1)
 			return (0);
 	}
 	return (1);
+}
+
+
+void		ft_checkroom2_p1(t_checkr *checkr1, char *line)
+{
+		while(line[checkr1->i] != ' ')
+			checkr1->i++;
+		checkr1->s1 = (char*)malloc(sizeof(char)*checkr1->i+1);
+		checkr1->i = 0;
+		while(line[checkr1->i] != ' ')
+		{
+			(checkr1->s1)[checkr1->i] = line[checkr1->i];
+			checkr1->i++;
+		}
+		(checkr1->s1)[checkr1->i] = 0;
+		checkr1->i++;
+		checkr1->k = checkr1->i;
+		while(line[checkr1->i])
+		{
+			checkr1->j++;
+			checkr1->i++;
+		}
+}
+
+void		ft_checkroom2_p2(t_checkr *checkr1, char *line)
+{
+		checkr1->s2 = (char*)malloc(sizeof(char)*checkr1->j+1);
+		checkr1->i = checkr1->k;
+		checkr1->j = 0;
+		while(line[checkr1->i])
+		{
+			(checkr1->s2)[checkr1->j] = line[checkr1->i];
+			checkr1->j++;
+			checkr1->i++;
+		}
+		(checkr1->s2)[checkr1->j] = 0;
 }
