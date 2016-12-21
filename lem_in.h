@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 16:28:11 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 17:15:37 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,6 +183,18 @@ typedef struct			s_crtroom
 	int		ind1;
 }						t_crtroom;
 
+typedef struct			s_dmain
+{
+	t_node				*node2;
+	t_node				*nodetmp;
+	t_node				*nodedata;
+	t_node				*nodedummie;
+	t_node				*nodebest;
+	t_data	data1;
+	t_map	map1;
+	char	*line;
+}						t_dmain;
+
 t_lst		*create_lst1(void *content);
 t_lst2		*create_lst2(void *content);
 t_node		*ft_createnode(char *s);
@@ -270,7 +282,7 @@ void					ft_addseries(t_node **node2, t_node *node1);
 void					ft_printsol(t_node *node);
 void					ft_init2(t_map *map1);
 void					ft_printmap(t_map map1, int nbant);
-void					ft_init3(t_pr *pr1);
+//void					ft_init3(t_pr *pr1);
 void					ft_init4(t_read *read1);
 void					ft_init5(t_screen *screen1);
 void					ft_read_map_p1(char *line, t_read *read1);
@@ -319,5 +331,6 @@ void		ft_checkroom2_p2(t_checkr *checkr1, char *line);
 void		ft_createroom_p1(t_crtroom *crtroom1, t_room ***rooms, char *strend);
 void		ft_createroom_p2(t_crtroom *crtroom1, t_room ***rooms, char *strend);
 void		permute_p2(t_node **nodetmp3, int *r, int *r1);
+void		ft_init12(t_dmain *dmain1);
 
 #endif

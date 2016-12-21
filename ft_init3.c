@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 15:22:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 15:26:22 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 17:15:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,4 +20,12 @@ void		ft_init11(t_checkr *checkr1)
 	checkr1->i = 0;
 	checkr1->j = 0;
 	checkr1->k = 0;
+}
+
+void		ft_init12(t_dmain *dmain1)
+{
+	dmain1->node2 = NULL;
+	dmain1->nodebest = NULL;
+	dmain1->nodedata = NULL;
+	dmain1->nodedummie = NULL;
 }
