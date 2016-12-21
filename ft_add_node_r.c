@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/15 15:51:08 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/15 18:44:01 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 15:12:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,51 +15,14 @@
 
 t_node	*ft_add_node_r(t_node **node1,char *line)
 {
-	int	i;
-	int	j;
-	char	*s1;
-	char	*s2;
+	t_checkt checkt1;
 
-	s1 = NULL;
-	s2 = NULL;
-	i = 0;
-	j = 0;
-	while(line[i] != '-')
-		i++;
-	s1 = (char*)malloc(sizeof(char)*i+1);
-	i = 0;
-	while(line[i] != '-')
-	{
-		s1[i] = line[i];
-		i++;
-	}
-	s1[i] = 0;
-	i++;
-	j = 0;
-	while(line[i] && line[i] != EOF && line[i] != ' ' && line[i] != '\t')
-	{
-		j++;
-		i++;
-	}
-	i = i - j;
-	s2 = (char*)malloc(sizeof(char)*j+1);
-	j = 0;
-	while(line[i] && line[i] != EOF && line[i] != ' ' && line[i] != '\t')
-	{
-		s2[j] = line[i];
-		j++;
-		i++;
-	}
-	s2[j] = 0;
-	if (ft_checkdouble_r(ft_cursref_first(*node1,s1),s2))
-	{
-		*node1 = lst_add_downr(node1,ft_cursref_first(*node1,s1),s2);
-//		printf("tube = %s\n",line);
-	}
-	if (ft_checkdouble_r(ft_cursref_first(*node1,s2),s1))
-	{
-		*node1 = lst_add_downr(node1,ft_cursref_first(*node1,s2),s1);
-//		printf("tube = %s\n",line);
-	}
+	ft_init10(&checkt1);
+	ft_checktube2_p1(&checkt1, line);
+	ft_checktube2_p2(&checkt1, line);
+	if (ft_checkdouble_r(ft_cursref_first(*node1,checkt1.s1),checkt1.s2))
+		*node1 = lst_add_downr(node1,ft_cursref_first(*node1,checkt1.s1),checkt1.s2);
+	if (ft_checkdouble_r(ft_cursref_first(*node1,checkt1.s2),checkt1.s1))
+		*node1 = lst_add_downr(node1,ft_cursref_first(*node1,checkt1.s2),checkt1.s1);
 	return (*node1);
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:14:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 15:07:07 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 15:09:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int		ft_checktube2(char *line,t_node *node1)
 	ft_init10(&checkt1);
 	if(ft_checktube1(line))
 	{
+		checkt1.i = 0;
 		ft_checktube2_p1(&checkt1, line);
 		ft_checktube2_p2(&checkt1, line);
 		if (ft_cursref_first(node1,checkt1.s1) == NULL)
@@ -67,7 +68,6 @@ int		ft_checktube2(char *line,t_node *node1)
 
 void		ft_checktube2_p1(t_checkt *checkt1, char *line)
 {
-		checkt1->i = 0;
 		while(line[checkt1->i] != '-')
 			checkt1->i++;
 		checkt1->s1 = (char*)malloc(sizeof(char)*checkt1->i+1);
