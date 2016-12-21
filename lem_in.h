@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 13:38:28 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 14:11:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,6 +148,16 @@ typedef struct			s_swap
 	int		cnt2;
 }						t_swap;
 
+typedef struct			s_minpath
+{
+	t_node		*nodetmp;
+	t_node		*nodetmp3;
+	int			min;
+	int			cnt;
+	int			i;
+	int			index;
+}						t_minpath;
+
 t_lst		*create_lst1(void *content);
 t_lst2		*create_lst2(void *content);
 t_node		*ft_createnode(char *s);
@@ -226,6 +236,7 @@ int						ft_checkint_p2_p2_p8(char *s1);
 int						ft_checkint_p2_p2_p3(char *s1);
 void					ft_init(t_data *data1);
 int						ft_getminpath(t_node *nodetmp,t_node *numberlist, char *strend);
+void					ft_getminpath_p1(t_minpath *minpath1, char *strend);
 int						ft_checkdirect(t_node *node1, char *strend);
 void					ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant);
 int						ft_countelemroom_lvr(t_room *room1);
@@ -275,5 +286,6 @@ void		ft_swap_p3(t_swap *swap1, t_node ***nodetmp, char *s2);
 void		ft_swapr_p1(t_swap *swap1, t_node *nodetmp, char *s1, char *s2);
 void		ft_swapr_p2(t_swap *swap1, t_node ***nodetmp, char *s1);
 void		ft_swapr_p3(t_swap *swap1, t_node ***nodetmp, char *s2);
+void		ft_init9(t_minpath *minpath1);
 
 #endif

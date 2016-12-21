@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 12:55:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/20 18:53:58 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 14:02:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,12 @@ void		ft_init8(t_swap *swap1)
 	swap1->z = NULL;
 	swap1->nodetmp3 = NULL;
 	swap1->nodetmp5 = NULL;
+}
+
+void		ft_init9(t_minpath *minpath1)
+{
+	minpath1->min = 0;
+	minpath1->cnt = 0;
+	minpath1->i = 0;
+	minpath1->index = -1;
 }
