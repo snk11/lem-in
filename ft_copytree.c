@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 16:13:39 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 14:16:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 14:18:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-t_node *ft_copytree2(t_node *maintree,char *strbegi)
+t_node *ft_copytree(t_node *maintree,char *strbegi)
 {
 	t_node	*rtree;
 	t_node	*nodetmp2;

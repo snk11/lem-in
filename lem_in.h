@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 14:11:20 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 14:17:52 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,15 +173,13 @@ int		ft_checknode4(t_node *node,char *strend,char *s);
 int		ft_checknode5(t_node *node,char *s);
 int		ft_checknode6(t_node *node,char *strend,char *s);
 void	ft_printfpath(t_node *path1begi);
-t_node *ft_copytree(t_node *maintree,char *strbegi);
-t_node	*ft_maketree(t_node *maintree,char *strbegi);
 int		ft_countelem_lv1(t_node *node1);
 t_node *ft_cursref(t_node *node1,t_node *noderef);
 t_node *ft_cursref_first(t_node *node1,char *s);
 void permute(char *a, int l, int r);
 void swap(char *x, char *y);
-t_node	*ft_maketree2(t_node *maintree,char *strbegi);
-t_node *ft_copytree2(t_node *maintree,char *strbegi);
+t_node	*ft_maketree(t_node *maintree,char *strbegi);
+t_node *ft_copytree(t_node *maintree,char *strbegi);
 void permute2(t_node **nodetmp, t_node **nodedata,int r1,int r2,char *strbegi);
 void	ft_swap2(t_node **nodetmp,char *s1,char *s2);
 t_node	*ft_generate(t_node *node1,char *strbegi);
