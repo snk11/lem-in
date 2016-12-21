@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 20:27:03 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/20 18:57:58 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 17:42:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,7 @@ void	ft_sort(t_node **node1)
 	t_node	*nodetmp3;
 	int		r;
 
-	nodetmp3 = NULL;
-
-	r = 1;
+	ft_sort_p1(&nodetmp3, &r);
 	nodetmp = *node1;
 	while (r == 1)
 	{
@@ -41,4 +39,10 @@ void	ft_sort(t_node **node1)
 		}
 	}
 	*node1 = nodetmp;
+}
+
+void		ft_sort_p1(t_node **nodetmp3, int *r)
+{
+	*nodetmp3 = NULL;
+	*r = 1;
 }
