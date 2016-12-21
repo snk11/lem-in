@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/05 17:01:50 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 14:17:24 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 16:32:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,43 +31,3 @@ t_node	*ft_generate(t_node *node1,char *strbegi)
 	return (nodedata);
 }
 
-void permute2(t_node **nodetmp, t_node **nodedata,int r1,int r2,char *strbegi)
-{
-	int	r;
-	t_node *nodetmp2;
-	t_node *nodetmp3;
-	nodetmp3 = *nodetmp;
-
-	r = r1;
-	if (r1 == r2 && ft_strcmp(nodetmp3->name,strbegi) == 0)
-		permute_p1(nodedata,nodetmp3);
-	else
-	{
-		while(r1 > 0)
-		{
-			nodetmp3 = nodetmp3->nextl;
-			r1--;
-		}
-		r1 = r;
-		nodetmp2 = nodetmp3;
-		while(r <= r2)
-		{
-			ft_swap2(nodetmp,nodetmp2->name,nodetmp3->name);
-			permute2(nodetmp,nodedata,r1 + 1,r2,strbegi);
-			ft_swap2(nodetmp,nodetmp2->name,nodetmp3->name);
-			nodetmp3 = nodetmp3->nextl;
-			r++;
-		}
-	}
-}
-
-void		permute_p1(t_node **nodedata, t_node *nodetmp3)
-{
-	*nodedata = lst_add_downlrnew(nodedata,nodetmp3->name);
-	nodetmp3 = nodetmp3->nextl;
-	while(nodetmp3)
-	{
-		*nodedata = lst_add_down_downr(nodedata,nodetmp3->name);
-		nodetmp3 = nodetmp3->nextl;
-	}
-}

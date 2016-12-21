@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 16:17:12 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 16:28:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -318,5 +318,6 @@ void		ft_checkroom2_p1(t_checkr *checkr1, char *line);
 void		ft_checkroom2_p2(t_checkr *checkr1, char *line);
 void		ft_createroom_p1(t_crtroom *crtroom1, t_room ***rooms, char *strend);
 void		ft_createroom_p2(t_crtroom *crtroom1, t_room ***rooms, char *strend);
+void		permute_p2(t_node **nodetmp3, int *r, int *r1);
 
 #endif
