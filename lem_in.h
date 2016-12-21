@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 15:40:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 16:17:12 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -176,6 +176,13 @@ typedef struct			s_checkr
 	t_node	*node2;
 }						t_checkr;
 
+typedef struct			s_crtroom
+{
+	t_node	*nodetmp;
+	t_node	*nodetmp3;
+	int		ind1;
+}						t_crtroom;
+
 t_lst		*create_lst1(void *content);
 t_lst2		*create_lst2(void *content);
 t_node		*ft_createnode(char *s);
@@ -309,5 +316,7 @@ void		ft_checktube2_p2(t_checkt *checkt1, char *line);
 void		ft_init11(t_checkr *checkr1);
 void		ft_checkroom2_p1(t_checkr *checkr1, char *line);
 void		ft_checkroom2_p2(t_checkr *checkr1, char *line);
+void		ft_createroom_p1(t_crtroom *crtroom1, t_room ***rooms, char *strend);
+void		ft_createroom_p2(t_crtroom *crtroom1, t_room ***rooms, char *strend);
 
 #endif
