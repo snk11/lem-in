@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 17:15:56 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/21 17:35:23 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,6 @@ int main(int ac,char **av)
 {
 	t_dmain		dmain1;
 
-	dmain1.line = NULL;
-	dmain1.data1.nbant = 0;
-	ft_init(&(dmain1.data1));
-	ft_init2(&(dmain1.map1));
 	ft_init12(&dmain1);
 	ft_read_map(&(dmain1.node2),av[1],&(dmain1.data1), &(dmain1.map1));
 	if (ft_checkmindata(dmain1.data1) == 0)
@@ -39,9 +35,7 @@ int main(int ac,char **av)
 		return (0);
 	}
 	ft_printmap(dmain1.map1,dmain1.data1.nbant);
-//	ft_printfpath(nodedata);
 	dmain1.nodebest = ft_screenbest(&(dmain1.nodebest),dmain1.nodedata,(dmain1.data1).strend);
-//	ft_printfpath(nodebest);
 	if (dmain1.nodebest && !ft_checkdirect(dmain1.nodebest, (dmain1.data1).strend))
 		ft_simul(dmain1.nodebest, (dmain1.data1).strbegi, (dmain1.data1).strend, (dmain1.data1).nbant);
 	else if (dmain1.nodebest && ft_checkdirect(dmain1.nodebest, (dmain1.data1).strend))
