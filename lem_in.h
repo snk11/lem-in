@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/22 16:47:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/22 17:10:42 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -231,7 +231,7 @@ t_node *ft_copytree(t_node *maintree,char *strbegi);
 void permute2(t_node **nodetmp, t_node **nodedata,int r1,int r2,char *strbegi);
 void	ft_swap2(t_node **nodetmp,char *s1,char *s2);
 t_node	*ft_generate(t_node *node1,char *strbegi);
-t_node	*ft_screen(t_node **nodedata,t_node *nodedummie,t_node *node1,char *strbegi,char *strend);
+t_node		*ft_screen(t_node **nodedata, t_dmain dmain1);
 t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend);
 int		get_next_line(int const fd, char **line);
 int		ft_checknbant(char *s);

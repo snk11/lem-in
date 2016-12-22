@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 11:17:10 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/22 16:47:27 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/22 16:57:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,14 @@ void		ft_read_map_p1(t_read *read1)
 	}
 }
 
-void		ft_read_map_p2(t_read *read1, t_node **node1 , t_data *data1, t_map *map1)
+void		ft_read_map_p2(t_read *read1, t_node **node1, t_data *data1,
+		t_map *map1)
 {
 	if (read1->r3 >= 1)
 		read1->r1 = 1;
 	else
 	{
-		get_next_line(read1->fd,&(read1->line));
+		get_next_line(read1->fd, &(read1->line));
 		if (ft_checkroom(read1->line))
 			ft_read_map_p2_p1(read1, node1, data1, map1);
 		else
@@ -38,16 +39,17 @@ void		ft_read_map_p2(t_read *read1, t_node **node1 , t_data *data1, t_map *map1)
 	}
 }
 
-void		ft_read_map_p2_p1(t_read *read1, t_node **node1, t_data *data1, t_map *map1)
+void		ft_read_map_p2_p1(t_read *read1, t_node **node1, t_data *data1,
+		t_map *map1)
 {
-	if (ft_checkroom2(read1->line,node1) == 0)
+	if (ft_checkroom2(read1->line, node1) == 0)
 		read1->r1 = 1;
 	else
 	{
 		read1->i = 0;
 		while ((read1->line)[read1->i] != ' ')
 			read1->i++;
-		read1->s1 = (char*)malloc(sizeof(char)*read1->i+1);
+		read1->s1 = (char*)malloc(sizeof(char) * read1->i + 1);
 		read1->i = 0;
 		while ((read1->line)[read1->i] != ' ')
 		{
@@ -60,13 +62,14 @@ void		ft_read_map_p2_p1(t_read *read1, t_node **node1, t_data *data1, t_map *map
 	}
 }
 
-void		ft_read_map_p3(t_read *read1, t_node **node1, t_data *data1, t_map *map1)
+void		ft_read_map_p3(t_read *read1, t_node **node1, t_data *data1,
+		t_map *map1)
 {
 	if (read1->r4 >= 1)
 		read1->r1 = 1;
 	else
 	{
-		get_next_line(read1->fd,&(read1->line));
+		get_next_line(read1->fd, &(read1->line));
 		if (ft_checkroom(read1->line))
 			ft_read_map_p3_p1(read1, node1, data1, map1);
 		else
@@ -75,16 +78,17 @@ void		ft_read_map_p3(t_read *read1, t_node **node1, t_data *data1, t_map *map1)
 	}
 }
 
-void		ft_read_map_p3_p1(t_read *read1, t_node **node1, t_data *data1, t_map *map1)
+void		ft_read_map_p3_p1(t_read *read1, t_node **node1, t_data *data1,
+		t_map *map1)
 {
-	if (ft_checkroom2(read1->line,node1) == 0)
+	if (ft_checkroom2(read1->line, node1) == 0)
 	{
 		read1->r1 = 1;
 	}
 	read1->i = 0;
 	while ((read1->line)[read1->i] != ' ')
 		read1->i++;
-	read1->s1 = (char*)malloc(sizeof(char)*read1->i+1);
+	read1->s1 = (char*)malloc(sizeof(char) * read1->i + 1);
 	read1->i = 0;
 	while ((read1->line)[read1->i] != ' ')
 	{
