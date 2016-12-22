@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/22 18:02:46 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/22 18:04:58 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/22 18:12:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-t_room		*lst_add_downl_room(t_room **node1,char *s)
+t_room		*lst_add_downl_room(t_room **node1, char *s)
 {
 	t_room	*nodetmp;
 	t_room	*nodetmp2;
@@ -51,7 +51,7 @@ t_room		*ft_createnode_room(char *s)
 	return (curlst);
 }
 
-t_room		*lst_add_down_downr_room(t_room **node1,char *s)
+t_room		*lst_add_down_downr_room(t_room **node1, char *s)
 {
 	t_room	*nodetmp;
 	t_room	*nodetmp2;
@@ -63,7 +63,7 @@ t_room		*lst_add_down_downr_room(t_room **node1,char *s)
 	nodetmp = ft_createnode_room(s);
 	if (!(nodetmp2))
 		return (nodetmp);
-	while(nodetmp2 && nodetmp2->nextl)
+	while (nodetmp2 && nodetmp2->nextl)
 		nodetmp2 = (nodetmp2)->nextl;
 	while ((nodetmp2)->nextr)
 		nodetmp2 = (nodetmp2)->nextr;
@@ -93,7 +93,7 @@ t_node		*ft_createnode(char *s)
 	return (curlst);
 }
 
-t_node		*lst_add_downl(t_node **node1,char *s)
+t_node		*lst_add_downl(t_node **node1, char *s)
 {
 	t_node	*nodetmp;
 	t_node	*nodetmp2;
@@ -108,4 +108,3 @@ t_node		*lst_add_downl(t_node **node1,char *s)
 	(nodetmp2)->nextl = nodetmp;
 	return (*node1);
 }
-
