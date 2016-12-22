@@ -6,7 +6,7 @@
 #    By: syusof <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/22 15:50:15 by syusof            #+#    #+#              #
-#    Updated: 2016/12/16 18:38:34 by syusof           ###   ########.fr        #
+#    Updated: 2016/12/22 19:06:34 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS = *.c
 
 OFILES = $(SRCS:.c=.o)
 
-FLAGS = -I libft/includes/ -c
+FLAGS = -I libft/includes/
 
 MAIN = lem_in.c
 
@@ -27,7 +27,7 @@ all: $(NAME)
 
 $(NAME):
 	make -C libft/ re
-	gcc $(FLAGS) $(SRCS)
+	gcc $(FLAGS) -I includes/ -c $(SRCS)
 	gcc -o $(NAME) $(OFILES)  -L libft/ -lft
 
 clean:
