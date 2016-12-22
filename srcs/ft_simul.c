@@ -6,13 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 15:54:58 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/22 17:29:00 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/22 19:41:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void		ft_simul(t_node *nodebest, char *strbegi, char *strend, int totant)
+void		ft_simul(t_node *nodebest, char *strend, int totant)
 {
 	t_simul		simul1;
 

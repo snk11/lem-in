@@ -6,7 +6,7 @@
 #    By: syusof <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/22 15:50:15 by syusof            #+#    #+#              #
-#    Updated: 2016/12/22 19:26:33 by syusof           ###   ########.fr        #
+#    Updated: 2016/12/22 19:36:10 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS = srcs/*.c
 
 OFILES = *.o
 
-FLAGS = -I libft/
+FLAGS = -Wall -Werror -Wextra
 
 MAIN = lem_in.c
 
@@ -27,7 +27,7 @@ all: $(NAME)
 
 $(NAME):
 	make -C libft/ re
-	gcc $(FLAGS) -I includes/ -c $(SRCS)
+	gcc $(FLAGS) -I libft/ -I includes/ -c $(SRCS)
 	gcc -o $(NAME) $(OFILES)  -L libft/ -lft
 
 clean:

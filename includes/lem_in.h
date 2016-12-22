@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/22 19:15:46 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/22 19:40:36 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -253,10 +253,9 @@ t_room					*lst_add_down_downr_room(t_room **node1, char *s);
 t_room					*ft_createroom(t_room **rooms, t_node *nodebest,
 		char *strend);
 void					ft_printfpath_room(t_room *path1begi);
-void					ft_simul(t_node *nodebest, char *strbegi, char *strend,
-		int nbant);
+void					ft_simul(t_node *nodebest, char *strend, int nbant);
 int						ft_checkzero(t_room *rooms);
-int						ft_read_map(t_node **node1, char *file, t_data *data1,
+int						ft_read_map(t_node **node1, t_data *data1,
 		t_map *map1);
 int						ft_checknewant(t_room *room, t_room *node, int nbant);
 int						ft_checkmindata(t_data data1);
@@ -291,7 +290,7 @@ int						ft_getminpath(t_node *nodetmp, t_node *numberlist,
 		char *strend);
 void					ft_getminpath_p1(t_minpath *minpath1, char *strend);
 int						ft_checkdirect(t_node *node1, char *strend);
-void					ft_simuldirect(t_node *nodebest, char *strbegi,
+void					ft_simuldirect(t_node *nodebest,
 		char *strend, int totant);
 int						ft_countelemroom_lvr(t_room *room1);
 char					*ft_makestring(int nb, char *name);
