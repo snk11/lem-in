@@ -6,18 +6,18 @@
 #    By: syusof <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/22 15:50:15 by syusof            #+#    #+#              #
-#    Updated: 2016/12/22 19:06:34 by syusof           ###   ########.fr        #
+#    Updated: 2016/12/22 19:26:33 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = lem-in
 
-SRCS = *.c
+SRCS = srcs/*.c
 
-OFILES = $(SRCS:.c=.o)
+OFILES = *.o
 
-FLAGS = -I libft/includes/
+FLAGS = -I libft/
 
 MAIN = lem_in.c
 
