@@ -6,16 +6,13 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 09:54:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/20 14:01:45 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/22 17:21:29 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-
-
-#include <stdio.h>
-t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
+t_node	*ft_screenbest(t_node **nodebest, t_node *nodedata,char *strend)
 {
 	t_scbest		scbest1;
 
@@ -23,7 +20,7 @@ t_node	*ft_screenbest(t_node **nodebest,t_node *nodedata,char *strend)
 	scbest1.nbelemnodedata = ft_countelem_lv1(nodedata);
 	scbest1.nodetmp = nodedata;
 	scbest1.nodetmp3 = scbest1.nodetmp;
-	while(scbest1.iter < scbest1.nbelemnodedata)
+	while (scbest1.iter < scbest1.nbelemnodedata)
 	{
 		scbest1.r = 0;
 		scbest1.indirect = 0;
@@ -40,12 +37,7 @@ void		ft_screenbest_p1(t_scbest *scbest1, t_node ***nodebest, t_node *nodedata, 
 	ft_screenbest_p1_p1(scbest1, nodedata, strend);
 	if (scbest1->indirect == 0 || (scbest1->indirect == 1 && scbest1->countdirect <= 1))
 	{
-		while (scbest1->nodetmp && ft_strcmp((scbest1->nodetmp)->name,strend) != 0 && scbest1->r == 0)
-		{
-			if(*nodebest && ft_checknode6(**nodebest,strend,scbest1->nodetmp->name) == 0)
-				scbest1->r = 1;
-			scbest1->nodetmp = scbest1->nodetmp->nextr;
-		}
+		ft_screenbest_p1_p2(scbest1, nodebest, strend);
 		scbest1->nodetmp = scbest1->nodetmp3;
 		if(scbest1->r == 0)
 		{
@@ -79,4 +71,19 @@ void		ft_screenbest_p1_p1(t_scbest *scbest1, t_node *nodedata, char *strend)
 		scbest1->indirect = 1;
 		scbest1->countdirect++;
 	}
+}
+
+void		ft_screenbest_p1_p2(t_scbest *scbest1, t_node ***nodebest
+		,char *strend)
+{
+		while (scbest1->nodetmp
+				&& ft_strcmp((scbest1->nodetmp)->name, strend) != 0
+				&& scbest1->r == 0)
+		{
+			if(*nodebest
+					&& ft_checknode6(**nodebest, strend,
+						scbest1->nodetmp->name) == 0)
+				scbest1->r = 1;
+			scbest1->nodetmp = scbest1->nodetmp->nextr;
+		}
 }
