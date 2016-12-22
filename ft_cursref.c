@@ -6,15 +6,14 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/04 19:28:16 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 11:54:58 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/22 15:13:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-t_node *ft_cursref_first(t_node *node1,char *s)
+t_node	*ft_cursref_first(t_node *node1, char *s)
 {
-
 	t_node	*nodetmp;
 	int		ind2;
 
@@ -24,7 +23,7 @@ t_node *ft_cursref_first(t_node *node1,char *s)
 	{
 		while (nodetmp && ind2 == 0)
 		{
-			if(ft_strcmp((nodetmp->name),s) == 0)
+			if (ft_strcmp((nodetmp->name), s) == 0)
 				ind2 = 1;
 			else
 				nodetmp = nodetmp->nextl;
@@ -34,9 +33,9 @@ t_node *ft_cursref_first(t_node *node1,char *s)
 		return (NULL);
 	return (nodetmp);
 }
-t_node *ft_cursref(t_node *node1,t_node *noderef)
-{
 
+t_node	*ft_cursref(t_node *node1, t_node *noderef)
+{
 	t_node	*nodetmp;
 	int		ind2;
 
@@ -46,7 +45,7 @@ t_node *ft_cursref(t_node *node1,t_node *noderef)
 	{
 		while (nodetmp && ind2 == 0)
 		{
-			if(ft_strcmp((nodetmp->name),noderef->name) == 0)
+			if (ft_strcmp((nodetmp->name), noderef->name) == 0)
 				ind2 = 1;
 			else
 				nodetmp = nodetmp->nextl;
