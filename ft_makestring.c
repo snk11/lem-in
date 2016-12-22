@@ -6,44 +6,43 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/14 18:42:19 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/14 19:10:08 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/22 15:38:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-char	*ft_makestring(int nb, char *name)
+char		*ft_makestring(int nb, char *name)
 {
-	char	*s1;
-	char	*s2;
-	int		nb1;
-	int		nb2;
-	int		i;
-	int		j;
-	nb1 = 0;
-	nb2 = 0;
-	i = 0;
+	t_mkstring		mkstring1;
 
-	s2 = ft_itoa(nb);
-	nb1 = ft_strlen(s2);
-	nb2 = ft_strlen(name);
-	s1 = (char*)malloc(sizeof(char) * 2 + nb1 + nb2 + 1);
-	s1[i] = 'L';
-	i++;
-	while (*s2)
+	ft_init3(&mkstring1);
+	ft_makestring_p1(&mkstring1, nb, name);
+	mkstring1.s1 = (char*)malloc(sizeof(char) * 2
+			+ mkstring1.nb1 + mkstring1.nb2 + 1);
+	mkstring1.s1[mkstring1.i] = 'L';
+	mkstring1.i++;
+	while (*(mkstring1.s2))
 	{
-		s1[i] = *s2;
-		i++;
-		s2++;
+		(mkstring1.s1)[mkstring1.i] = *mkstring1.s2;
+		mkstring1.i++;
+		mkstring1.s2++;
 	}
-	s1[i] = '-';
-	i++;
+	(mkstring1.s1)[mkstring1.i] = '-';
+	mkstring1.i++;
 	while (*name)
 	{
-		s1[i] = *name;
-		i++;
+		(mkstring1.s1)[mkstring1.i] = *name;
+		mkstring1.i++;
 		name++;
 	}
-	s1[i] = 0;
-	return (s1);
+	(mkstring1.s1)[mkstring1.i] = 0;
+	return (mkstring1.s1);
+}
+
+void		ft_makestring_p1(t_mkstring *mkstring1, int nb, char *name)
+{
+	mkstring1->s2 = ft_itoa(nb);
+	mkstring1->nb1 = ft_strlen(mkstring1->s2);
+	mkstring1->nb2 = ft_strlen(name);
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 17:42:51 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/22 15:37:15 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,6 +183,16 @@ typedef struct			s_crtroom
 	int		ind1;
 }						t_crtroom;
 
+typedef struct			s_mkstring
+{
+	char	*s1;
+	char	*s2;
+	int		nb1;
+	int		nb2;
+	int		i;
+	int		j;
+}						t_mkstring;
+
 typedef struct			s_dmain
 {
 	t_node				*node2;
@@ -276,6 +286,7 @@ int						ft_checkdirect(t_node *node1, char *strend);
 void					ft_simuldirect(t_node *nodebest,char *strbegi,char *strend,int totant);
 int						ft_countelemroom_lvr(t_room *room1);
 char					*ft_makestring(int nb, char *name);
+void					ft_makestring_p1(t_mkstring *mkstring1, int nb, char *name);
 void					ft_sort(t_node **node1);
 void					ft_sort_p1(t_node **nodetmp3, int *r);
 void					ft_swap2r(t_node **nodetmp,char *s1,char *s2);
@@ -333,5 +344,6 @@ void		ft_createroom_p1(t_crtroom *crtroom1, t_room ***rooms, char *strend);
 void		ft_createroom_p2(t_crtroom *crtroom1, t_room ***rooms, char *strend);
 void		permute_p2(t_node **nodetmp3, int *r, int *r1);
 void		ft_init12(t_dmain *dmain1);
+void		ft_init3(t_mkstring *mkstring1);
 
 #endif
