@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/22 18:24:18 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/22 18:35:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -353,5 +353,6 @@ void		ft_createroom_p2(t_crtroom *crtroom1, t_room ***rooms, char *strend);
 void		permute_p2(t_node **nodetmp3, int *r, int *r1);
 void		ft_init12(t_dmain *dmain1);
 void		ft_init3(t_mkstring *mkstring1);
+void		main_p1(t_dmain *dmain1);
 
 #endif
