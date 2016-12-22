@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/22 19:40:36 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/22 21:17:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -372,5 +372,7 @@ void					permute_p2(t_node **nodetmp3, int *r, int *r1);
 void					ft_init12(t_dmain *dmain1);
 void					ft_init3(t_mkstring *mkstring1);
 void					main_p1(t_dmain *dmain1);
+void		ft_printnode(t_node *nodedummie);
+void		permute1(t_gene *gene1, int r1, int r2, char *strbegi);
 
 #endif
