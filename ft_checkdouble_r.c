@@ -6,18 +6,17 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 19:21:24 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 11:53:12 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/22 14:53:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "lem_in.h"
 
-int		ft_checkdouble_r(t_node *node,char *s)
+int		ft_checkdouble_r(t_node *node, char *s)
 {
-	while(node)
+	while (node)
 	{
-		if(ft_strcmp(node->name,s) == 0)
+		if (ft_strcmp(node->name, s) == 0)
 			return (0);
 		node = node->nextr;
 	}

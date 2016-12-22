@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 16:30:00 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/23 16:33:41 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/22 14:52:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_checkdirect(t_node *node1, char *strend)
 {
-	if (node1 && node1->nextr && ft_strcmp((node1->nextr)->name,strend) == 0)
+	if (node1 && node1->nextr && ft_strcmp((node1->nextr)->name, strend) == 0)
 		return (1);
 	return (0);
 }
