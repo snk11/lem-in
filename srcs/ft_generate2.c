@@ -6,26 +6,26 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/22 23:52:26 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/23 03:29:50 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/23 04:09:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-t_node	*ft_generate2(t_node *nodeprime, t_node **nodedata, t_node **nodescreen, char *strbegi)
+t_node	*ft_generate2(t_node *nodeprime, t_node **nodedata, t_node **nodescreen, char *strbegi, char *strend)
 {
 	int		nbelem;
 	int		lv;
 
 	lv = 1;
 	nbelem = ft_countelem_lv1(nodeprime);
-	ft_dfs(nodeprime, nodedata, nodescreen, strbegi, nbelem, &lv);
+	ft_dfs(nodeprime, nodedata, nodescreen, strbegi, strend, nbelem, &lv);
 	printf("\n");
 	return (*nodescreen);
 
 }
 
-void		ft_dfs(t_node *nodeprime, t_node **nodedata, t_node **nodescreen, char *strbegi, int nbelem, int *lv)
+void		ft_dfs(t_node *nodeprime, t_node **nodedata, t_node **nodescreen, char *strbegi, char *strend, int nbelem, int *lv)
 {
 	t_node		*nodetmp3;
 	t_node		*nodetmp4;
@@ -41,10 +41,10 @@ void		ft_dfs(t_node *nodeprime, t_node **nodedata, t_node **nodescreen, char *st
 	while (nodetmp3)
 	{
 		//		if (ft_checkdouble_l(*nodedata, nodetmp3->name))
-		if (*lv < nbelem)
+		if (*lv < nbelem && ft_strcmp(nodetmp3->name, strend) != 0 && ft_checkdouble_l(*nodedata, nodetmp3->name))
 		{
 			(*lv)++;
-			ft_dfs(nodeprime, nodedata, nodescreen,nodetmp3->name,nbelem,lv);
+			ft_dfs(nodeprime, nodedata, nodescreen,nodetmp3->name,strend,nbelem,lv);
 		}
 		else
 		{
@@ -59,7 +59,6 @@ void		ft_dfs(t_node *nodeprime, t_node **nodedata, t_node **nodescreen, char *st
 				printf("%s ", nodetmp4->name);
 				nodetmp4 = nodetmp4->nextl;
 			}
-			*nodescreen = lst_add_down_downr(nodescreen, nodetmp3->name);
 			printf("\n");
 			nodetmp4 = *nodedata;
 			while (nodetmp4 && nodetmp4->nextl && (nodetmp4->nextl)->nextl)

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/23 03:19:20 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/23 04:03:29 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int			main(void)
 		return (0);
 	}
 	ft_printnode(dmain1.node2);
-	dmain1.nodedummie = ft_generate2(dmain1.node2, &(dmain1.nodedata),&nodescreen,dmain1.data1.strbegi);
-//	ft_printnode(dmain1.nodedata);
+	dmain1.nodedummie = ft_generate2(dmain1.node2, &(dmain1.nodedata),&nodescreen,dmain1.data1.strbegi, dmain1.data1.strend);
+	ft_printnode(nodescreen);
 	/*
 	dmain1.nodedummie = ft_generate(dmain1.node2, dmain1.data1.strbegi);
 //	ft_printnode(dmain1.nodedummie);
