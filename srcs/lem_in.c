@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/23 00:38:33 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/23 03:19:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,9 @@ void		main_p1(t_dmain *dmain1)
 int			main(void)
 {
 	t_dmain		dmain1;
+	t_node		*nodescreen;
 
+	nodescreen = NULL;
 	ft_init12(&dmain1);
 	ft_read_map(&(dmain1.node2), &(dmain1.data1), &(dmain1.map1));
 	if (ft_checkmindata(dmain1.data1) == 0)
@@ -35,8 +37,9 @@ int			main(void)
 		write(1, "ERROR", 5);
 		return (0);
 	}
-	dmain1.nodedummie = ft_generate2(dmain1.node2, &(dmain1.nodedata), dmain1.data1.strbegi);
-	ft_printnode(dmain1.nodedata);
+	ft_printnode(dmain1.node2);
+	dmain1.nodedummie = ft_generate2(dmain1.node2, &(dmain1.nodedata),&nodescreen,dmain1.data1.strbegi);
+//	ft_printnode(dmain1.nodedata);
 	/*
 	dmain1.nodedummie = ft_generate(dmain1.node2, dmain1.data1.strbegi);
 //	ft_printnode(dmain1.nodedummie);
