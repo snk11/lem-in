@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/23 04:02:52 by syusof           ###   ########.fr       */
+/*   Updated: 2016/12/23 05:59:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,6 +197,7 @@ typedef struct			s_gene
 {
 	t_node				*nodetmp;
 	t_node				*nodedata;
+	t_node				*nodescreen;
 }						t_gene;
 
 typedef struct			s_dmain
@@ -374,7 +375,7 @@ void					ft_init3(t_mkstring *mkstring1);
 void					main_p1(t_dmain *dmain1);
 void		ft_printnode(t_node *nodedummie);
 void		permute1(t_gene *gene1, int r1, int r2, char *strbegi);
-t_node	*ft_generate2(t_node *nodeprime, t_node **nodedata,t_node **nodescreen, char *strbegi, char *strend);
-void		ft_dfs(t_node *nodeprime, t_node **nodedata, t_node **nodescreen, char *strbegi, char *strend, int nbelem, int *lv);
+t_node	*ft_generate2(t_node *nodeprime, char *strbegi, char *strend);
+void		ft_dfs(t_node *nodeprime, t_gene *gene1, char *strbegi, char *strend, int nbelem, int *lv);
 
 #endif
