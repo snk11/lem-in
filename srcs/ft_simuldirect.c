@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 17:13:07 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/03 19:40:09 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/03 19:47:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,7 @@ void		ft_simuldirect_p1(t_simul *simul1, int totant)
 void		ft_simuldirect_p1_p1(t_simul *simul1, int totant)
 {
 	if ((simul1->nodetmp)->client != 0)
-	{
 		simul1->nodetmp->client = 0;
-	}
 	if (simul1->nbtmp > 0
 			&& simul1->nodetmp == simul1->nodetmp3
 			&& simul1->nodetmp->client == 0
@@ -96,7 +94,7 @@ void		ft_simuldirect_p1_p1(t_simul *simul1, int totant)
 		(simul1->nodetmp)->client = totant - simul1->nbtmp + 1;
 		(simul1->nbtmp)--;
 	}
-	simul1->nodetmp5 = simul1->nodetmp4;
+//	simul1->nodetmp5 = simul1->nodetmp4;
 }
 
 void		ft_simuldirect_p2(t_simul *simul1, char *strend, int totant)
