@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 17:13:07 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/03 18:13:01 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/03 19:40:09 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void		ft_simuldirect(t_node *nodebest, char *strend, int totant)
 
 	ft_init7(&simul1);
 	ft_simuldirect_p0(&simul1, nodebest, strend, totant);
+//	simul1.rooms->client = 1;
 	while (simul1.r1 == 0)
 	{
 		simul1.nodetmp = simul1.rooms;
@@ -34,6 +35,8 @@ void		ft_simuldirect(t_node *nodebest, char *strend, int totant)
 		}
 		if (ft_checkzero(simul1.rooms) == 1)
 			simul1.r1 = 1;
+//		printf("r1 = %d\n",simul1.r1);
+//		ft_printroom(simul1.rooms);
 		ft_sort(&simul1.node1);
 		ft_addseries(&(simul1.node2), simul1.node1);
 	}
@@ -105,11 +108,10 @@ void		ft_simuldirect_p2(t_simul *simul1, char *strend, int totant)
 		simul1->nodetmp = simul1->nodetmp3;
 		simul1->nodetmp4 = NULL;
 		ft_simuldirect_p2_p1(simul1, strend);
-	printf("nodetmp = %s\n", simul1->nodetmp->name);
-		if (simul1->nodetmp->nextr
-				&& ft_strcmp((simul1->nodetmp->nextr)->name, strend) == 0)
+		if (simul1->nodetmp
+				&& ft_strcmp((simul1->nodetmp)->name, strend) == 0)
 			ft_simuldirect_p2_p2(simul1, strend, totant);
-		else if (simul1->nodetmp != simul1->nodetmp3)
+		else if (simul1->nodetmp != simul1->nodetmp3 && simul1->nodetmp4->client != 0)
 			ft_simuldirect_p2_p3(simul1);
 		else if (simul1->nbtmp > 0
 				&& simul1->nodetmp == simul1->nodetmp3

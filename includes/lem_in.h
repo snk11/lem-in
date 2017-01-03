@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/03 13:50:58 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/03 19:07:07 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -380,5 +380,6 @@ void		permute1(t_gene *gene1, int r1, int r2, char *strbegi);
 t_node	*ft_generate2(t_node *nodeprime, char *strbegi, char *strend);
 void		ft_dfs(t_node *nodeprime, t_gene *gene1, char *strbegi, char *strend, int nbelem, int *lv);
 t_node					*lst_add_l(t_node **node1, char *s);
+void		ft_printroom(t_room *nodedummie);
 
 #endif
