@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 11:17:10 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/23 05:05:01 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/03 11:28:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void		ft_read_map_p2_p1(t_read *read1, t_node **node1, t_data *data1,
 		}
 		read1->s1[read1->i] = 0;
 		(data1)->strbegi = read1->s1;
-		map1->nodestart = lst_add_downl(&(map1->nodestart), read1->line);
+		map1->nodestart = lst_add_l(&(map1->nodestart), read1->line);
 	}
 }
 

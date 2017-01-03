@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/22 18:04:07 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/22 18:13:39 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/03 11:26:32 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,16 @@ t_node		*lst_add_down_downr(t_node **node1, char *s)
 		nodetmp2 = (nodetmp2)->nextr;
 	(nodetmp2)->nextr = nodetmp;
 	return (*node1);
+}
+
+t_node		*lst_add_l(t_node **node1, char *s)
+{
+	t_node	*nodetmp;
+	t_node	*nodetmp2;
+
+	nodetmp2 = *node1;
+	nodetmp = NULL;
+	nodetmp = ft_createnode(s);
+	nodetmp->nextl = nodetmp2;
+	return (nodetmp);
 }
