@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 18:33:33 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/03 16:32:39 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/03 18:04:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,22 +26,23 @@ void		ft_simuldirect_p2_p1(t_simul *simul1, char *strend)
 	while (simul1->nodetmp && simul1->nodetmp->nextr
 			&& simul1->nodetmp != simul1->nodetmp5)
 	{
-	printf("nodetmp = %s\n", simul1->nodetmp->name);
 		simul1->nodetmp4 = simul1->nodetmp;
 		simul1->nodetmp = simul1->nodetmp->nextr;
 	}
 	if (simul1->nodetmp4)
+	{
 		simul1->nodetmp5 = simul1->nodetmp4;
-	printf("nodetmp5 = %s\n", simul1->nodetmp5->name);
+		simul1->nodetmp = simul1->nodetmp4;
+	}
 }
 
 void		ft_simuldirect_p2_p2(t_simul *simul1, char *strend, int totant)
 {
-	if (simul1->nodetmp->client != 0)
+	if (simul1->nodetmp4 && simul1->nodetmp4->client != 0)
 	{
-		simul1->s1 = ft_makestring(simul1->nodetmp->client, strend);
+		simul1->s1 = ft_makestring(simul1->nodetmp4->client, strend);
 		simul1->node1 = lst_add_down_downr(&(simul1->node1), simul1->s1);
-		simul1->nodetmp->client = 0;
+		simul1->nodetmp4->client = 0;
 	}
 	if (simul1->nbtmp > 0 && simul1->nodetmp == simul1->nodetmp3
 			&& simul1->nodetmp->client == 0
@@ -54,12 +55,14 @@ void		ft_simuldirect_p2_p2(t_simul *simul1, char *strend, int totant)
 		simul1->nodetmp->client = totant - simul1->nbtmp + 1;
 		simul1->nbtmp--;
 	}
+	/*
 	else if (simul1->nodetmp != simul1->nodetmp3)
 	{
 		simul1->nodetmp->client = simul1->nodetmp4->client;
 		simul1->nodetmp4->client = 0;
 //		simul1->nodetmp5 = simul1->nodetmp;
 	}
+	*/
 //	simul1->nodetmp5 = simul1->nodetmp4;
 }
 
