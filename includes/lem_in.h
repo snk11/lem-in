@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 12:44:48 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 13:49:34 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -381,5 +381,7 @@ t_node	*ft_generate2(t_node *nodeprime, char *strbegi, char *strend);
 void		ft_dfs(t_node *nodeprime, t_gene *gene1, char *strbegi, char *strend, int nbelem, int *lv);
 t_node					*lst_add_l(t_node **node1, char *s);
 void		ft_printroom(t_room *nodedummie);
+void		ft_dfs_p1(t_gene *gene1, t_node *nodetmp3, t_node *nodetmp4);
+void		ft_dfs_p2(t_gene *gene1, t_node *nodetmp4);
 
 #endif
