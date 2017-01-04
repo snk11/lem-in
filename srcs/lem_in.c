@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 19:18:12 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 19:55:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int			main(void)
 	t_dmain		dmain1;
 
 	ft_init12(&dmain1);
-	ft_read_map(&(dmain1.node2), &(dmain1.data1), &(dmain1.map1));
+	ft_read_map(&dmain1, &(dmain1.data1), &(dmain1.map1));
 	if (ft_checkmindata(dmain1.data1) == 0)
 	{
 		write(1, "ERROR", 5);

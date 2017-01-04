@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 15:22:54 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 19:31:02 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 19:55:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void		ft_init12(t_dmain *dmain1)
 	(dmain1->data1).nbant = 0;
 	ft_init(&(dmain1->data1));
 	ft_init2(&(dmain1->map1));
+	dmain1->nodecoors = NULL;
 	dmain1->node2 = NULL;
 	dmain1->nodebest = NULL;
 	dmain1->nodedata = NULL;

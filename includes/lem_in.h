@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 19:41:17 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 20:07:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -203,6 +203,7 @@ typedef struct			s_gene
 
 typedef struct			s_dmain
 {
+	t_node				*nodecoors;
 	t_node				*node2;
 	t_node				*nodetmp;
 	t_node				*nodedata;
@@ -254,7 +255,7 @@ t_room					*ft_createroom(t_room **rooms, t_node *nodebest,
 void					ft_printfpath_room(t_room *path1begi);
 void					ft_simul(t_node *nodebest, char *strend, int nbant);
 int						ft_checkzero(t_room *rooms);
-int						ft_read_map(t_node **node1, t_data *data1,
+int						ft_read_map(t_dmain *dmain1, t_data *data1,
 		t_map *map1);
 int						ft_checknewant(t_room *room, t_room *node, int nbant);
 int						ft_checkmindata(t_data data1);
@@ -368,13 +369,13 @@ int		ft_checkroom_p1_p1(char *s);
 int		ft_checkroom_p1_p2(char *s);
 
 void					ft_read_map_p1(t_read *read1);
-void		ft_read_map_p2(t_read *read1, t_node **node2, t_node **nodecoors, t_data *data1,
+void		ft_read_map_p2(t_read *read1, t_dmain *dmain1, t_data *data1,
 		t_map *map1);
-void		ft_read_map_p2_p1(t_read *read1, t_node **node2, t_node **nodecoors, t_data *data1,
+void		ft_read_map_p2_p1(t_read *read1, t_dmain *dmain1, t_data *data1,
 		t_map *map1);
-void		ft_read_map_p3(t_read *read1, t_node **node2, t_node **nodecoors, t_data *data1, t_map *map1);
-void		ft_read_map_p3_p1(t_read *read1, t_node **node2, t_node **nodecoors, t_data *data1,
+void		ft_read_map_p3(t_read *read1, t_dmain *dmain1, t_data *data1, t_map *map1);
+void		ft_read_map_p3_p1(t_read *read1, t_dmain *dmain1, t_data *data1,
 		t_map *map1);
-void		ft_read_map_p4(t_read *read1, t_node **node2,t_node **nodecoors, t_map *map1);
+void		ft_read_map_p4(t_read *read1, t_dmain *dmain1, t_map *map1);
 
 #endif
