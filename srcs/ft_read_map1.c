@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 11:17:10 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/03 11:28:27 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 19:14:46 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		ft_read_map_p1(t_read *read1)
 	}
 }
 
-void		ft_read_map_p2(t_read *read1, t_node **node1, t_data *data1,
+void		ft_read_map_p2(t_read *read1, t_node **node2, t_data *data1,
 		t_map *map1)
 {
 	if (read1->r3 >= 1)
@@ -32,17 +32,17 @@ void		ft_read_map_p2(t_read *read1, t_node **node1, t_data *data1,
 	{
 		get_next_line(read1->fd, &(read1->line));
 		if (ft_checkroom(read1->line))
-			ft_read_map_p2_p1(read1, node1, data1, map1);
+			ft_read_map_p2_p1(read1, node2, data1, map1);
 		else
 			read1->r1 = 1;
 		read1->r3++;
 	}
 }
 
-void		ft_read_map_p2_p1(t_read *read1, t_node **node1, t_data *data1,
+void		ft_read_map_p2_p1(t_read *read1, t_node **node2, t_data *data1,
 		t_map *map1)
 {
-	if (ft_checkroom2(read1->line, node1) == 0)
+	if (ft_checkroom2(read1->line, node2) == 0)
 		read1->r1 = 1;
 	else
 	{
@@ -62,7 +62,7 @@ void		ft_read_map_p2_p1(t_read *read1, t_node **node1, t_data *data1,
 	}
 }
 
-void		ft_read_map_p3(t_read *read1, t_node **node1, t_data *data1,
+void		ft_read_map_p3(t_read *read1, t_node **node2, t_data *data1,
 		t_map *map1)
 {
 	if (read1->r4 >= 1)
@@ -71,17 +71,17 @@ void		ft_read_map_p3(t_read *read1, t_node **node1, t_data *data1,
 	{
 		get_next_line(read1->fd, &(read1->line));
 		if (ft_checkroom(read1->line))
-			ft_read_map_p3_p1(read1, node1, data1, map1);
+			ft_read_map_p3_p1(read1, node2, data1, map1);
 		else
 			read1->r1 = 1;
 		read1->r4++;
 	}
 }
 
-void		ft_read_map_p3_p1(t_read *read1, t_node **node1, t_data *data1,
+void		ft_read_map_p3_p1(t_read *read1, t_node **node2, t_data *data1,
 		t_map *map1)
 {
-	if (ft_checkroom2(read1->line, node1) == 0)
+	if (ft_checkroom2(read1->line, node2) == 0)
 	{
 		read1->r1 = 1;
 	}
