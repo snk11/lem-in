@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 14:52:15 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/22 15:01:49 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 16:20:18 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,8 @@ int		ft_checkroom(char *s)
 		return (0);
 	while (*s && space <= 2)
 	{
-		if (ft_checkroom_p1(s) == 0)
+		if(ft_checkroom_p1(&s, &space) == 0)
 			return (0);
-		if (*s == ' ')
-			space++;
-		s++;
 	}
 	if (space == 0 || space == 1)
 		return (0);
@@ -36,7 +33,25 @@ int		ft_checkroom(char *s)
 	return (1);
 }
 
-int		ft_checkroom_p1(char *s)
+int		ft_checkroom_p1(char **s, int *space)
+{
+//		if (*space == 0)
+		{
+			if (ft_checkroom_p1_p1(*s) == 0)
+				return (0);
+		}
+//		else
+//		{
+//			if (ft_checkroom_p1_p2(*s) == 0)
+//				return (0);
+//		}
+		if (**s == ' ')
+			(*space)++;
+		(*s)++;
+		return (1);
+}
+
+int		ft_checkroom_p1_p1(char *s)
 {
 	while (*s && *s != ' ' && *s != '\t')
 	{

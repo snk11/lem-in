@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 14:19:16 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 16:21:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,8 +245,6 @@ int						ft_checknbant(char *s);
 int						ft_checktube1(char *s);
 int						ft_checktube1_p1(char *s);
 int						ft_checktube2(char *line, t_node *node1);
-int						ft_checkroom(char *s);
-int						ft_checkroom_p1(char *s);
 int						ft_checkroom2(char *line, t_node **node1);
 t_room					*lst_add_downlrnew_room(t_room **node1, char *strbegi);
 t_room					*lst_add_downl_room(t_room **node1, char *s);
@@ -376,5 +374,8 @@ void					ft_printroom(t_room *nodedummie);
 void					ft_dfs_p1(t_gene *gene1, t_node *nodetmp3,
 		t_node *nodetmp4);
 void					ft_dfs_p2(t_gene *gene1, t_node *nodetmp4);
+int		ft_checkroom(char *s);
+int		ft_checkroom_p1(char **s, int *space);
+int		ft_checkroom_p1_p1(char *s);
 
 #endif
