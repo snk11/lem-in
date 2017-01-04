@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 12:09:52 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/23 05:01:11 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/05 00:37:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void		ft_init3(t_mkstring *mkstring1)
 
 void		ft_init4(t_read *read1)
 {
+	read1->line = NULL;
 	read1->s1 = NULL;
 	read1->ant1 = 0;
 	read1->j = 0;

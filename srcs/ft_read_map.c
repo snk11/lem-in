@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 21:02:38 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/05 00:37:06 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	ft_read_map(t_dmain *dmain1, t_data *data1, t_map *map1)
 			ft_read_map_p3(&read1, dmain1, data1, map1);
 		else
 			ft_read_map_p4(&read1, dmain1, map1);
+		free(read1.line);
+		read1.line = NULL;
 	}
 	(data1)->nbant = read1.ant1;
 	close(read1.fd);
