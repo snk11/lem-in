@@ -6,35 +6,37 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 13:39:01 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 13:49:39 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 14:06:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void		ft_dfs(t_node *nodeprime, t_gene *gene1, char *strbegi, char *strend, int nbelem, int *lv)
+void		ft_dfs(t_node *nodeprime, t_gene *gene1, char *strbegi,
+		char *strend)
 {
 	t_node		*nodetmp3;
 	t_node		*nodetmp4;
 
 	nodetmp3 = ft_cursref_first(nodeprime, strbegi);
-	if (*lv < nbelem)
+	if (gene1->lv < gene1->nbelem)
 		gene1->nodedata = lst_add_downl(&(gene1->nodedata), nodetmp3->name);
 	nodetmp3 = nodetmp3->nextr;
 	while (nodetmp3)
 	{
-		if (*lv < nbelem && ft_strcmp(nodetmp3->name, strend) != 0 && ft_checkdouble_l(gene1->nodedata, nodetmp3->name))
+		if (gene1->lv < gene1->nbelem && ft_strcmp(nodetmp3->name, strend) != 0
+				&& ft_checkdouble_l(gene1->nodedata, nodetmp3->name))
 		{
-			(*lv)++;
-			ft_dfs(nodeprime, gene1,nodetmp3->name,strend,nbelem,lv);
+			(gene1->lv)++;
+			ft_dfs(nodeprime, gene1,nodetmp3->name,strend);
 		}
 		else
 			ft_dfs_p1(gene1, nodetmp3, nodetmp4);
 		nodetmp3 = nodetmp3->nextr;
 	}
-	if (*lv < nbelem)
+	if (gene1->lv < gene1->nbelem)
 			ft_dfs_p2(gene1, nodetmp4);
-	(*lv)--;
+	(gene1->lv)--;
 }
 
 
