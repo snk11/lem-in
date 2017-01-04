@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 14:52:15 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 16:28:04 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 19:36:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ int		ft_checkroom_p1_p2(char *s)
 	return (1);
 }
 
-int		ft_checkroom2(char *line, t_node **node1)
+int		ft_checkroom2(char *line, t_node **node2, t_node **nodecoors)
 {
 	t_checkr	checkr1;
 
@@ -82,17 +82,17 @@ int		ft_checkroom2(char *line, t_node **node1)
 	{
 		ft_checkroom2_p1(&checkr1, line);
 		ft_checkroom2_p2(&checkr1, line);
-		if (ft_checkdouble_l(checkr1.node2, checkr1.s2)
-				&& ft_checkdouble_l(*node1, checkr1.s1) == 1)
+		if (ft_checkdouble_l(*nodecoors, checkr1.s2)
+				&& ft_checkdouble_l(*node2, checkr1.s1) == 1)
 		{
-			*node1 = ft_add_node_l(node1, checkr1.s1);
-			checkr1.node2 = lst_add_downl(&(checkr1.node2), checkr1.s2);
+			*node2 = ft_add_node_l(node2, checkr1.s1);
+			*nodecoors = lst_add_downl(nodecoors, checkr1.s2);
 		}
-		else if (ft_checkdouble_l(checkr1.node2, checkr1.s2) == 0
-				&& ft_checkdouble_l(*node1, checkr1.s1) == 1)
+		else if (ft_checkdouble_l(*nodecoors, checkr1.s2) == 0
+				&& ft_checkdouble_l(*node2, checkr1.s1) == 1)
 			return (0);
-		else if (ft_checkdouble_l(*node1, checkr1.s1) == 0
-				&& ft_checkdouble_l(checkr1.node2, checkr1.s2) == 1)
+		else if (ft_checkdouble_l(*node2, checkr1.s1) == 0
+				&& ft_checkdouble_l(*nodecoors, checkr1.s2) == 1)
 			return (0);
 	}
 	return (1);

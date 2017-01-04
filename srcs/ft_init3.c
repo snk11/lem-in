@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 15:22:54 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/21 17:35:05 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 19:31:02 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void		ft_init11(t_checkr *checkr1)
 {
-	checkr1->node2 = NULL;
 	checkr1->s1 = NULL;
 	checkr1->s2 = NULL;
 	checkr1->i = 0;

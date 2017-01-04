@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 19:13:47 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 19:40:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 int	ft_read_map(t_node **node2, t_data *data1, t_map *map1)
 {
 	t_read	read1;
+	t_node	*nodecoors;
 
+	nodecoors = NULL;
 	ft_init4(&read1);
 	read1.fd = 0;
 	while (get_next_line(read1.fd, &(read1.line)) > 0 && read1.r1 == 0)
@@ -23,11 +25,11 @@ int	ft_read_map(t_node **node2, t_data *data1, t_map *map1)
 		if (ft_checknbant(read1.line))
 			ft_read_map_p1(&read1);
 		else if (ft_strcmp(read1.line, "##start") == 0)
-			ft_read_map_p2(&read1, node2, data1, map1);
+			ft_read_map_p2(&read1, node2, &nodecoors, data1, map1);
 		else if (ft_strcmp(read1.line, "##end") == 0)
-			ft_read_map_p3(&read1, node2, data1, map1);
+			ft_read_map_p3(&read1, node2, &nodecoors, data1, map1);
 		else
-			ft_read_map_p4(&read1, node2, map1);
+			ft_read_map_p4(&read1, node2, &nodecoors, map1);
 	}
 	(data1)->nbant = read1.ant1;
 	close(read1.fd);

@@ -6,17 +6,17 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 14:09:32 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 19:15:18 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 19:41:59 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void		ft_read_map_p4(t_read *read1, t_node **node2, t_map *map1)
+void		ft_read_map_p4(t_read *read1, t_node **node2,t_node **nodecoors, t_map *map1)
 {
 	if (ft_checkroom(read1->line))
 	{
-		if (ft_checkroom2(read1->line, node2) == 0)
+		if (ft_checkroom2(read1->line, node2,nodecoors) == 0)
 			read1->r1 = 1;
 		else
 			map1->noderoom = lst_add_downl(&(map1->noderoom), read1->line);

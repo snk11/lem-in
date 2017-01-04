@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 16:28:53 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 19:41:17 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -173,7 +173,6 @@ typedef struct			s_checkr
 	int					k;
 	char				*s1;
 	char				*s2;
-	t_node				*node2;
 }						t_checkr;
 
 typedef struct			s_crtroom
@@ -245,7 +244,7 @@ int						ft_checknbant(char *s);
 int						ft_checktube1(char *s);
 int						ft_checktube1_p1(char *s);
 int						ft_checktube2(char *line, t_node *node1);
-int						ft_checkroom2(char *line, t_node **node1);
+int						ft_checkroom2(char *line, t_node **node1, t_node **nodecoors);
 t_room					*lst_add_downlrnew_room(t_room **node1, char *strbegi);
 t_room					*lst_add_downl_room(t_room **node1, char *s);
 t_room					*ft_createnode_room(char *s);
@@ -305,17 +304,6 @@ void					ft_init2(t_map *map1);
 void					ft_printmap(t_map map1, int nbant);
 void					ft_init4(t_read *read1);
 void					ft_init5(t_screen *screen1);
-void					ft_read_map_p1(t_read *read1);
-void					ft_read_map_p2(t_read *read1, t_node **node1,
-		t_data *data1, t_map *map1);
-void					ft_read_map_p2_p1(t_read *read1, t_node **node1,
-		t_data *data1, t_map *map1);
-void					ft_read_map_p3(t_read *read1, t_node **node1,
-		t_data *data1, t_map *map1);
-void					ft_read_map_p3_p1(t_read *read1, t_node **node1,
-		t_data *data1, t_map *map1);
-void					ft_read_map_p4(t_read *read1, t_node **node1,
-		t_map *map1);
 void					permute_p1(t_node **nodedata, t_node *nodetmp3);
 void					ft_screen_p1(t_node *node1, t_screen *screen1,
 		char *strend);
@@ -378,5 +366,15 @@ int		ft_checkroom(char *s);
 int		ft_checkroom_p1(char **s, int *space);
 int		ft_checkroom_p1_p1(char *s);
 int		ft_checkroom_p1_p2(char *s);
+
+void					ft_read_map_p1(t_read *read1);
+void		ft_read_map_p2(t_read *read1, t_node **node2, t_node **nodecoors, t_data *data1,
+		t_map *map1);
+void		ft_read_map_p2_p1(t_read *read1, t_node **node2, t_node **nodecoors, t_data *data1,
+		t_map *map1);
+void		ft_read_map_p3(t_read *read1, t_node **node2, t_node **nodecoors, t_data *data1, t_map *map1);
+void		ft_read_map_p3_p1(t_read *read1, t_node **node2, t_node **nodecoors, t_data *data1,
+		t_map *map1);
+void		ft_read_map_p4(t_read *read1, t_node **node2,t_node **nodecoors, t_map *map1);
 
 #endif
