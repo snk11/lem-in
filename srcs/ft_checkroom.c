@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 14:52:15 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 19:36:02 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 20:43:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int		ft_checkroom_p1_p2(char *s)
 {
 	while (*s && *s != ' ' && *s != '\t')
 	{
-		if (!ft_isdigit(*s))
+		if (!ft_isdigit(*s) && *s != '-' && *s != '+')
 			return (0);
 		s++;
 	}
@@ -82,6 +82,8 @@ int		ft_checkroom2(char *line, t_node **node2, t_node **nodecoors)
 	{
 		ft_checkroom2_p1(&checkr1, line);
 		ft_checkroom2_p2(&checkr1, line);
+		if (ft_checkroom2_p3(checkr1.s2) == 0)
+			return (0);
 		if (ft_checkdouble_l(*nodecoors, checkr1.s2)
 				&& ft_checkdouble_l(*node2, checkr1.s1) == 1)
 		{
@@ -131,4 +133,18 @@ void	ft_checkroom2_p2(t_checkr *checkr1, char *line)
 		checkr1->i++;
 	}
 	(checkr1->s2)[checkr1->j] = 0;
+}
+
+int		ft_checkroom2_p3(char *s2)
+{
+	t_checkr checkr2;
+
+	ft_init11(&checkr2);
+	ft_checkroom2_p1(&checkr2, s2);
+	if (ft_checkint(checkr2.s1) == 0)
+		return (0);
+	ft_checkroom2_p2(&checkr2, s2);
+	if (ft_checkint(checkr2.s2) == 0)
+		return (0);
+	return (1);
 }

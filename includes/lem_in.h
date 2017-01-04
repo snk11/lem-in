@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 20:07:22 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 20:43:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -342,6 +342,7 @@ void					ft_init9(t_minpath *minpath1);
 void					ft_init10(t_checkt *checkt1);
 void					ft_checktube2_p1(t_checkt *checkt1, char *line);
 void					ft_checktube2_p2(t_checkt *checkt1, char *line);
+int						ft_checkroom2_p3(char *s2);
 void					ft_init11(t_checkr *checkr1);
 void					ft_checkroom2_p1(t_checkr *checkr1, char *line);
 void					ft_checkroom2_p2(t_checkr *checkr1, char *line);

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 20:06:32 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 21:02:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 int	ft_read_map(t_dmain *dmain1, t_data *data1, t_map *map1)
 {
 	t_read	read1;
-	t_node	*nodecoors;
 
-	nodecoors = NULL;
 	ft_init4(&read1);
 	read1.fd = 0;
 	while (get_next_line(read1.fd, &(read1.line)) > 0 && read1.r1 == 0)
