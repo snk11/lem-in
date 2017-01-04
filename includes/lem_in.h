@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 16:21:19 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 16:28:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -377,5 +377,6 @@ void					ft_dfs_p2(t_gene *gene1, t_node *nodetmp4);
 int		ft_checkroom(char *s);
 int		ft_checkroom_p1(char **s, int *space);
 int		ft_checkroom_p1_p1(char *s);
+int		ft_checkroom_p1_p2(char *s);
 
 #endif
