@@ -6,26 +6,11 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 12:56:47 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 14:17:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
-void		main_p1(t_dmain *dmain1)
-{
-	/*
-	if (dmain1->nodebest
-			&& !ft_checkdirect(dmain1->nodebest, (dmain1->data1).strend))
-		ft_simul(dmain1->nodebest,
-				(dmain1->data1).strend, (dmain1->data1).nbant);
-	else if (dmain1->nodebest
-			&& ft_checkdirect(dmain1->nodebest, (dmain1->data1).strend))
-	*/
-	if (dmain1->nodebest)
-		ft_simuldirect(dmain1->nodebest,
-				(dmain1->data1).strend, (dmain1->data1).nbant);
-}
 
 int			main(void)
 {
@@ -33,17 +18,13 @@ int			main(void)
 
 	ft_init12(&dmain1);
 	ft_read_map(&(dmain1.node2), &(dmain1.data1), &(dmain1.map1));
-//	(dmain1.data1).nbant = 100;
 	if (ft_checkmindata(dmain1.data1) == 0)
 	{
 		write(1, "FERROR", 5);
 		return (0);
 	}
-//	ft_printnode(dmain1.node2);
-	dmain1.nodedummie = ft_generate2(dmain1.node2, dmain1.data1.strbegi, dmain1.data1.strend);
-//	ft_printnode(dmain1.nodedummie);
-//	dmain1.nodedummie = ft_generate(dmain1.node2, dmain1.data1.strbegi);
-//	ft_printnode(dmain1.nodedummie);
+	dmain1.nodedummie = ft_generate2(dmain1.node2, dmain1.data1.strbegi,
+			dmain1.data1.strend);
 	dmain1.nodedata = ft_screen(&(dmain1.nodedata), dmain1);
 	if (dmain1.nodedata == NULL)
 	{
@@ -53,7 +34,8 @@ int			main(void)
 	ft_printmap(dmain1.map1, dmain1.data1.nbant);
 	dmain1.nodebest = ft_screenbest(&(dmain1.nodebest), dmain1.nodedata,
 			(dmain1.data1).strend);
-//	ft_printnode(dmain1.nodebest);
-	main_p1(&dmain1);
+	if (dmain1.nodebest)
+		ft_simuldirect(dmain1.nodebest,
+				(dmain1.data1).strend, (dmain1.data1).nbant);
 	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 14:06:56 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/04 14:19:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -237,7 +237,6 @@ t_node					*ft_maketree(t_node *maintree, char *strbegi);
 t_node					*ft_copytree(t_node *maintree, char *strbegi);
 void					permute2(t_gene *gene1, int r1, int r2, char *strbegi);
 void					ft_swap2(t_node **nodetmp, char *s1, char *s2);
-//t_node					*ft_generate(t_node *node1, char *strbegi);
 t_node					*ft_screen(t_node **nodedata, t_dmain dmain1);
 t_node					*ft_screenbest(t_node **nodebest, t_node *nodedata,
 		char *strend);
@@ -331,16 +330,6 @@ void					ft_screenbest_p1_p1(t_scbest *scbest1,
 void					ft_screenbest_p1_p2(t_scbest *scbest1,
 		t_node ***nodebest, char *strend);
 void					ft_init7(t_simul *simul1);
-/*
-void					ft_simul_p1(t_simul *simul1, char *strend, int totant);
-void					ft_simul_p1_p0(t_simul *simul1);
-void					ft_simul_p1_p42(t_simul *simul1, char *strend);
-void					ft_simul_p1_p1(t_simul *simul1, char *strend,
-		int totant);
-void					ft_simul_p1_p1_p1(t_simul *simul1);
-void					ft_simul_p1_p2(t_simul *simul1);
-void					ft_simul_p1_p3(t_simul *simul1, int totant);
-*/
 void					ft_simuldirect_p0(t_simul *simul1, t_node *nodebest,
 		char *strend, int totant);
 void					ft_simuldirect_p1(t_simul *simul1, int totant);
@@ -376,15 +365,16 @@ void					ft_createroom_p2(t_crtroom *crtroom1, t_room ***rooms,
 void					permute_p2(t_node **nodetmp3, int *r, int *r1);
 void					ft_init12(t_dmain *dmain1);
 void					ft_init3(t_mkstring *mkstring1);
-void					main_p1(t_dmain *dmain1);
-void		ft_printnode(t_node *nodedummie);
-void		permute1(t_gene *gene1, int r1, int r2, char *strbegi);
-t_node	*ft_generate2(t_node *nodeprime, char *strbegi, char *strend);
-void		ft_dfs(t_node *nodeprime, t_gene *gene1, char *strbegi,
+void					ft_printnode(t_node *nodedummie);
+void					permute1(t_gene *gene1, int r1, int r2, char *strbegi);
+t_node					*ft_generate2(t_node *nodeprime, char *strbegi,
+		char *strend);
+void					ft_dfs(t_node *nodeprime, t_gene *gene1, char *strbegi,
 		char *strend);
 t_node					*lst_add_l(t_node **node1, char *s);
-void		ft_printroom(t_room *nodedummie);
-void		ft_dfs_p1(t_gene *gene1, t_node *nodetmp3, t_node *nodetmp4);
-void		ft_dfs_p2(t_gene *gene1, t_node *nodetmp4);
+void					ft_printroom(t_room *nodedummie);
+void					ft_dfs_p1(t_gene *gene1, t_node *nodetmp3,
+		t_node *nodetmp4);
+void					ft_dfs_p2(t_gene *gene1, t_node *nodetmp4);
 
 #endif
