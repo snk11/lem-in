@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/22 18:02:46 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/22 18:12:46 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/05 00:34:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ t_room		*ft_createnode_room(char *s)
 	}
 	else
 	{
-		if (!(curlst->name = malloc(sizeof(char) * ft_strlen(s))))
-			return (NULL);
-		curlst->name = ft_memmove(curlst->name, s, sizeof(char) * ft_strlen(s));
+//		if (!(curlst->name = malloc(sizeof(char) * ft_strlen(s))))
+//			return (NULL);
+		curlst->name = ft_memmove2(s);
 	}
 	curlst->client = 0;
 	curlst->nextl = NULL;
@@ -84,9 +84,9 @@ t_node		*ft_createnode(char *s)
 	}
 	else
 	{
-		if (!(curlst->name = malloc(sizeof(char) * ft_strlen(s))))
-			return (NULL);
-		curlst->name = ft_memmove(curlst->name, s, sizeof(char) * ft_strlen(s));
+//		if (!(curlst->name = malloc(sizeof(char) * ft_strlen(s))))
+//			return (NULL);
+		curlst->name = ft_memmove2(s);
 	}
 	curlst->nextl = NULL;
 	curlst->nextr = NULL;
