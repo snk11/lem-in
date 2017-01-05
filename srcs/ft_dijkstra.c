@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 05:42:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/05 06:59:04 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/05 07:24:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 	t_node		*nodetmp3;
 	t_node		*nodetmp4;
 	t_node		*nodetmp5;
+	t_node		*nodetmp6;
 
 	nodetmp5 = NULL;
 	nodetmp3 = ft_cursref_first(nodeprime, strbegi);
@@ -27,7 +28,6 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 		nodetmp5 = lst_add_downl(&nodetmp5, nodetmp3->name);
 		nodetmp3 = nodetmp3->nextr;
 	}
-		nodetmp5 = lst_add_down_downr(&nodetmp5, "gggg");
 	ft_printsol(nodetmp5);
 	/*
 	if (gene1->lv < gene1->nbelem)
@@ -37,7 +37,24 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 //	while (nodetmp5)
 	{
 		ft_sortpath(&nodetmp5);
+		nodetmp3 = ft_cursref_first(nodeprime, nodetmp5->name);
+		nodetmp3 = nodetmp3->nextr;
+		nodetmp6 = nodetmp5;
+		if (nodetmp3)
+		{
+			nodetmp5 = lst_add_downr(&nodetmp5, nodetmp5,nodetmp3->name);
+		}
+		/*
+		while (nodetmp3->nextr)
+		{
+			nodetmp3 = nodetmp3->nextr;
+			nodetmp5 = lst_add_downl(&nodetmp5, nodetmp6->name);
+			nodetmp5 = lst_add_down_downr(&nodetmp5, nodetmp3->name);
+		}
+		*/
+
 	}
+		ft_sortpath(&nodetmp5);
 	ft_printsol(nodetmp5);
 
 }
