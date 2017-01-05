@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 20:43:20 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/05 01:08:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,7 +245,8 @@ int						ft_checknbant(char *s);
 int						ft_checktube1(char *s);
 int						ft_checktube1_p1(char *s);
 int						ft_checktube2(char *line, t_node *node1);
-int						ft_checkroom2(char *line, t_node **node1, t_node **nodecoors);
+int						ft_checkroom2(char *line, t_node **node1,
+		t_node **nodecoors);
 t_room					*lst_add_downlrnew_room(t_room **node1, char *strbegi);
 t_room					*lst_add_downl_room(t_room **node1, char *s);
 t_room					*ft_createnode_room(char *s);
@@ -364,19 +365,20 @@ void					ft_printroom(t_room *nodedummie);
 void					ft_dfs_p1(t_gene *gene1, t_node *nodetmp3,
 		t_node *nodetmp4);
 void					ft_dfs_p2(t_gene *gene1, t_node *nodetmp4);
-int		ft_checkroom(char *s);
-int		ft_checkroom_p1(char **s, int *space);
-int		ft_checkroom_p1_p1(char *s);
-int		ft_checkroom_p1_p2(char *s);
-
+int						ft_checkroom(char *s);
+int						ft_checkroom_p1(char **s, int *space);
+int						ft_checkroom_p1_p1(char *s);
+int						ft_checkroom_p1_p2(char *s);
 void					ft_read_map_p1(t_read *read1);
-void		ft_read_map_p2(t_read *read1, t_dmain *dmain1, t_data *data1,
+void					ft_read_map_p2(t_read *read1, t_dmain *dmain1,
+		t_data *data1, t_map *map1);
+void					ft_read_map_p2_p1(t_read *read1, t_dmain *dmain1,
+		t_data *data1, t_map *map1);
+void					ft_read_map_p3(t_read *read1, t_dmain *dmain1,
+		t_data *data1, t_map *map1);
+void					ft_read_map_p3_p1(t_read *read1, t_dmain *dmain1,
+		t_data *data1, t_map *map1);
+void					ft_read_map_p4(t_read *read1, t_dmain *dmain1,
 		t_map *map1);
-void		ft_read_map_p2_p1(t_read *read1, t_dmain *dmain1, t_data *data1,
-		t_map *map1);
-void		ft_read_map_p3(t_read *read1, t_dmain *dmain1, t_data *data1, t_map *map1);
-void		ft_read_map_p3_p1(t_read *read1, t_dmain *dmain1, t_data *data1,
-		t_map *map1);
-void		ft_read_map_p4(t_read *read1, t_dmain *dmain1, t_map *map1);
 
 #endif
