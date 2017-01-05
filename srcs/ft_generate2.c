@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/22 23:52:26 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 14:07:50 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/05 06:49:48 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ t_node	*ft_generate2(t_node *nodeprime, char *strbegi, char *strend)
 	gene1.lv = 1;
 	gene1.nbelem = ft_countelem_lv1(nodeprime);
 	ft_dfs(nodeprime, &gene1, strbegi, strend);
+	ft_dijkstra(nodeprime, &gene1, strbegi, strend);
 	return (gene1.nodescreen);
 }

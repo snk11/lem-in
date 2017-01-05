@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/05 01:08:14 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/05 06:49:40 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -380,5 +380,14 @@ void					ft_read_map_p3_p1(t_read *read1, t_dmain *dmain1,
 		t_data *data1, t_map *map1);
 void					ft_read_map_p4(t_read *read1, t_dmain *dmain1,
 		t_map *map1);
+int		ft_countelem_lvr(t_node *node1);
+void		ft_swappath2(t_node **nodetmp, char *s1, char *s2);
+void		ft_swappath_p1(t_swap *swap1, t_node *nodetmp, char *s1, char *s2);
+void		ft_swappath_p2(t_swap *swap1, t_node ***nodetmp, char *s1);
+void		ft_swappath_p3(t_swap *swap1, t_node ***nodetmp, char *s2);
+void	ft_sortpath(t_node **node1);
+void	ft_sortpath_p1(t_node **nodetmp3, int *r);
+void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
+		char *strend);
 
 #endif
