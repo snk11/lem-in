@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 06:05:39 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/05 06:47:34 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/05 06:59:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_sortpath(t_node **node1)
 			nodetmp3 = nodetmp2->nextl;
 		while (nodetmp3)
 		{
-			if (ft_countelem_lvr(nodetmp3) > ft_countelem_lvr(nodetmp2))
+			if (ft_countelem_lvr(nodetmp3) < ft_countelem_lvr(nodetmp2))
 			{
 				ft_swappath2(&nodetmp, nodetmp2->name, nodetmp3->name);
 				r = 1;
