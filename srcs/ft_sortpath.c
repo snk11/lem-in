@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 06:05:39 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/07 14:00:05 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/07 14:23:00 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_sortpath(t_node **node1)
 
 	ft_sortpath_p1(&nodetmp3, &r);
 	nodetmp = *node1;
-//	while (r == 1)
+	while (r == 1)
 	{
 		r = 0;
 		nodetmp2 = nodetmp;
