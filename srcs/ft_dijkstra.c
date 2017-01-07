@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 05:42:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/07 18:55:54 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/07 19:01:11 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,10 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 		nodetmp5 = nodetmp7;
 		if (nodetmp3)
 		{
-			nodetmp5 = lst_add_downr(&nodetmp5, nodetmp5,nodetmp3->name);
+			if (ft_checkdouble_r(nodetmp5,nodetmp3->name) == 0)
+				ft_del_first(&nodetmp5);
+			else
+				nodetmp5 = lst_add_downr(&nodetmp5, nodetmp5,nodetmp3->name);
 		}
 		if (ft_strcmp(nodetmp3->name, strend) == 0)
 			indend = 1;
@@ -67,7 +70,10 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 				while (nodetmp6 && nodetmp6->nextr && nodetmp6->nextr->nextr)
 				{
 					nodetmp6 = nodetmp6->nextr;
-					nodetmp5 = lst_add_down_downr(&nodetmp5, nodetmp6->name);
+					if (ft_checkdouble_r(nodetmp5,nodetmp3->name) == 0)
+						ft_del_last(&nodetmp5);
+					else
+						nodetmp5 = lst_add_down_downr(&nodetmp5, nodetmp6->name);
 				}
 				nodetmp5 = lst_add_down_downr(&nodetmp5, nodetmp3->name);
 				if (ft_strcmp(nodetmp3->name, strend) == 0)
