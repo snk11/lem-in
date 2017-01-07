@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/07 14:06:21 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/07 18:46:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -391,5 +391,7 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 		char *strend);
 void	ft_sortpath_decreas(t_node **node1);
 void	ft_sortpath_decreas_p1(t_node **nodetmp3, int *r);
+void		ft_del_first(t_node **node1);
+void		ft_del_last(t_node **node1);
 
 #endif
