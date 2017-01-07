@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/05 07:10:12 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/07 11:20:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -299,7 +299,7 @@ void					ft_makestring_p1(t_mkstring *mkstring1, int nb,
 		char *name);
 void					ft_sort(t_node **node1);
 void					ft_sort_p1(t_node **nodetmp3, int *r);
-void					ft_swap2r(t_node **nodetmp, char *s1, char *s2);
+void					ft_swapr(t_node **nodetmp, char *s1, char *s2);
 void					ft_addseries(t_node **node2, t_node *node1);
 void					ft_printsol(t_node *node);
 void					ft_init2(t_map *map1);
@@ -381,7 +381,7 @@ void					ft_read_map_p3_p1(t_read *read1, t_dmain *dmain1,
 void					ft_read_map_p4(t_read *read1, t_dmain *dmain1,
 		t_map *map1);
 int		ft_countelem_lvr(t_node *node1);
-void		ft_swappath2(t_node **nodetmp, char *s1, char *s2);
+void		ft_swappath(t_node **nodetmp, char *s1, char *s2);
 void		ft_swappath_p1(t_swap *swap1, t_node *nodetmp, char *s1, char *s2);
 void		ft_swappath_p2(t_swap *swap1, t_node ***nodetmp, char *s1);
 void		ft_swappath_p3(t_swap *swap1, t_node ***nodetmp, char *s2);

@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/05/31 18:32:04 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/22 18:10:36 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/07 12:00:39 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ t_node		*ft_remove_last_l(t_node **node1)
 		nodetmp->nextl = NULL;
 	return (*node1);
 }
-
+/*
 t_node		*lst_add_downlrnew(t_node **node1, char *strbegi)
 {
 	*node1 = lst_add_downl(node1, strbegi);
@@ -80,3 +80,4 @@ t_room		*lst_add_downlrnew_room(t_room **node1, char *strbegi)
 	*node1 = lst_add_downl_room(node1, strbegi);
 	return (*node1);
 }
+*/

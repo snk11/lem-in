@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 08:19:51 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/22 17:11:40 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/07 12:01:14 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void		ft_screen_p1(t_node *node2, t_screen *screen1, char *strend)
 
 void		ft_screen_p2(t_node ***nodedata, t_screen *screen1)
 {
-	**nodedata = lst_add_downlrnew(*nodedata,
+	**nodedata = lst_add_downl(*nodedata,
 			screen1->nodetmp->name);
 	screen1->nodetmp = screen1->nodetmp->nextr;
 	while (screen1->nodetmp)

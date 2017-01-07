@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/06 09:54:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/12/22 17:25:20 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/07 12:01:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void		ft_screenbest_p1(t_scbest *scbest1, t_node ***nodebest,
 		scbest1->nodetmp = scbest1->nodetmp3;
 		if (scbest1->r == 0)
 		{
-			**nodebest = lst_add_downlrnew(*nodebest, scbest1->nodetmp->name);
+			**nodebest = lst_add_downl(*nodebest, scbest1->nodetmp->name);
 			scbest1->nodetmp = scbest1->nodetmp->nextr;
 			while (scbest1->nodetmp)
 			{
@@ -59,7 +59,7 @@ void		ft_screenbest_p1_p1(t_scbest *scbest1, t_node *nodedata,
 		char *strend)
 {
 	if (scbest1->iter == 0)
-		scbest1->numberlist = lst_add_downlrnew(&(scbest1->numberlist),
+		scbest1->numberlist = lst_add_downl(&(scbest1->numberlist),
 				ft_itoa(scbest1->index));
 	else
 		scbest1->numberlist = lst_add_downl(&(scbest1->numberlist),
