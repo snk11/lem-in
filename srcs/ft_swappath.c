@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 06:33:32 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/07 14:08:13 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/07 14:20:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void		ft_swappath_p1(t_swap *swap1, t_node *nodetmp, int pos)
 
 	swap1->nodetmp3 = nodetmp;
 	i = 0;
-	while (i < pos)
+	while (i < pos - 1)
 	{
 		swap1->nodetmp3 = swap1->nodetmp3->nextl;
 		i++;
@@ -39,7 +39,7 @@ void		ft_swappath_p1(t_swap *swap1, t_node *nodetmp, int pos)
 	swap1->nodetmp4 = NULL;
 	swap1->nodetmp4 = nodetmp;
 	i = 0;
-	while (i < pos + 1)
+	while (i < pos)
 	{
 		swap1->nodetmp4 = swap1->nodetmp4->nextl;
 		swap1->cnt2++;
