@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/07 11:20:53 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/07 14:06:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -381,10 +381,10 @@ void					ft_read_map_p3_p1(t_read *read1, t_dmain *dmain1,
 void					ft_read_map_p4(t_read *read1, t_dmain *dmain1,
 		t_map *map1);
 int		ft_countelem_lvr(t_node *node1);
-void		ft_swappath(t_node **nodetmp, char *s1, char *s2);
-void		ft_swappath_p1(t_swap *swap1, t_node *nodetmp, char *s1, char *s2);
-void		ft_swappath_p2(t_swap *swap1, t_node ***nodetmp, char *s1);
-void		ft_swappath_p3(t_swap *swap1, t_node ***nodetmp, char *s2);
+void		ft_swappath(t_node **nodetmp, int pos);
+void		ft_swappath_p1(t_swap *swap1, t_node *nodetmp, int pos);
+void		ft_swappath_p2(t_swap *swap1, t_node ***nodetmp, int pos);
+void		ft_swappath_p3(t_swap *swap1, t_node ***nodetmp, int pos);
 void	ft_sortpath(t_node **node1);
 void	ft_sortpath_p1(t_node **nodetmp3, int *r);
 void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
