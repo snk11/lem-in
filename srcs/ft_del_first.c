@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/07 18:44:25 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/07 18:45:07 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/07 18:49:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,13 @@
 
 void		ft_del_first(t_node **node1)
 {
-	t_node		*nodetmp;
 	t_node		*nodetmp2;
 
 	nodetmp2 = *node1;
 	if (nodetmp2)
 	{
+		*node1 = (*node1)->nextl;
 		free(nodetmp2);
 		nodetmp2 = NULL;
-		*node1 = (*node1)->nextl;
 	}
-	nodetmp = *node1;
 }
