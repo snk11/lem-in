@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 05:42:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/08 12:28:20 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/08 13:29:45 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,12 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 	t_node		*nodetmp5;
 	t_node		*nodetmp6;
 	t_node		*nodetmp7;
+	t_node		*nodetmp;
+	t_node		*nodetmp2;
 	int			indend;
 
 	indend = 0;
+	nodetmp2 = NULL;
 	nodetmp5 = NULL;
 	nodetmp3 = ft_cursref_first(nodeprime, strbegi);
 	nodetmp3 = nodetmp3->nextr;
@@ -83,11 +86,21 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 			}
 		}
 		(gene1->lv)++;
-
-		ft_sortpath(&nodetmp5);
+		if(indend == 0)
+			ft_sortpath(&nodetmp5);
 		ft_printsol(nodetmp5);
 		printf("--------\n");
 	}
+	nodetmp = nodetmp5;
+	while (nodetmp && nodetmp->nextl)
+		nodetmp = nodetmp->nextl;
+	nodetmp2 = lst_add_downl(&nodetmp2, strbegi);
+	while (nodetmp)
+	{
+		nodetmp2 = lst_add_down_downr(&nodetmp2, nodetmp->name);
+		nodetmp = nodetmp->nextr;
+	}
+	gene1->nodescreen = nodetmp2;
 	/*
 	   {
 	   ft_sortpath(&nodetmp5);
