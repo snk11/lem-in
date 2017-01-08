@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 05:42:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/08 17:18:08 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/08 17:27:08 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,10 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 				else
 					nodetmp5 = lst_add_down_downr(&nodetmp5, nodetmp3->name);
 				if (ft_strcmp(nodetmp3->name, strend) == 0)
+				{
+					ft_node_add_wholer(&(gene1->nodescreen), nodetmp5, strbegi);
 					indend = 1;
+				}
 				else if (ft_strcmp(nodetmp3->name, strbegi) == 0)
 					ft_del_last(&nodetmp5);
 			}
@@ -97,7 +100,10 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 				else
 					nodetmp5 = lst_add_down_downr(&nodetmp5, nodetmp3->name);
 				if (ft_strcmp(nodetmp3->name, strend) == 0)
+				{
+					ft_node_add_wholer(&(gene1->nodescreen), nodetmp5, strbegi);
 					indend = 1;
+				}
 				else if (ft_strcmp(nodetmp3->name, strbegi) == 0)
 					ft_del_last(&nodetmp5);
 			}
@@ -108,7 +114,6 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 		ft_printsol(nodetmp5);
 		printf("--------\n");
 	}
-	ft_node_add_wholer(&(gene1->nodescreen), nodetmp5, strbegi);
 	/*
 	nodetmp = nodetmp5;
 	while (nodetmp && nodetmp->nextl)
