@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 05:42:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/08 18:09:05 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/08 18:36:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 	t_node		*nodetmp;
 	t_node		*nodetmp2;
 	int			indend;
-//	int			inddelfirst;
+	//	int			inddelfirst;
 	int			cnt;
 
 	cnt = 0;
@@ -34,18 +34,17 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 	nodetmp3 = nodetmp3->nextr;
 	while (nodetmp3)
 	{
-		nodetmp5 = lst_add_downl(&nodetmp5, nodetmp3->name);
+		if (ft_strcmp(nodetmp3->name, strend) == 0)
+			ft_node_add_wholer(&(gene1->nodescreen), nodetmp3, strbegi);
+		else
+			nodetmp5 = lst_add_downl(&nodetmp5, nodetmp3->name);
 		nodetmp3 = nodetmp3->nextr;
 	}
 	ft_sortpath(&nodetmp5);
 	ft_printsol(nodetmp5);
 	printf("--------\n");
-	/*
-	   if (gene1->lv < gene1->nbelem)
-	   gene1->nodedata = lst_add_downl(&(gene1->nodedata), nodetmp3->name);
-	   nodetmp3 = nodetmp3->nextr;
-	   */
-//	while(nodetmp5 && indend == 0)
+
+	//	while(nodetmp5 && indend == 0)
 	while(nodetmp5 && cnt < 2)
 	{
 		indend = 0;
@@ -56,17 +55,17 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 		nodetmp3 = ft_cursref_first(nodeprime, nodetmp5->name);
 		nodetmp3 = nodetmp3->nextr;
 		nodetmp5 = nodetmp7;
-//		inddelfirst = 0;
+		//		inddelfirst = 0;
 		if (nodetmp3)
 		{
 			/*
-			if (ft_countelem_lvr(nodetmp5) > gene1->nbelem - 1)
-			{
-				ft_del_first(&nodetmp5);
-				inddelfirst = 1;
-			}
-			else
-			*/
+			   if (ft_countelem_lvr(nodetmp5) > gene1->nbelem - 1)
+			   {
+			   ft_del_first(&nodetmp5);
+			   inddelfirst = 1;
+			   }
+			   else
+			   */
 			{
 				//				nodetmp5 = lst_add_downr(&nodetmp5, nodetmp5,nodetmp3->name);
 				nodetmp6 = nodetmp5;
@@ -91,7 +90,7 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 					ft_del_last(&nodetmp5);
 			}
 		}
-//		if (inddelfirst == 0)
+		//		if (inddelfirst == 0)
 		{
 			while (nodetmp3->nextr && indend == 0)
 			{
@@ -125,15 +124,15 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 		printf("--------\n");
 	}
 	/*
-	nodetmp = nodetmp5;
-	while (nodetmp && nodetmp->nextl)
-		nodetmp = nodetmp->nextl;
-	nodetmp2 = lst_add_downl(&nodetmp2, strbegi);
-	while (nodetmp)
-	{
-		nodetmp2 = lst_add_down_downr(&nodetmp2, nodetmp->name);
-		nodetmp = nodetmp->nextr;
-	}
-	gene1->nodescreen = nodetmp2;
-	*/
+	   nodetmp = nodetmp5;
+	   while (nodetmp && nodetmp->nextl)
+	   nodetmp = nodetmp->nextl;
+	   nodetmp2 = lst_add_downl(&nodetmp2, strbegi);
+	   while (nodetmp)
+	   {
+	   nodetmp2 = lst_add_down_downr(&nodetmp2, nodetmp->name);
+	   nodetmp = nodetmp->nextr;
+	   }
+	   gene1->nodescreen = nodetmp2;
+	   */
 }
