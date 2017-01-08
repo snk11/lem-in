@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/08 16:30:57 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/08 17:16:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -393,5 +393,6 @@ void	ft_sortpath_decreas(t_node **node1);
 void	ft_sortpath_decreas_p1(t_node **nodetmp3, int *r);
 void		ft_del_first(t_node **node1);
 void		ft_del_last(t_node **node1);
+void	ft_node_add_wholer(t_node **nodetmp1, t_node *nodetmp2,char *strbegi);
 
 #endif
