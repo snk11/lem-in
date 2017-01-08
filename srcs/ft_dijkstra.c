@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 05:42:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/08 17:27:08 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/08 17:40:28 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 	t_node		*nodetmp2;
 	int			indend;
 	int			inddelfirst;
+	int			cnt;
 
+	cnt = 0;
 	indend = 0;
 	nodetmp2 = NULL;
 	nodetmp5 = NULL;
@@ -43,8 +45,10 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 	   gene1->nodedata = lst_add_downl(&(gene1->nodedata), nodetmp3->name);
 	   nodetmp3 = nodetmp3->nextr;
 	   */
-	while(nodetmp5 && indend == 0)
+//	while(nodetmp5 && indend == 0)
+	while(nodetmp5 && cnt < 2)
 	{
+		indend = 0;
 		ft_sortpath(&nodetmp5);
 		nodetmp7 = nodetmp5;
 		while (nodetmp5->nextr)
@@ -78,6 +82,8 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 				{
 					ft_node_add_wholer(&(gene1->nodescreen), nodetmp5, strbegi);
 					indend = 1;
+					ft_del_last(&nodetmp5);
+					cnt++;
 				}
 				else if (ft_strcmp(nodetmp3->name, strbegi) == 0)
 					ft_del_last(&nodetmp5);
@@ -103,6 +109,8 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 				{
 					ft_node_add_wholer(&(gene1->nodescreen), nodetmp5, strbegi);
 					indend = 1;
+					ft_del_last(&nodetmp5);
+					cnt++;
 				}
 				else if (ft_strcmp(nodetmp3->name, strbegi) == 0)
 					ft_del_last(&nodetmp5);
