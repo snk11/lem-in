@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/22 23:52:26 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/08 13:46:26 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/08 14:00:27 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_node	*ft_generate2(t_node *nodeprime, char *strbegi, char *strend)
 {
 	t_gene	gene1;
 
-	ft_printsol(nodeprime);
+//	ft_printsol(nodeprime);
 	gene1.nodedata = NULL;
 	gene1.nodescreen = NULL;
 	gene1.lv = 1;
