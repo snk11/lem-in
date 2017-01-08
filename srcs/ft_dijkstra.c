@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 05:42:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/07 19:01:11 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/08 12:28:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 			ft_del_first(&nodetmp5);
 //		else
 		{
-			while (nodetmp3->nextr)
+			while (nodetmp3->nextr && indend == 0)
 			{
 				nodetmp6 = nodetmp7;
 				nodetmp3 = nodetmp3->nextr;
