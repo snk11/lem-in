@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 05:42:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/08 17:40:28 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/08 18:09:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 	t_node		*nodetmp;
 	t_node		*nodetmp2;
 	int			indend;
-	int			inddelfirst;
+//	int			inddelfirst;
 	int			cnt;
 
 	cnt = 0;
@@ -56,15 +56,17 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 		nodetmp3 = ft_cursref_first(nodeprime, nodetmp5->name);
 		nodetmp3 = nodetmp3->nextr;
 		nodetmp5 = nodetmp7;
-		inddelfirst = 0;
+//		inddelfirst = 0;
 		if (nodetmp3)
 		{
+			/*
 			if (ft_countelem_lvr(nodetmp5) > gene1->nbelem - 1)
 			{
 				ft_del_first(&nodetmp5);
 				inddelfirst = 1;
 			}
 			else
+			*/
 			{
 				//				nodetmp5 = lst_add_downr(&nodetmp5, nodetmp5,nodetmp3->name);
 				nodetmp6 = nodetmp5;
@@ -89,7 +91,7 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 					ft_del_last(&nodetmp5);
 			}
 		}
-		if (inddelfirst == 0)
+//		if (inddelfirst == 0)
 		{
 			while (nodetmp3->nextr && indend == 0)
 			{
