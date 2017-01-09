@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 05:42:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/09 13:57:22 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/09 15:53:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 	printf("--------\n");
 
 	//	while(nodetmp5 && indend == 0)
-	while(nodetmp5 && cnt < 4)
+	while(nodetmp5 && cnt < NB_SOL)
 	{
 		indend = 0;
 		ft_sortpath(&nodetmp5);
