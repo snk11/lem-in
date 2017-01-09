@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 05:42:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/09 13:36:50 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/09 13:57:22 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,10 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 	while (nodetmp3)
 	{
 		if (ft_strcmp(nodetmp3->name, strend) == 0)
+		{
 			ft_node_add_wholer(&(gene1->nodescreen), nodetmp3, strbegi);
+			cnt++;
+		}
 		else
 			nodetmp5 = lst_add_downl(&nodetmp5, nodetmp3->name);
 		nodetmp3 = nodetmp3->nextr;
@@ -45,7 +48,7 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 	printf("--------\n");
 
 	//	while(nodetmp5 && indend == 0)
-	while(nodetmp5 && cnt < 2)
+	while(nodetmp5 && cnt < 4)
 	{
 		indend = 0;
 		ft_sortpath(&nodetmp5);
@@ -56,29 +59,22 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 		nodetmp3 = nodetmp3->nextr;
 		nodetmp5 = nodetmp7;
 		//		inddelfirst = 0;
-		if (nodetmp3)
+		while (nodetmp3)
 		{
-			/*
-			   if (ft_countelem_lvr(nodetmp5) > gene1->nbelem - 1)
-			   {
-			   ft_del_first(&nodetmp5);
-			   inddelfirst = 1;
-			   }
-			   else
-			   */
+			//				nodetmp5 = lst_add_downr(&nodetmp5, nodetmp5,nodetmp3->name);
+			nodetmp6 = nodetmp7;
+			//				nodetmp6 = nodetmp5;
+			nodetmp5 = lst_add_downl(&nodetmp5, nodetmp6->name);
+			while (nodetmp6 && nodetmp6->nextr)
 			{
-				//				nodetmp5 = lst_add_downr(&nodetmp5, nodetmp5,nodetmp3->name);
-				nodetmp6 = nodetmp5;
-				nodetmp5 = lst_add_downl(&nodetmp5, nodetmp6->name);
-				while (nodetmp6 && nodetmp6->nextr)
-				{
-					nodetmp6 = nodetmp6->nextr;
-					nodetmp5 = lst_add_down_downr(&nodetmp5, nodetmp6->name);
-				}
-				if (ft_checkdouble_r(nodetmp5,nodetmp3->name) == 0)
-					ft_del_last(&nodetmp5);
-				else
-					nodetmp5 = lst_add_down_downr(&nodetmp5, nodetmp3->name);
+				nodetmp6 = nodetmp6->nextr;
+				nodetmp5 = lst_add_down_downr(&nodetmp5, nodetmp6->name);
+			}
+			if (ft_checkdouble_r(nodetmp5,nodetmp3->name) == 0)
+				ft_del_last(&nodetmp5);
+			else
+			{
+				nodetmp5 = lst_add_down_downr(&nodetmp5, nodetmp3->name);
 				if (ft_strcmp(nodetmp3->name, strend) == 0)
 				{
 					ft_node_add_wholer(&(gene1->nodescreen), nodetmp5, strbegi);
@@ -89,50 +85,10 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 				else if (ft_strcmp(nodetmp3->name, strbegi) == 0)
 					ft_del_last(&nodetmp5);
 			}
+			nodetmp3 = nodetmp3->nextr;
 		}
-		//		if (inddelfirst == 0)
-		{
-			while (nodetmp3->nextr && indend == 0)
-			{
-				nodetmp6 = nodetmp7;
-				nodetmp3 = nodetmp3->nextr;
-				nodetmp5 = lst_add_downl(&nodetmp5, nodetmp6->name);
-				while (nodetmp6 && nodetmp6->nextr)
-				{
-					nodetmp6 = nodetmp6->nextr;
-					nodetmp5 = lst_add_down_downr(&nodetmp5, nodetmp6->name);
-				}
-				if (ft_checkdouble_r(nodetmp5,nodetmp3->name) == 0)
-					ft_del_last(&nodetmp5);
-				else
-					nodetmp5 = lst_add_down_downr(&nodetmp5, nodetmp3->name);
-				if (ft_strcmp(nodetmp3->name, strend) == 0)
-				{
-					ft_node_add_wholer(&(gene1->nodescreen), nodetmp5, strbegi);
-					indend = 1;
-					ft_del_last(&nodetmp5);
-					cnt++;
-				}
-				else if (ft_strcmp(nodetmp3->name, strbegi) == 0)
-					ft_del_last(&nodetmp5);
-			}
-			ft_del_first(&nodetmp5);
-		}
-		//			if(indend == 0)
-		//				ft_sortpath(&nodetmp5);
+		ft_del_first(&nodetmp5);
 		ft_printsol(nodetmp5);
 		printf("--------\n");
 	}
-	/*
-	   nodetmp = nodetmp5;
-	   while (nodetmp && nodetmp->nextl)
-	   nodetmp = nodetmp->nextl;
-	   nodetmp2 = lst_add_downl(&nodetmp2, strbegi);
-	   while (nodetmp)
-	   {
-	   nodetmp2 = lst_add_down_downr(&nodetmp2, nodetmp->name);
-	   nodetmp = nodetmp->nextr;
-	   }
-	   gene1->nodescreen = nodetmp2;
-	   */
 }
