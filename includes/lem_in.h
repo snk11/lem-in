@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/14 18:43:13 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/14 18:47:03 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdio.h>
 
 # define BUFF_SIZE 8192
-# define NB_SOL 4
+# define NB_SOL 8
 
 typedef struct			s_env
 {
