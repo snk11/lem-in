@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/14 19:12:46 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/14 19:25:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -204,16 +204,16 @@ typedef struct			s_gene
 
 typedef struct			s_dij
 {
-	t_node		*nodetmp3;
-	t_node		*nodetmp4;
-	t_node		*nodetmp5;
-	t_node		*nodetmp6;
-	t_node		*nodetmp7;
-	t_node		*nodetmp;
-	t_node		*nodetmp2;
-	int			indend;
-	int			cnt;
-	t_node		*nodeprime1;
+	t_node				*nodetmp3;
+	t_node				*nodetmp4;
+	t_node				*nodetmp5;
+	t_node				*nodetmp6;
+	t_node				*nodetmp7;
+	t_node				*nodetmp;
+	t_node				*nodetmp2;
+	int					indend;
+	int					cnt;
+	t_node				*nodeprime1;
 }						t_dij;
 
 typedef struct			s_dmain
@@ -395,26 +395,30 @@ void					ft_read_map_p3_p1(t_read *read1, t_dmain *dmain1,
 		t_data *data1, t_map *map1);
 void					ft_read_map_p4(t_read *read1, t_dmain *dmain1,
 		t_map *map1);
-int		ft_countelem_lvr(t_node *node1);
-void		ft_swappath(t_node **nodetmp, int pos);
-void		ft_swappath_p1(t_swap *swap1, t_node *nodetmp, int pos);
-void		ft_swappath_p2(t_swap *swap1, t_node ***nodetmp, int pos);
-void		ft_swappath_p3(t_swap *swap1, t_node ***nodetmp, int pos);
-void	ft_sortpath(t_node **node1);
-void	ft_sortpath_p1(t_node **nodetmp3, t_node **nodetmp, t_node ***node1,
-		int *r);
-void	ft_sortpath_p2(int *r, int *pos, t_node **nodetmp2, t_node **nodetmp);
-void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
-		char *strend);
-void		ft_dijkstra_p1(t_dij *dij1, t_gene *gene1,
+int						ft_countelem_lvr(t_node *node1);
+void					ft_swappath(t_node **nodetmp, int pos);
+void					ft_swappath_p1(t_swap *swap1, t_node *nodetmp, int pos);
+void					ft_swappath_p2(t_swap *swap1, t_node ***nodetmp,
+		int pos);
+void					ft_swappath_p3(t_swap *swap1, t_node ***nodetmp,
+		int pos);
+void					ft_sortpath(t_node **node1);
+void					ft_sortpath_p1(t_node **nodetmp3, t_node **nodetmp,
+		t_node ***node1, int *r);
+void					ft_sortpath_p2(int *r, int *pos, t_node **nodetmp2,
+		t_node **nodetmp);
+void					ft_dijkstra(t_node *nodeprime, t_gene *gene1,
 		char *strbegi, char *strend);
-void		ft_dijkstra_p2(t_dij *dij1, t_gene *gene1,
+void					ft_dijkstra_p1(t_dij *dij1, t_gene *gene1,
 		char *strbegi, char *strend);
-void	ft_sortpath_decreas(t_node **node1);
-void		ft_del_first(t_node **node1);
-void		ft_del_last(t_node **node1);
-void		ft_del_last_p1(t_node **nodetmp);
-void	ft_node_add_wholer(t_node **nodetmp1, t_node *nodetmp2,char *strbegi);
-void		ft_init13(t_dij *dij1);
+void					ft_dijkstra_p2(t_dij *dij1, t_gene *gene1,
+		char *strbegi, char *strend);
+void					ft_sortpath_decreas(t_node **node1);
+void					ft_del_first(t_node **node1);
+void					ft_del_last(t_node **node1);
+void					ft_del_last_p1(t_node **nodetmp);
+void					ft_node_add_wholer(t_node **nodetmp1, t_node *nodetmp2,
+		char *strbegi);
+void					ft_init13(t_dij *dij1);
 
 #endif
