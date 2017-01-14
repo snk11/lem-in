@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/09 15:53:23 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/14 12:47:42 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -387,11 +387,12 @@ void		ft_swappath_p1(t_swap *swap1, t_node *nodetmp, int pos);
 void		ft_swappath_p2(t_swap *swap1, t_node ***nodetmp, int pos);
 void		ft_swappath_p3(t_swap *swap1, t_node ***nodetmp, int pos);
 void	ft_sortpath(t_node **node1);
-void	ft_sortpath_p1(t_node **nodetmp3, int *r);
+void	ft_sortpath_p1(t_node **nodetmp3, t_node **nodetmp, t_node ***node1,
+		int *r);
+void	ft_sortpath_p2(int *r, int *pos, t_node **nodetmp2, t_node **nodetmp);
 void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 		char *strend);
 void	ft_sortpath_decreas(t_node **node1);
-void	ft_sortpath_decreas_p1(t_node **nodetmp3, int *r);
 void		ft_del_first(t_node **node1);
 void		ft_del_last(t_node **node1);
 void	ft_node_add_wholer(t_node **nodetmp1, t_node *nodetmp2,char *strbegi);
