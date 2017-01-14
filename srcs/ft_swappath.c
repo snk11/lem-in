@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 06:33:32 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/07 14:20:26 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/14 12:49:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void		ft_swappath(t_node **nodetmp, int pos)
 	else if (swap1.cnt1 > swap1.cnt2)
 		ft_swappath_p3(&swap1, &nodetmp, pos);
 }
+
 void		ft_swappath_p1(t_swap *swap1, t_node *nodetmp, int pos)
 {
 	int		i;

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/07 18:19:07 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/08 12:38:40 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/14 12:55:01 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,17 @@ void		ft_del_last(t_node **node1)
 		}
 		if (nodetmp)
 		{
-			free(nodetmp);
-			nodetmp = NULL;
-			if(nodetmp2)
+			ft_del_last_p1(&nodetmp);
+			if (nodetmp2)
 				nodetmp2->nextl = NULL;
 		}
 		else
-		{
-			free(nodetmp2);
-			nodetmp2 = NULL;
-		}
+			ft_del_last_p1(&nodetmp2);
 	}
+}
+
+void		ft_del_last_p1(t_node **nodetmp)
+{
+	free(*nodetmp);
+	*nodetmp = NULL;
 }
