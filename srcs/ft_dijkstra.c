@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 05:42:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/14 18:45:36 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/14 18:51:55 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 	t_dij		dij1;
 
 	ft_init13(&dij1);
-	ft_dijkstra_p1(&dij1, nodeprime, gene1, strbegi, strend);
+	dij1.nodeprime1 = nodeprime;
+	ft_dijkstra_p1(&dij1, gene1, strbegi, strend);
 	while (dij1.nodetmp5 && dij1.cnt < NB_SOL)
 	{
 		dij1.indend = 0;
@@ -26,7 +27,7 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 		dij1.nodetmp7 = dij1.nodetmp5;
 		while (dij1.nodetmp5->nextr)
 			dij1.nodetmp5 = dij1.nodetmp5->nextr;
-		dij1.nodetmp3 = ft_cursref_first(nodeprime, dij1.nodetmp5->name);
+		dij1.nodetmp3 = ft_cursref_first(dij1.nodeprime1, dij1.nodetmp5->name);
 		dij1.nodetmp3 = dij1.nodetmp3->nextr;
 		dij1.nodetmp5 = dij1.nodetmp7;
 		while (dij1.nodetmp3)
@@ -35,10 +36,10 @@ void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 	}
 }
 
-void		ft_dijkstra_p1(t_dij *dij1, t_node *nodeprime, t_gene *gene1,
+void		ft_dijkstra_p1(t_dij *dij1, t_gene *gene1,
 		char *strbegi, char *strend)
 {
-	dij1->nodetmp3 = ft_cursref_first(nodeprime, strbegi);
+	dij1->nodetmp3 = ft_cursref_first(dij1->nodeprime1, strbegi);
 	dij1->nodetmp3 = dij1->nodetmp3->nextr;
 	while (dij1->nodetmp3)
 	{

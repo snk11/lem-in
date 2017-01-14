@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/14 18:47:03 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/14 18:51:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <stdio.h>
 
 # define BUFF_SIZE 8192
-# define NB_SOL 8
+# define NB_SOL 4
 
 typedef struct			s_env
 {
@@ -213,8 +213,7 @@ typedef struct			s_dij
 	t_node		*nodetmp2;
 	int			indend;
 	int			cnt;
-	char		*strbegi;
-	char		*strend;
+	t_node		*nodeprime1;
 }						t_dij;
 
 typedef struct			s_dmain
@@ -407,7 +406,7 @@ void	ft_sortpath_p1(t_node **nodetmp3, t_node **nodetmp, t_node ***node1,
 void	ft_sortpath_p2(int *r, int *pos, t_node **nodetmp2, t_node **nodetmp);
 void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 		char *strend);
-void		ft_dijkstra_p1(t_dij *dij1, t_node *nodeprime, t_gene *gene1,
+void		ft_dijkstra_p1(t_dij *dij1, t_gene *gene1,
 		char *strbegi, char *strend);
 void		ft_dijkstra_p2(t_dij *dij1, t_gene *gene1,
 		char *strbegi, char *strend);
