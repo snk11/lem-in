@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/21 15:22:54 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 19:55:40 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/14 17:25:47 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,12 @@ void		ft_init12(t_dmain *dmain1)
 	dmain1->nodebest = NULL;
 	dmain1->nodedata = NULL;
 	dmain1->nodedummie = NULL;
+}
+
+void		ft_init13(t_dij *dij1)
+{
+	dij1->cnt = 0;
+	dij1->indend = 0;
+	dij1->nodetmp2 = NULL;
+	dij1->nodetmp5 = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 05:42:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/09 15:53:47 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/14 17:48:21 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,80 +15,69 @@
 void		ft_dijkstra(t_node *nodeprime, t_gene *gene1, char *strbegi,
 		char *strend)
 {
-	t_node		*nodetmp3;
-	t_node		*nodetmp4;
-	t_node		*nodetmp5;
-	t_node		*nodetmp6;
-	t_node		*nodetmp7;
-	t_node		*nodetmp;
-	t_node		*nodetmp2;
-	int			indend;
-	//	int			inddelfirst;
-	int			cnt;
+	t_dij		*dij1;
 
-	cnt = 0;
-	indend = 0;
-	nodetmp2 = NULL;
-	nodetmp5 = NULL;
-	nodetmp3 = ft_cursref_first(nodeprime, strbegi);
-	nodetmp3 = nodetmp3->nextr;
-	while (nodetmp3)
+	ft_init13(dij1);
+	ft_dijkstra_p1(dij1, nodeprime, gene1, strbegi, strend);
+	while(dij1->nodetmp5 && dij1->cnt < NB_SOL)
 	{
-		if (ft_strcmp(nodetmp3->name, strend) == 0)
+		dij1->indend = 0;
+		ft_sortpath(&(dij1->nodetmp5));
+		dij1->nodetmp7 = dij1->nodetmp5;
+		while (dij1->nodetmp5->nextr)
+			dij1->nodetmp5 = dij1->nodetmp5->nextr;
+		dij1->nodetmp3 = ft_cursref_first(nodeprime, dij1->nodetmp5->name);
+		dij1->nodetmp3 = dij1->nodetmp3->nextr;
+		dij1->nodetmp5 = dij1->nodetmp7;
+		while (dij1->nodetmp3)
+			ft_dijkstra_p2(dij1, nodeprime, gene1, strbegi, strend);
+		ft_del_first(&(dij1->nodetmp5));
+	}
+}
+
+void		ft_dijkstra_p1(t_dij *dij1, t_node *nodeprime, t_gene *gene1,
+		char *strbegi, char *strend)
+{
+	dij1->nodetmp3 = ft_cursref_first(nodeprime, strbegi);
+	dij1->nodetmp3 = dij1->nodetmp3->nextr;
+	while (dij1->nodetmp3)
+	{
+		if (ft_strcmp(dij1->nodetmp3->name, strend) == 0)
 		{
-			ft_node_add_wholer(&(gene1->nodescreen), nodetmp3, strbegi);
-			cnt++;
+			ft_node_add_wholer(&(gene1->nodescreen), dij1->nodetmp3, strbegi);
+			(dij1->cnt)++;
 		}
 		else
-			nodetmp5 = lst_add_downl(&nodetmp5, nodetmp3->name);
-		nodetmp3 = nodetmp3->nextr;
+			dij1->nodetmp5 = lst_add_downl(&(dij1->nodetmp5), dij1->nodetmp3->name);
+		dij1->nodetmp3 = dij1->nodetmp3->nextr;
 	}
-	ft_sortpath(&nodetmp5);
-	ft_printsol(nodetmp5);
-	printf("--------\n");
+}
 
-	//	while(nodetmp5 && indend == 0)
-	while(nodetmp5 && cnt < NB_SOL)
+
+void		ft_dijkstra_p2(t_dij *dij1, t_node *nodeprime, t_gene *gene1,
+		char *strbegi, char *strend)
+{
+	dij1->nodetmp6 = dij1->nodetmp7;
+	dij1->nodetmp5 = lst_add_downl(&(dij1->nodetmp5), dij1->nodetmp6->name);
+	while (dij1->nodetmp6 && dij1->nodetmp6->nextr)
 	{
-		indend = 0;
-		ft_sortpath(&nodetmp5);
-		nodetmp7 = nodetmp5;
-		while (nodetmp5->nextr)
-			nodetmp5 = nodetmp5->nextr;
-		nodetmp3 = ft_cursref_first(nodeprime, nodetmp5->name);
-		nodetmp3 = nodetmp3->nextr;
-		nodetmp5 = nodetmp7;
-		//		inddelfirst = 0;
-		while (nodetmp3)
-		{
-			//				nodetmp5 = lst_add_downr(&nodetmp5, nodetmp5,nodetmp3->name);
-			nodetmp6 = nodetmp7;
-			//				nodetmp6 = nodetmp5;
-			nodetmp5 = lst_add_downl(&nodetmp5, nodetmp6->name);
-			while (nodetmp6 && nodetmp6->nextr)
-			{
-				nodetmp6 = nodetmp6->nextr;
-				nodetmp5 = lst_add_down_downr(&nodetmp5, nodetmp6->name);
-			}
-			if (ft_checkdouble_r(nodetmp5,nodetmp3->name) == 0)
-				ft_del_last(&nodetmp5);
-			else
-			{
-				nodetmp5 = lst_add_down_downr(&nodetmp5, nodetmp3->name);
-				if (ft_strcmp(nodetmp3->name, strend) == 0)
-				{
-					ft_node_add_wholer(&(gene1->nodescreen), nodetmp5, strbegi);
-					indend = 1;
-					ft_del_last(&nodetmp5);
-					cnt++;
-				}
-				else if (ft_strcmp(nodetmp3->name, strbegi) == 0)
-					ft_del_last(&nodetmp5);
-			}
-			nodetmp3 = nodetmp3->nextr;
-		}
-		ft_del_first(&nodetmp5);
-		ft_printsol(nodetmp5);
-		printf("--------\n");
+		dij1->nodetmp6 = dij1->nodetmp6->nextr;
+		dij1->nodetmp5 = lst_add_down_downr(&(dij1->nodetmp5), dij1->nodetmp6->name);
 	}
+	if (ft_checkdouble_r(dij1->nodetmp5, dij1->nodetmp3->name) == 0)
+		ft_del_last(&(dij1->nodetmp5));
+	else
+	{
+		dij1->nodetmp5 = lst_add_down_downr(&(dij1->nodetmp5), dij1->nodetmp3->name);
+		if (ft_strcmp(dij1->nodetmp3->name, strend) == 0)
+		{
+			ft_node_add_wholer(&(gene1->nodescreen), dij1->nodetmp5, strbegi);
+			dij1->indend = 1;
+			ft_del_last(&(dij1->nodetmp5));
+			dij1->cnt++;
+		}
+		else if (ft_strcmp(dij1->nodetmp3->name, strbegi) == 0)
+			ft_del_last(&(dij1->nodetmp5));
+	}
+	dij1->nodetmp3 = dij1->nodetmp3->nextr;
 }
