@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/05 05:42:09 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/14 18:53:55 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/14 18:56:51 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ void		ft_dijkstra_p1(t_dij *dij1, t_gene *gene1,
 		dij1->nodetmp3 = dij1->nodetmp3->nextr;
 	}
 }
-
 
 void		ft_dijkstra_p2(t_dij *dij1, t_gene *gene1,
 		char *strbegi, char *strend)
