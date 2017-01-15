@@ -6,14 +6,16 @@
 #    By: syusof <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/22 15:50:15 by syusof            #+#    #+#              #
-#    Updated: 2017/01/15 22:08:12 by syusof           ###   ########.fr        #
+#    Updated: 2017/01/15 22:47:30 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = lem-in
 
-SRCS = srcs/*.c
+FILES = *.c
+
+SRCS = $(addprefix srcs/, $(FILES))
 
 OFILES = *.o
 
