@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/20 18:33:33 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/04 14:11:50 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/15 22:10:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void		ft_simuldirect_p2_p0(t_simul *simul1)
 	simul1->nodetmp4 = simul1->nodetmp;
 }
 
-void		ft_simuldirect_p2_p1(t_simul *simul1, char *strend)
+void		ft_simuldirect_p2_p1(t_simul *simul1)
 {
 	while (simul1->nodetmp && simul1->nodetmp->nextr
 			&& simul1->nodetmp != simul1->nodetmp5)

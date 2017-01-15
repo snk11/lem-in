@@ -6,7 +6,7 @@
 #    By: syusof <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/22 15:50:15 by syusof            #+#    #+#              #
-#    Updated: 2016/12/22 23:57:28 by syusof           ###   ########.fr        #
+#    Updated: 2017/01/15 22:08:12 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ SRCS = srcs/*.c
 
 OFILES = *.o
 
-FLAGS =
+FLAGS = -Wall -Werror -Wextra
 
 MAIN = lem_in.c
 

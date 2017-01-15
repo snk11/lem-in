@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/04 13:39:01 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/14 19:20:47 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/15 22:09:43 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void		ft_dfs(t_node *nodeprime, t_gene *gene1, char *strbegi,
 	t_node		*nodetmp3;
 	t_node		*nodetmp4;
 
+	nodetmp4 = NULL;
 	nodetmp3 = ft_cursref_first(nodeprime, strbegi);
 	if (gene1->lv < gene1->nbelem)
 		gene1->nodedata = lst_add_downl(&(gene1->nodedata), nodetmp3->name);
