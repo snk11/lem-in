@@ -6,7 +6,7 @@
 #    By: syusof <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/22 15:50:15 by syusof            #+#    #+#              #
-#    Updated: 2017/01/15 22:47:30 by syusof           ###   ########.fr        #
+#    Updated: 2017/01/15 22:51:56 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,16 +28,17 @@ OMAIN = $(MAIN:.c=.o)
 all: $(NAME)
 
 $(NAME):
-	make -C libft/ re
-	gcc $(FLAGS) -I libft/ -I includes/ -c $(SRCS)
-	gcc -o $(NAME) $(OFILES)  -L libft/ -lft
+	@make -C libft/ re
+	@gcc $(FLAGS) -I libft/ -I includes/ -c $(SRCS)
+	@gcc -o $(NAME) $(OFILES)  -L libft/ -lft
+	@echo "-- done --"
 
 clean:
-	rm -f $(OFILES)
-	make -C libft/ clean
+	@rm -f $(OFILES)
+	@make -C libft/ clean
 
 fclean: clean
-	rm -f $(NAME)
-	make -C libft/ fclean
+	@rm -f $(NAME)
+	@make -C libft/ fclean
 
 re: fclean all

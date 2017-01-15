@@ -6,7 +6,7 @@
 #    By: syusof <syusof@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/05 17:57:07 by syusof            #+#    #+#              #
-#    Updated: 2016/11/18 18:09:27 by syusof           ###   ########.fr        #
+#    Updated: 2017/01/15 22:50:14 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,14 +39,14 @@ OBJ = ft_atoi.o ft_bzero.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o \
 all: $(NAME)
 
 $(NAME):
-		gcc -Wall -Werror -Wextra -c $(SRC)
-		ar rc $(NAME) $(OBJ)
-		ranlib $(NAME)
+		@gcc -Wall -Werror -Wextra -c $(SRC)
+		@ar rc $(NAME) $(OBJ)
+		@ranlib $(NAME)
 
 clean:
-		rm -f $(OBJ)
+		@rm -f $(OBJ)
 
 fclean: clean
-		rm -f $(NAME)
+		@rm -f $(NAME)
 
 re: fclean all
