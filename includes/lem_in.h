@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/15 22:10:59 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/30 12:49:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,7 @@ typedef struct			s_map
 	t_node				*nodeend;
 	t_node				*noderoom;
 	t_node				*nodetube;
+	t_node				*nodemap;
 }						t_map;
 
 typedef struct			s_data

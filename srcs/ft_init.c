@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 12:09:52 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/05 00:37:19 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/30 12:49:41 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void		ft_init2(t_map *map1)
 	map1->nodeend = NULL;
 	map1->noderoom = NULL;
 	map1->nodetube = NULL;
+	map1->nodemap = NULL;
 }
 
 void		ft_init3(t_mkstring *mkstring1)

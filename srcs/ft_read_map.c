@@ -6,7 +6,7 @@
 /*   By: syusof <syusof@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 00:03:17 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/05 00:37:06 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/30 12:58:20 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	ft_read_map(t_dmain *dmain1, t_data *data1, t_map *map1)
 	read1.fd = 0;
 	while (get_next_line(read1.fd, &(read1.line)) > 0 && read1.r1 == 0)
 	{
+		map1->nodemap = lst_add_downl(&(map1->nodemap), read1.line);
 		if (ft_checknbant(read1.line))
 			ft_read_map_p1(&read1);
 		else if (ft_strcmp(read1.line, "##start") == 0)

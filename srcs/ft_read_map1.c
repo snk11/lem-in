@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 11:17:10 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/08 16:23:27 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/30 13:03:26 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void		ft_read_map_p2(t_read *read1, t_dmain *dmain1, t_data *data1,
 	else
 	{
 		get_next_line(read1->fd, &(read1->line));
+		map1->nodemap = lst_add_downl(&(map1->nodemap), read1->line);
 		if (ft_checkroom(read1->line))
 			ft_read_map_p2_p1(read1, dmain1, data1, map1);
 		else
@@ -70,6 +71,7 @@ void		ft_read_map_p3(t_read *read1, t_dmain *dmain1, t_data *data1,
 	else
 	{
 		get_next_line(read1->fd, &(read1->line));
+		map1->nodemap = lst_add_downl(&(map1->nodemap), read1->line);
 		if (ft_checkroom(read1->line))
 			ft_read_map_p3_p1(read1, dmain1, data1, map1);
 		else
