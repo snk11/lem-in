@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/30 14:12:18 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/30 14:23:53 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -386,7 +386,7 @@ int						ft_checkroom(char *s);
 int						ft_checkroom_p1(char **s, int *space);
 int						ft_checkroom_p1_p1(char *s);
 int						ft_checkroom_p1_p2(char *s);
-void					ft_read_map_p1(t_read *read1);
+void					ft_read_map_p1(t_read *read1, t_map *map1);
 void					ft_read_map_p2(t_read *read1, t_dmain *dmain1,
 		t_data *data1, t_map *map1);
 void					ft_read_map_p2_p1(t_read *read1, t_dmain *dmain1,
