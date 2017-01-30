@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/30 12:49:16 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/30 14:12:18 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,7 @@ typedef struct			s_read
 	int					r2;
 	int					r3;
 	int					r4;
+	int					r5;
 	int					ant1;
 	char				*s1;
 	char				*line;

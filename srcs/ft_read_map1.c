@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 11:17:10 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/30 13:03:26 by syusof           ###   ########.fr       */
+/*   Updated: 2017/01/30 13:57:10 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void		ft_read_map_p1(t_read *read1)
 void		ft_read_map_p2(t_read *read1, t_dmain *dmain1, t_data *data1,
 		t_map *map1)
 {
-	if (read1->r3 >= 1)
+	if (read1->r3 >= 1 || read1->r2 == 0)
 		read1->r1 = 1;
 	else
 	{
@@ -66,7 +66,7 @@ void		ft_read_map_p2_p1(t_read *read1, t_dmain *dmain1, t_data *data1,
 void		ft_read_map_p3(t_read *read1, t_dmain *dmain1, t_data *data1,
 		t_map *map1)
 {
-	if (read1->r4 >= 1)
+	if (read1->r4 >= 1 || read1->r2 == 0)
 		read1->r1 = 1;
 	else
 	{
