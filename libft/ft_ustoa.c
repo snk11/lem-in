@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 07:42:27 by syusof            #+#    #+#             */
-/*   Updated: 2016/11/18 18:33:00 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/08 11:04:56 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ char			*ft_ustoa(unsigned short n)
 	int		i;
 
 	i = ft_countdigit((int)n);
-	str = ft_strnew(i);
+	str = ft_strnew(i + 1);
 	itoa_pos(str, (int)n, i);
 	return (str);
 }

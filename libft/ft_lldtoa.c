@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/14 08:04:30 by syusof            #+#    #+#             */
-/*   Updated: 2016/06/14 08:17:38 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/08 10:45:16 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ char			*ft_lldtoa(long long int n)
 
 	if (n == LLONG_MIN)
 	{
-		str = ft_strnew(21);
+		str = ft_strnew(21 + 1);
 		str = ft_strcpy(str, "-9223372036854775808");
 		return (str);
 	}
@@ -61,13 +61,13 @@ char			*ft_lldtoa(long long int n)
 	{
 		n = -n;
 		i = ft_countdigit(n);
-		str = ft_strnew(1 + i);
+		str = ft_strnew(1 + i + 1);
 		itoa_neg(str, n, i);
 	}
 	else
 	{
 		i = ft_countdigit(n);
-		str = ft_strnew(i);
+		str = ft_strnew(i + 1);
 		itoa_pos(str, n, i);
 	}
 	return (str);
