@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:42 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/30 13:04:42 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/08 10:14:19 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,8 @@ int			main(void)
 		write(1, "ERROR", 5);
 		return (0);
 	}
-	ft_printsol(dmain1.map1.nodemap);
 	ft_putstr("\n");
-//	ft_printmap(dmain1.map1, dmain1.data1.nbant);
+	ft_printmap(dmain1.map1, dmain1.data1.nbant);
 	dmain1.nodebest = ft_screenbest(&(dmain1.nodebest), dmain1.nodedata,
 			(dmain1.data1).strend);
 	if (dmain1.nodebest)
