@@ -6,7 +6,7 @@
 #    By: syusof <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/09/22 15:50:15 by syusof            #+#    #+#              #
-#    Updated: 2017/02/08 22:16:52 by syusof           ###   ########.fr        #
+#    Updated: 2017/02/09 12:41:30 by syusof           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,6 @@ FLAGS = -Wall -Werror -Wextra
 
 MAIN = lem_in.c
 
-OMAIN = $(MAIN:.c=.o)
 
 VPATH = srcs
 
