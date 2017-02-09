@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 11:17:10 by syusof            #+#    #+#             */
-/*   Updated: 2017/01/30 14:28:06 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 11:25:24 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void		ft_read_map_p1(t_read *read1, t_map *map1)
 		read1->r1 = 1;
 	else
 	{
+		read1->r6 = 0;
 		map1->nodemap = lst_add_downl(&(map1->nodemap), read1->line);
 		read1->r2++;
 		read1->ant1 = ft_atoi(read1->line);
