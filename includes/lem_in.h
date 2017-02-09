@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/29 14:39:56 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/09 11:05:47 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/09 11:37:05 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -423,5 +423,6 @@ void					ft_del_last_p1(t_node **nodetmp);
 void					ft_node_add_wholer(t_node **nodetmp1, t_node *nodetmp2,
 		char *strbegi);
 void					ft_init13(t_dij *dij1);
+void					ft_read_map_p4_p1(t_read *read1, t_map *map1);
 
 #endif
