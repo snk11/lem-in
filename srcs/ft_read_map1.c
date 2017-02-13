@@ -6,7 +6,7 @@
 /*   By: syusof <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/17 11:17:10 by syusof            #+#    #+#             */
-/*   Updated: 2017/02/13 11:12:05 by syusof           ###   ########.fr       */
+/*   Updated: 2017/02/13 11:40:38 by syusof           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ void		ft_read_map_p1(t_read *read1, t_map *map1)
 void		ft_read_map_p2(t_read *read1, t_dmain *dmain1, t_data *data1,
 		t_map *map1)
 {
-//	if (read1->r3 >= 1 || read1->r2 == 0)
 	if (read1->r2 == 0)
 		read1->r1 = 1;
 	else
@@ -40,7 +39,6 @@ void		ft_read_map_p2(t_read *read1, t_dmain *dmain1, t_data *data1,
 			ft_read_map_p2_p1(read1, dmain1, data1, map1);
 		else
 			read1->r1 = 1;
-//		read1->r3++;
 	}
 }
 
@@ -70,7 +68,6 @@ void		ft_read_map_p2_p1(t_read *read1, t_dmain *dmain1, t_data *data1,
 void		ft_read_map_p3(t_read *read1, t_dmain *dmain1, t_data *data1,
 		t_map *map1)
 {
-//	if (read1->r4 >= 1 || read1->r2 == 0)
 	if (read1->r2 == 0)
 		read1->r1 = 1;
 	else
@@ -82,7 +79,6 @@ void		ft_read_map_p3(t_read *read1, t_dmain *dmain1, t_data *data1,
 			ft_read_map_p3_p1(read1, dmain1, data1, map1);
 		else
 			read1->r1 = 1;
-//		read1->r4++;
 	}
 }
 
