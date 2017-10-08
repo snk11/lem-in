@@ -18,7 +18,7 @@ to clean .o files and exe file:
 >make fclean
 
 # HOW IT WORKS
-'''
+```
 put a file in argument.
 
 for example in file1:
@@ -34,4 +34,4 @@ for example in file1:
 - node2-node3
 - node3-node4
 - node4-node1
-'''
+```
