@@ -5,7 +5,7 @@ It's an console application which the goal is to obatin the shortest path from g
 
 # USAGE
 
-to make the exe file:
+to make the exe file called lem-in: 
 make
 
 
