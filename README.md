@@ -22,16 +22,16 @@ to clean .o files and exe file:
 put a file in argument.
 
 for example in file1:
-> 20
-> ##start
-> node0 1 0
-> ##end
-> node1 5 0
-> node2 9 0
-> node3 13 0
-> node4 0 2
-> node0-node2
-> node2-node3
-> node3-node4
-> node4-node1
+- 20
+- ##start
+- node0 1 0
+- ##end
+- node1 5 0
+- node2 9 0
+- node3 13 0
+- node4 0 2
+- node0-node2
+- node2-node3
+- node3-node4
+- node4-node1
 
