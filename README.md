@@ -5,17 +5,17 @@ It's an console application which the goal is to obatin the shortest path from g
 
 # USAGE
 
-to make the exe file called lem-in: 
+#to make the exe file called lem-in:
 make
 
 
-to re:
+#to re:
 make re
 
 
-to clean .o files:
+#to clean .o files:
 make clean
 
 
-to clean .o files and exe file:
+#to clean .o files and exe file:
 make fclean
