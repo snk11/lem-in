@@ -1,6 +1,6 @@
 # INTRODUCTION
 ```
-It's an console application which the goal is to obatin the shortest and fastest path from graph.
+It's an console application which the goal is to obatin the shortest and fastest path from a graph.
 ```
 
 # MAKEFILE
@@ -8,7 +8,7 @@ It's an console application which the goal is to obatin the shortest and fastest
 to make the exe file called lem-in:
 make
 
-to re:
+to recomplile all:
 make re
 
 to clean .o files:
@@ -20,7 +20,7 @@ make fclean
 
 # HOW IT WORKS
 ```
-put a file in argument.
+write on the standard input the graph as:
 
 for example in a file called "file1":
 5
@@ -41,7 +41,7 @@ L1-node1 L2-node2 L3-node3
 L2-node1 L3-node1 L4-node1
 L5-node1
 
-Explanation:
+Explanations:
 we have 5 voyagers, the constain is that we have only one place in each node.
 the node start is node0 with coordinates x = 1  and y = 0.
 the node end is node1 with coordinates x = 5 and y = 0.
