@@ -1,6 +1,6 @@
 # INTRODUCTION
 ```
-It's an console application which can finds the shortest and fastest path from a graph.
+This is an console application which can finds the shortest and fastest path from a graph.
 ```
 
 # MAKEFILE
