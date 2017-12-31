@@ -1,6 +1,6 @@
 # INTRODUCTION
 ```
-This is an console application which can finds the shortest and fastest path from a graph.
+This is an console application which can finds the shortest path from a graph.
 ```
 
 # MAKEFILE
@@ -36,7 +36,7 @@ node0-node3
 node3-node2
 node1-node0
 
-the result of the command "./lem-on < file1" is:
+the result of the command "./lem-in < file1" is:
 L1-node1 L2-node2 L3-node3
 L2-node1 L3-node1 L4-node1
 L5-node1
