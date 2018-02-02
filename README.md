@@ -49,6 +49,6 @@ the node end is node1 with coordinates x = 5 and y = 0.
 the result format:
 Each line corresponds to one turn where each voyager can move from a room to another room linked and free.
 
-So for the example we can solve the problem in a minimum of 3 turn.
+So for the example we can solve the problem in a minimum of 3 turns.
 
 ```
