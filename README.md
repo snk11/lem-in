@@ -42,7 +42,7 @@ L2-node1 L3-node1 L4-node1
 L5-node1
 
 Explanations:
-we have 5 voyagers, the constain is that we have only one place in each node.
+we have 5 voyagers, the constraint is that we have only one place in each node.
 the node start is node0 with coordinates x = 1  and y = 0.
 the node end is node1 with coordinates x = 5 and y = 0.
 
