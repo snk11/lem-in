@@ -42,12 +42,12 @@ L2-node1 L3-node1 L4-node1
 L5-node1
 
 Explanations:
-we have 5 voyagers, the constraint is that we have only one place in each node.
+we have 5 travelers, the constraint is that we have only one place in each node.
 the node start is node0 with coordinates x = 1  and y = 0.
 the node end is node1 with coordinates x = 5 and y = 0.
 
 the result format:
-Each line corresponds to one turn where each voyager can move from a room to another room linked and free.
+Each line corresponds to one turn where each traveler can move from a room to another room linked and free.
 
 So for the example we can solve the problem in a minimum of 3 turns.
 
